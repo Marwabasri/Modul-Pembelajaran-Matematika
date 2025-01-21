@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(/src/dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+</head>
+
+<body class="bg-secondary font-Poppins">
+    
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+          <img class="w-10 h-10 rounded-lg mt-5"
+                    src="/src/dist/img/cube-icon.png"
+                    alt="Beranda">
+          <a href="" class="font-bold text-2xl text-primary block py-6">Modul Matematika</a>
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4">
+            <span class="w-10 h-1 my-2 block rounded-full bg-black origin-center transition duration-300"></span>
+            <span class="w-8 h-1 my-2 block rounded-full bg-primary origin-center transition duration-300"></span>
+          </button>
+          <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full">
+            <ul class="flex flex-col gap-2 max-w-[280px] mx-auto">
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/beranda.svg"
+                    alt="Beranda">
+                  <a href="/src/index.html">Beranda</a>
+                </span>
+              </li>
+              <li>
+                <details class="group">
+                    <summary
+                        class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span class="flex gap-2">
+                          <img class="w-6 h-6 rounded-lg"
+                            src="/src/dist/img/Aktv belajar.svg"
+                            alt="">
+                          <span>
+                              Aktivitas Pembelajaran
+                          </span>
+                        </span>
+                        <svg class="w-5 h-5 text-primary transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                            </path>
+                        </svg>
+                    </summary>
+                    <article class="px-4 pb-4">
+                        <ul class="flex flex-col gap-4 pl-2 mt-4">
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./peluang.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/peluang.svg"
+                                alt="">
+                              <a href="./peluang.html">Peluang</a>
+                            </span>
+                          </li>
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./frekuensi-relatif.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre relatif.svg"
+                                alt="">
+                              <a href="./frekuensi-relatif.html">Frekuensi Relatif</a>
+                            </span>
+                          </li>   
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./frekuensi-harapan.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre harapan.svg"
+                                alt="">
+                              <a href="./frekuensi-harapan.html">Frekuensi Harapan</a>
+                            </span>
+                          </li>                            
+                        </ul>
+                    </article>
+                </details>
+              </li> 
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/close.svg"
+                    alt="Penutup">
+                  <a href="./penutup.html">Penutup</a>
+                </span>
+              </li>      
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+  
+  <!--Hero Section Start-->
+  <section id="hero" class=" pt-20 body-font items-center justify-center">
+    <div class="bg-gradient-to-b from-[#ffa114] to-[#fef2c1] pt-10 pb-2 sm:pt-16 lg:pt-20 h-auto w-full overflow-x-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-start">
+          <h1 class="text-4xl font-bold text-[#fef2c1] sm:text-5xl lg:text-3xl">Aktivitas Belajar 3</h1>
+          <p class="text-4xl font-bold text-[#fef2c1]">Frekuensi Harapan</p>
+        </div>
+      </div>
+    
+      <div class="flex items-center justify-center my-6 px-2">
+        <img src="/src/dist/img/CubeTugOfWar.gif" class="w-56 max-w-full" />
+        <div class="group relative flex h-20 w-full max-w-full items-center justify-center self-center overflow-hidden rounded-lg bg-white/80">
+          <p class="absolute left-1/2 top-1/2 text-primary -translate-x-1/2 -translate-y-1/2 text-lg font-semibold duration-500 group-hover:-translate-x-[500%]">
+            Tujuan Pembelajaran
+          </p>
+          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-base font-normal duration-500 group-hover:-translate-x-1/2 text-center">
+            Siswa dapat menghitung frekuensi harapan suatu kejadian berdasarkan peluang teoritis
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Hero Section End-->
+
+  <!--Study Activities Start-->
+  <div class="h-full min-h-screen w-full pt-1 p-10">
+    <div class="grid gap-1">
+      <ul class="space-y-6 border-l-2 border-primary border-dashed">
+        <!-- Timeline Experienece -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Experience -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/E.svg" alt="Icon 1" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Experience</h2>
+            </div>
+          </div>
+          <!-- Content Experience Start-->
+          <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 p-6 rounded-lg shadow-md">
+            <!-- Input for Voucher Code -->
+            <div class="relative w-full bg-secondary rounded-xl rounded-b-none p-6 mt-2 border border-secondary">
+              <!-- Bagian kiri dengan gaya melingkar -->
+              <div class="absolute top-1/2 -left-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <div class="absolute top-1/2 -right-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <p class="text-justify text-xs font-extralight text-gray-700">
+                Suatu restoran telah resmi dibuka dan sebagai kegiatan promosi,  restoran tersebut menawarkan kegiatan seru 
+                yaitu bermain spin dan memenangkan hadiah menarik dengan menukarkan voucher spesial. Voucher ini di dapatkan dengan mengikuti 
+                kuis seru yang restoran berikan kepada pelanggangnya.
+              </p>
+            </div>  
+            <div class="w-full bg-white  rounded-xl rounded-t-none shadow-lg p-0 border border-gray-200">
+              <!-- Kode Voucher -->
+              <div id="ticket-voucher1" class="border-dashed w-full border-2 h-full p-1">
+                <div class="flex items-center justify-between gap-2 pr-2 py-2">
+                  <label for="voucher" class="text-lg font-medium text-gray-700"></label>
+                  <input 
+                    type="text" 
+                    id="voucher" 
+                    placeholder="Masukkan Kode Voucher" 
+                    class="px-4 py-2 w-11/12 border text-xs rounded focus:ring focus:outline-none"/>
+                  <button 
+                    id="redeem-button" 
+                    class="px-4 py-2 text-white text-xs bg-quaternary rounded">
+                    Gunakan 
+                  </button>
+                </div>
+              </div>
+            </div> 
+            
+            <!-- Spin Counter --> 
+            <div class="flex items-start space-x-2 bg-slate-100 border border-slate-200 outline-none rounded-xl justify-center w-48 h-12 mt-5 -mb-5 place-self-center">
+              <svg class="w-6 h-6 text-primary" fill="currentColor" 
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9l2.6-2.4C267.2 438.6 256 404.6 256 368c0-97.2 78.8-176 176-176c28.3 0 55 6.7 78.7 18.5c.9-6.5 1.3-13 1.3-19.6l0-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1l0 5.8c0 41.5 17.2 81.2 47.6 109.5zM432 512a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm16-208l0 48 48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48-48 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l48 0 0-48c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+              </svg>
+              <span id="spin-counter" class="text-base font-bold text-primary">
+                  0
+              </span>
+            </div>
+            <div class="bg-slate-100 text-slate-600 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 mt-0 focus:border-slate-600">
+              <div id="spinner-container" class="relative grid grid-cols-4 gap-4 p-4 border-gray-300 rounded-md w-full">
+                <!-- Kotak Hadiah -->
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Coba Lagi</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Coba Lagi</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Gratis Es Teh</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Coba Lagi</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Gratis Es Teh</div>
+                <div class="col-span-2"></div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Diskon 5%</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Coba Lagi</div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Diskon 5%  </div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Gratis Es Teh </div>
+                <div class="flex items-center justify-center bg-yellow-100 border border-gray-300 rounded h-20 text-center">Coba Lagi</div>
+              </div>
+            </div>
+
+            <div class="col-span-4 flex items-center justify-center mt-1 mb-3">
+              <button id="spin-button" class="px-6 py-2 text-white bg-primary rounded hover:bg-secondary">
+                Mainkan
+              </button>
+            </div>
+            <!-- Prize List --> 
+            <div class="bg-slate-100 text-slate-600 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 mt-0 focus:border-slate-600">
+              <h2 class="text-sm text-center text-gray-700">Daftar Hadiah yang Diperoleh:</h2>
+              <ol id="prize-list" class="mt-2 space-y-2 list-decimal list-inside bg-white p-4 rounded text-xs"></ol>
+            </div> 
+
+            <div class="flex items-center w-full top-0">
+              <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+              <div class="ml-2">
+                <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                  <p class="text-xs text-justify">  
+                    Untuk memainkan spinner di atas maka kalian memerlukan sebuah voucher, temukan kode 
+                    vauchernya dengan menjawab pertanyaan berikut!!
+                  </p>
+                </div>
+              </div>
+            </div>   
+
+            <!-- Tiket_1 / Kuis Box -->
+            <div class="relative w-full bg-secondary rounded-xl rounded-b-none p-6 mt-2 border border-secondary">
+              <!-- Bagian kiri dengan gaya melingkar -->
+              <div class="absolute top-1/2 -left-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <div class="absolute top-1/2 -right-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <!-- Konten Kuis -->
+              <div class="text-start text-xs h-20">
+                <p class="text-gray-800 font-medium ml-2">
+                  Tentukan peluang (peluang teoritik) dari kejadian mendapatkan "Coba Lagi"?
+                </p>
+                <!-- Input Jawaban -->
+                <form id="ticket-quiz-form1" class="mt-1 mb-1">
+                  <div class="flex items-center mx-2 justify-between">
+                    <input 
+                        type="text" 
+                        id="ticket-answer1" 
+                        name="ticket-answer" 
+                        placeholder="Misalnya 1/2" 
+                        class="flex items-center text-xs appearance-none w-10/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <button 
+                        type="button" 
+                        id="ticket-submit-btn1" 
+                        class="bg-primary/70 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary/80 focus:outline-none">
+                      Cek 
+                    </button>
+                  </div>
+                </form>
+                <!-- Feedback Jawaban -->
+                <div id="ticket-feedback1" class="hidden text-center"></div>
+              </div>  
+            </div>  
+            <div class="w-full bg-white  rounded-xl rounded-t-none shadow-lg p-0 border border-gray-200">
+              <!-- Kode Voucher -->
+              <div id="ticket-voucher1" class="h-12">
+                <div class="border-dashed w-full border-2 h-full p-1"></div>
+              </div>
+            </div>  
+            <!-- Tiket_1 / Kuis Box End -->
+
+            <!-- Tiket_2 / Kuis Box -->
+            <div class="relative w-full bg-secondary rounded-xl rounded-b-none p-6 mt-4 border border-secondary">
+              <!-- Bagian kiri dengan gaya melingkar -->
+              <div class="absolute top-1/2 -left-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <div class="absolute top-1/2 -right-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <!-- Konten Kuis -->
+              <div class="text-start text-xs h-20">
+                <p class="text-gray-800 font-medium ml-2">
+                  Tentukan peluang (peluang teoritik) dari kejadian mendapatkan "Gratis Es Teh"?
+                </p>
+                <!-- Input Jawaban -->
+                <form id="ticket-quiz-form2" class="mt-1 mb-1">
+                  <div class="flex items-center mx-2 justify-between">
+                    <input 
+                        type="text" 
+                        id="ticket-answer2" 
+                        name="ticket-answer" 
+                        placeholder="Misalnya 1/2" 
+                        class="flex items-center text-xs appearance-none w-10/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <button 
+                        type="button" 
+                        id="ticket-submit-btn2" 
+                        class="bg-primary/70 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary/80 focus:outline-none">
+                      Cek 
+                    </button>
+                  </div>
+                </form>
+                <!-- Feedback Jawaban -->
+                <div id="ticket-feedback2" class="hidden text-center"></div>
+              </div>  
+            </div>  
+            <div class="w-full bg-white  rounded-xl rounded-t-none shadow-lg p-0 border border-gray-200">
+              <!-- Kode Voucher -->
+              <div id="ticket-voucher2" class="h-12">
+                <div class="border-dashed w-full border-2 h-full p-1"></div>
+              </div>
+            </div>  
+            <!-- Tiket_2 / Kuis Box End -->
+
+            <!-- Tiket_3 / Kuis Box -->
+            <div class="relative w-full bg-secondary rounded-xl rounded-b-none p-6 mt-4 border border-secondary">
+              <!-- Bagian kiri dengan gaya melingkar -->
+              <div class="absolute top-1/2 -left-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <div class="absolute top-1/2 -right-4 h-8 w-8 bg-white rounded-full transform -translate-y-1/2"></div>
+              <!-- Konten Kuis -->
+              <div class="text-start text-xs h-20">
+                <p class="text-gray-800 font-medium ml-2">
+                  Tentukan peluang (peluang teoritik) dari kejadian mendapatkan "Diskon 5%"?
+                </p>
+                <!-- Input Jawaban -->
+                <form id="ticket-quiz-form3" class="mt-1 mb-1">
+                  <div class="flex items-center mx-2 justify-between">
+                    <input 
+                        type="text" 
+                        id="ticket-answer3" 
+                        name="ticket-answer" 
+                        placeholder="Misalnya 1/2" 
+                        class="flex items-center text-xs appearance-none w-10/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <button 
+                        type="button" 
+                        id="ticket-submit-btn3" 
+                        class="bg-primary/70 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary/80 focus:outline-none">
+                      Cek 
+                    </button>
+                  </div>
+                </form>
+                <!-- Feedback Jawaban -->
+                <div id="ticket-feedback3" class="hidden text-center"></div>
+              </div>  
+            </div>  
+            <div class="w-full bg-white  rounded-xl rounded-t-none shadow-lg p-0 border border-gray-200">
+              <!-- Kode Voucher -->
+              <div id="ticket-voucher3" class="h-12">
+                <div class="border-dashed w-full border-2 h-full p-1"></div>
+              </div>
+            </div>  
+            <!-- Tiket_3 / Kuis Box End -->
+          </div>
+        </li>
+
+        <!-- Timeline Experienece -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Experience -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/L.svg" alt="Languange" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Languange</h2>
+            </div>
+          </div>
+          <!-- Content Experience Start-->
+          <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 p-6 rounded-lg shadow-md">
+            
+            <div class="flex items-center w-full top-0">
+              <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+              <div class="ml-2">
+                <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                  <p class="text-xs text-justify">  
+                    Pada aktivitas menemukan kode voucher, kita telah menentukan peluang untuk setiap kejadian terpilihnya 
+                    "Coba Lagi", "Gratis Es Teh", dan "Diskon 5%". Setiap kejadian tersebut memiliki peluang tertentu, 
+                    sehingga kita dapat menghitung <b>jumlah kemunculannya yang diharapkan</b>. Dalam istilah matematika, 
+                    jumlah kejadian yang diharapkan ini disebut sebagai <b>frekuensi harapan</b>, yang dihitung
+                    berdasarkan peluang teoritis dari suatu kejadian dan jumlah percobaan yang dilakukan. 
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="items-center bg-gray-100 rounded-sm mt-3 p-3">
+              <p class="text-black text-xs text-justify">
+                Dari ketiga vocher yang didapatkan kita telah melakukan 15 kali putaran spin.
+                maka frekuensi harapan untuk setiap kejadian adalah: 
+              </p>
+              
+              <ol class="text-xs list-decimal list-outside text-black p-3">
+                <li>Frekuensi Harapan dari kejadian terpilihnya "Coba Lagi"
+                  <div class="py-2 rounded-sm bg-white p-3">
+                    <p class="text-xs text-start flex">
+                      \( \text{Frekuensi harapan} = \frac{5}{10} \times 15 = 7,5 \) 
+                    </p>
+                  </div>
+                </li>  
+                <li class="mt-3">Frekuensi Harapan dari kejadian terpilihnya "Gratis Es Teh"
+                  <div class="py-2 rounded-sm bg-white p-3">
+                    <p class="text-xs text-start flex">
+                      \( \text{Frekuensi harapan} = \frac{3}{10} \times 15 = 4,5 \) 
+                    </p>
+                  </div>
+                </li>  
+                <li class="mt-3">Frekuensi Harapan dari kejadian terpilihnya "Diskon 5%"
+                  <div class="py-2 rounded-sm bg-white p-3">
+                    <p class="text-xs text-start flex">
+                      \( \text{Frekuensi harapan} = \frac{2}{10} \times 15 = 3 \) 
+                    </p>
+                  </div>
+                </li> 
+              </ol>
+            </div>
+          </div>
+        </li>   
+        <!-- Timeline Languange End -->
+
+        <!-- Timeline symbol Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Symbol -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/S.svg" alt="Languange" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Symbol</h2>
+            </div>
+          </div>
+          <!-- Content Symbol Start-->
+          <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 p-6 rounded-lg shadow-md">
+            <div class="items-center bg-gray-100 rounded-sm p-3">
+              <p class="text-black text-justify text-xs mb-3">
+                Jika \( F_H  \) : Frekuensi Harapan, \( P(A) \) :  Peluang Teoritik dari kejadian A dan \( M \) : banyaknya percobaan,
+                Maka Rumus dari <b>Frekuensi Harapan</b> adalah?
+              </p>
+              <div id="GeneralFormulaFH" class="gap-3 flex flex-col">
+                <div class="optionFH py-2 h-20 items-center justify-center flex rounded-md bg-white text-center border-2 border-primary cursor-pointer hover:bg-gray-100" 
+                     onclick="checkGeneralFormula(this, false)">
+                  <p class="text-xs">
+                    \[
+                    F_H = \frac{n(A)}{M} \times P(A)
+                    \]
+                  </p>
+                </div>
+                <div class="optionFH py-2 h-20 items-center justify-center flex rounded-md bg-white text-center border-2 border-primary cursor-pointer hover:bg-gray-100"
+                     onclick="checkGeneralFormula(this, false)">
+                  <p class="text-xs">
+                    \[
+                    F_H = \frac{M}{P} \times A
+                    \]
+                  </p>
+                </div>
+                <div class="optionFH py-2 h-20 items-center justify-center flex rounded-md bg-white text-center border-2 border-primary cursor-pointer hover:bg-gray-100"
+                     onclick="checkGeneralFormula(this, true)">
+                  <p class="text-xs">
+                    \[
+                    F_H = P(A) \times M
+                    \]
+                  </p>
+                </div>
+                <div class="optionFH py-2 h-20 items-center justify-center flex rounded-md bg-white text-center border-2 border-primary cursor-pointer hover:bg-gray-100"
+                     onclick="checkGeneralFormula(this, false)">
+                  <p class="text-xs">
+                    \[
+                    F_H = M \times P(A)
+                    \]
+                  </p>
+                </div>
+              </div>
+              <div id="alertFH" class="hidden text-center"></div>
+
+              <div id="secondChoice" class="mt-3 hidden">
+                <p class="text-black text-justify text-sm mb-3">
+                  Atau rumus <b>frekuensi Harapan</b> juga dapat dituliskan sebagai berikut: 
+                </p>
+                <div class="py-2 h-20 items-center justify-center flex rounded-md bg-white text-center border-2 border-primary cursor-pointer hover:bg-gray-100">
+                  <p class="text-xs">
+                    \[
+                    F_H = \frac{n(A)}{n(S)} \times M
+                    \]
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>     
+        <!-- Timeline Symbol End -->
+
+        <!-- Timeline Application Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Application -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/A.svg" alt="Application" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Application</h2>
+            </div>
+          </div>
+          <!-- Content Application Start-->
+          <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 p-6 rounded-lg shadow-md">
+            <!--QuestionType2_6 Start-->
+            <div class="mt-0  mb-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+              <div class="question">
+                <img src="/src/dist/img/JuicePromotion.svg" class="w-28 place-self-center"/>
+                <p class="font-normal text-black text-xs mb-2 text-justify">
+                  Suatu Perusahaan yang memproduksi jus buah menawarkan hadiah menarik bagi pelanggang mereka 
+                  yang berhasil mengumpulkan huruf "J U Z Z" dari tutup botol produk jus mereka. Namun, peluang 
+                  mendapatkan setiap huruf berbeda, yaitu: 
+                  <br> \( P(J) = \frac{1}{10}\)
+                  <br> \( P(U) = \frac{4}{10}\)
+                  <br> \( P(z) = \frac{5}{10}\)
+                </p>
+                <p class="font-normal text-black text-xs my-2 text-justify">
+                  Jika pelanggang A membeli 2 box juss yang setiap boxnya berisi 30 botol jus. maka frekuensi harapan dari huruf "Z" adalah: 
+                </p>  
+                <label class="font-normal text-black text-xs text-left mb-2" for="6"></label>
+                <div class="flex items-center justify-between gap-2">
+                  <input 
+                    id="q6" 
+                    name="q6" 
+                    type="number" 
+                    class="flex items-center text-xs appearance-none w-11/12  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban"
+                  />
+                  <button id="quizBtnType2-q6"
+                    type="button" 
+                    onclick="checkAnswerType2('q6', 30, 'alertType2-6', 'quizBtnType2-q6')" 
+                    class="text-xs bg-primary/70 text-white px-4 py-2 rounded">
+                    Submit
+                  </button>
+                </div>
+                <div class="alert" id="alertType2-6"></div>
+                <div class="answer" id="answerType2-q6"></div>
+
+                <p class="font-normal text-black text-xs mt-4 mb-2 text-justify">
+                  Seorang pelanggang membutuhkan huruf "J" untuk melengkapi kumpulan huruf untuk memenangkan hadiah,
+                  jika dia membeli 10 botol jus. maka frekuensi harapan dia untuk mendapatkan huruf "J" adalah: 
+                </p>  
+                <label class="font-normal text-black text-sm text-left mb-2" for="7"></label>
+                <div class="flex items-center justify-between gap-2">
+                  <input 
+                    id="q7" 
+                    name="q7" 
+                    type="number" 
+                    class="flex items-center text-xs appearance-none w-11/12  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban"
+                  />
+                  <button id="quizBtnType2-q7"
+                    type="button" 
+                    onclick="checkAnswerType2('q7', 1, 'alertType2-7', 'quizBtnType2-q7')" 
+                    class="text-xs bg-primary/70 text-white px-4 py-2 rounded">
+                    Submit
+                  </button>
+                </div>
+                <div class="alert" id="alertType2-7"></div>
+                <div class="answer" id="answerType2-q7"></div>
+              </div>
+            </div>
+            <!--QuestionType2_6 End-->
+          </div>
+        </li>
+        <!-- Timeline Application End -->
+      </ul> 
+    </div>
+  </div>    
+  <!--Study Activities End-->
+
+  
+    
+  <!--FOOTER START-->
+  <footer class="p-4">
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <span class="block text-sm text-gray-500 text-center">Universitas Negeri Makassar <a href="https://flowbite.com" target="_blank" class="hover:underline"><br>2025</a>.
+    </span>
+  </footer>
+  <!--FOOTER END-->
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+  <script src="/src/script.js"></script>
+  <script src="./quiztype2.js"></script>
+  <script src="/src/conten/frekuensi-harapan.js"></script>
+
+</body>
+
+</html>

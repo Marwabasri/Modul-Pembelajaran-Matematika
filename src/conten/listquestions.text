@@ -1,0 +1,87 @@
+QUIZ TYPE 1 (pilihan Ganda)
+
+//index.html
+    ///KOMPETENSI AWAL
+        /question1
+        /question2
+        /question3
+        /question4
+        /question5
+
+//peluang.html
+    ///EXPERINECE
+        /question6
+        /question7
+        /question8
+
+//peluangSecondPage.html
+    ///EXPERINECE
+        /question9 peluangSecondPage.js
+        /question10
+
+QUIZ TYPE 2 (Isian bilangan bulat)
+
+//peluang.html
+    ///EXPERINECE
+        /q1
+        /q2
+        /q3
+
+    ///PICTURE
+        /q4    
+
+//frekuensi-relatif.html
+    ///EXPERINECE
+        /q5 special (frekuensi-relatif.js)
+
+//peluangSecondPage.html
+    ///EXPERINECE
+        //q6
+        //q7
+
+
+QUIZ TYPE 3 (Pilihan lebih dari 1 jawaban benar)
+
+//peluang.html 
+    ///LANGUANGE
+        /languangEques1
+
+//peluangSecondPage.html
+    ///EXPERINECE no working        
+
+
+QUIZ TYPE 4 (isian langsung pecahan)
+
+//peluang.html
+    ///APPLICATION
+        /q5 
+
+//peluangSecondPage.html
+    ///LANGUANGE
+        /q2 
+    ///APPLICATION   
+        /q8
+
+//frekuensi-relatif.html
+    ///APPLICATION
+        /q1
+        /q2
+        /q3
+        /q4
+
+
+QUIZ TYPE5
+
+//peluang.html
+    ///APPLICATION
+        /questionType5-1 (Tren Fasion)
+        /questionType5-4 (RS Bunga)
+        /questionType5-5 (K Bunga Putih) working?
+
+//frekuensi-relatif.html
+    ///EXPERINECE
+        /questionType5-2 
+
+//peluangSecondPage.html
+    /// EXPERINECE
+        /questionType5-3        

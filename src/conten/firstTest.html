@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(./dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+
+      #true.bg-green {
+        background-color: #34D399; /* Warna hijau */
+      }
+      
+      #false.bg-red {
+        background-color: #F87171; /* Warna merah */
+      }
+    
+      .bg-orange {
+        background-color:#ffa114;
+        opacity: 0.70;
+        color: black;
+      }
+
+    </style>
+</head>
+
+<body class="bg-secondary font-Poppins">
+
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+          <img class="w-10 h-10 rounded-lg mt-5"
+                    src="/dist/img/cube-icon.png"
+                    alt="Beranda">
+          <a href="" class="font-bold text-2xl text-primary block py-6">TES PERTAMA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+
+  <section id="hero" class="px-10 pt-36 body-font items-center justify-center">
+    <div class="bg-white border border-slate-200 grid grid-cols-6 gap-2 rounded-xl p-2 text-sm">
+        <h1 class="text-center text-slate-400 text-xl font-bold col-span-6">Macht the Word</h1>
+        <div class="bg-slate-100 text-slate-600 border border-slate-200 col-span-6 outline-none rounded-lg p-2 focus:border-slate-600">
+            <div class="grid grid-cols-2 gap-4">
+            <div id="words-container" class="flex w-28 flex-col justify-center gap-2">
+                <!-- Words will be dynamically inserted here -->
+            </div>
+            <div id="matches-container" class="flex  flex-col gap-2">
+                <!-- Matches will be dynamically inserted here -->
+            </div>
+            </div>
+        </div>
+        <p id="true" class="col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 border border-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
+            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM164.1 325.5C182 346.2 212.6 368 256 368s74-21.8 91.9-42.5c5.8-6.7 15.9-7.4 22.6-1.6s7.4 15.9 1.6 22.6C349.8 372.1 311.1 400 256 400s-93.8-27.9-116.1-53.5c-5.8-6.7-5.1-16.8 1.6-22.6s16.8-5.1 22.6 1.6zm53.5-96.7s0 0 0 0c0 0 0 0 0 0l-.2-.2c-.2-.2-.4-.5-.7-.9c-.6-.8-1.6-2-2.8-3.4c-2.5-2.8-6-6.6-10.2-10.3c-8.8-7.8-18.8-14-27.7-14s-18.9 6.2-27.7 14c-4.2 3.7-7.7 7.5-10.2 10.3c-1.2 1.4-2.2 2.6-2.8 3.4c-.3 .4-.6 .7-.7 .9l-.2 .2c0 0 0 0 0 0c0 0 0 0 0 0s0 0 0 0c-2.1 2.8-5.7 3.9-8.9 2.8s-5.5-4.1-5.5-7.6c0-17.9 6.7-35.6 16.6-48.8c9.8-13 23.9-23.2 39.4-23.2s29.6 10.2 39.4 23.2c9.9 13.2 16.6 30.9 16.6 48.8c0 3.4-2.2 6.5-5.5 7.6s-6.9 0-8.9-2.8c0 0 0 0 0 0s0 0 0 0zm160 0c0 0 0 0 0 0l-.2-.2c-.2-.2-.4-.5-.7-.9c-.6-.8-1.6-2-2.8-3.4c-2.5-2.8-6-6.6-10.2-10.3c-8.8-7.8-18.8-14-27.7-14s-18.9 6.2-27.7 14c-4.2 3.7-7.7 7.5-10.2 10.3c-1.2 1.4-2.2 2.6-2.8 3.4c-.3 .4-.6 .7-.7 .9l-.2 .2c0 0 0 0 0 0c0 0 0 0 0 0s0 0 0 0c-2.1 2.8-5.7 3.9-8.9 2.8s-5.5-4.1-5.5-7.6c0-17.9 6.7-35.6 16.6-48.8c9.8-13 23.9-23.2 39.4-23.2s29.6 10.2 39.4 23.2c9.9 13.2 16.6 30.9 16.6 48.8c0 3.4-2.2 6.5-5.5 7.6s-6.9 0-8.9-2.8c0 0 0 0 0 0s0 0 0 0s0 0 0 0z"/>
+          </svg>
+        </p>
+        <p id="false" class="col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 border border-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
+            <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zm240 80c0-8.8 7.2-16 16-16c45 0 85.6 20.5 115.7 53.1c6 6.5 5.6 16.6-.9 22.6s-16.6 5.6-22.6-.9c-25-27.1-57.4-42.9-92.3-42.9c-8.8 0-16-7.2-16-16zm-80 80c-26.5 0-48-21-48-47c0-20 28.6-60.4 41.6-77.7c3.2-4.4 9.6-4.4 12.8 0C179.6 308.6 208 349 208 369c0 26-21.5 47-48 47zM367.6 208a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm-192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+          </svg>
+        </p>        
+        <span class="col-span-1"></span>
+        <button id="reset-btn" class="bg-slate-100 stroke-slate-600 border border-slate-200 col-span-1 flex justify-center rounded-lg p-2 duration-300 hover:border-slate-600">
+            Acak
+        </button>
+        <a 
+          href="./peluangSecondPage.html"
+          id="complete-btn" 
+          class="bg-slate-100 stroke-slate-600 border border-slate-200 col-span-2 flex justify-center rounded-lg p-2 duration-300 hover:border-slate-600">
+          Pembelajaran Selanjutnya
+      </a>
+    </div>
+  </section>
+
+  <footer class="p-4">
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <span class="block text-sm text-gray-500 text-center">Universitas Negeri Makassar <a href="https://flowbite.com" target="_blank" class="hover:underline"><br>2025</a>.
+    </span>
+  </footer>
+
+  <script>
+    const words = [
+      { word: "Ruang Sampel", match: "Himpunan 	semua kemungkinan hasil dari suatu percobaan." },
+      { word: "Percobaan", match: "Sebagian dari ruang sampel yang memenuhi kriteria tertentu." },
+      { word: "Kejadian", match: "Proses atau aktivitas yang menghasilkan hasil tertentu." },
+      { word: "n(S)", match: "Banyaknya anggota ruang sampel" }
+    ];
+
+    let selected = [];
+    const wordsContainer = document.getElementById("words-container");
+    const matchesContainer = document.getElementById("matches-container");
+    const resetButton = document.getElementById("reset-btn");
+    const trueElement = document.getElementById("true");
+    const falseElement = document.getElementById("false");
+    const completeButton = document.getElementById("complete-btn");
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function createGame() {
+      wordsContainer.innerHTML = "";
+      matchesContainer.innerHTML = "";
+      trueElement.classList.remove("bg-green");
+      falseElement.classList.remove("bg-red");
+      selected = [];
+
+      const wordsPart = words.map(w => ({ text: w.word, type: "word" }));
+      const matchesPart = words.map(w => ({ text: w.match, type: "match" }));
+
+      shuffleArray(matchesPart); // Shuffle only the matches
+      shuffleArray(wordsPart);
+
+      wordsPart.forEach((item, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = item.text;
+        btn.className = "bg-gray-200 py-2 px-4 rounded hover:bg-gray-300 text-center text-xs";
+        btn.dataset.type = item.type;
+        btn.dataset.index = index;
+
+        btn.addEventListener("click", () => handleSelection(btn, item));
+        wordsContainer.appendChild(btn);
+      });
+
+      matchesPart.forEach((item, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = item.text;
+        btn.className = "bg-gray-200 py-2 px-4 rounded hover:bg-gray-300 text-center text-xs";
+        btn.dataset.type = item.type;
+        btn.dataset.index = index;
+
+        btn.addEventListener("click", () => handleSelection(btn, item));
+        matchesContainer.appendChild(btn);
+      });
+    }
+
+    function handleSelection(button, item) {
+    const alreadySelected = selected.find(sel => sel.button === button);
+
+    // Jika tombol sudah dipilih, hapus dari seleksi
+    if (alreadySelected) {
+        button.classList.remove("bg-orange");
+        selected = selected.filter(sel => sel.button !== button);
+        return;
+    }
+
+    // Jika tombol belum dipilih, tambahkan ke seleksi dan ubah warna menjadi oranye
+    if (selected.length < 2) {
+        button.classList.add("bg-orange");
+        selected.push({ button, item });
+    }
+
+    // Jika ada dua tombol yang dipilih, periksa kecocokan
+    if (selected.length === 2) {
+        const [first, second] = selected;
+
+        // Cocokkan pasangan kata dan arti
+        if (
+            first.item.type !== second.item.type &&
+            words.some(w => (w.word === first.item.text && w.match === second.item.text) || 
+                            (w.match === first.item.text && w.word === second.item.text))
+        ) {
+            first.button.classList.replace("bg-orange", "bg-green-300");
+            second.button.classList.replace("bg-orange", "bg-green-300");
+            first.button.disabled = true;
+            second.button.disabled = true;
+            first.button.classList.remove("hover:bg-gray-300");
+            second.button.classList.remove("hover:bg-gray-300");
+            trueElement.classList.add("bg-green");
+        } else {
+            first.button.classList.replace("bg-orange", "bg-gray-200");
+            second.button.classList.replace("bg-orange", "bg-gray-200");
+            falseElement.classList.add("bg-red");
+        }
+
+        // Hapus umpan balik visual setelah 1 detik
+        setTimeout(() => {
+            trueElement.classList.remove("bg-green");
+            falseElement.classList.remove("bg-red");
+        }, 1000);
+
+        selected = [];
+    }
+
+    // Periksa apakah permainan telah selesai
+    checkCompletion();
+}
+
+
+
+    function checkCompletion() {
+      const allButtons = document.querySelectorAll("#words-container button, #matches-container button");
+      const allDisabled = Array.from(allButtons).every(btn => btn.disabled);
+      if (allDisabled) {
+        completeButton.classList.remove("hidden");
+      }
+    }
+
+
+    resetButton.addEventListener("click", createGame);
+    createGame();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+//Alert quiz
+
+.alert {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex; /* Mengatur agar konten sejajar secara horizontal */
+    align-items: center; /* Membuat gambar dan teks sejajar vertikal */
+    gap: 2px; /* Jarak antara gambar dan teks */
+}
+.alert img {
+    width: 24px; /* Ukuran gambar */
+    height: 24px;
+    display:inline-block;
+}
+.alert.correct {
+    background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1)) /* #dcfce7 */;
+    color: rgb(21 128 61 / var(--tw-text-opacity, 1)) /* #15803d */;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgb(34 197 94 / var(--tw-border-opacity, 1)) /* #22c55e */;
+    font-size: small;
+    margin-top: 8px;
+    padding: 5px;
+}
+.alert.incorrect {
+    background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1)) /* #fee2e2 */;
+    color: rgb(185 28 28 / var(--tw-text-opacity, 1)) /* #b91c1c */;
+    border-top-width: 1px;
+    border-bottom-width: 1px;  
+    border-color: rgb(239 68 68 / var(--tw-border-opacity, 1)) /* #ef4444 */;
+    font-size: small;
+    margin-top: 8px;
+    padding: 5px;
+}
+.answer {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: small;
+    display: none;
+    margin-left: 5px;
+}
+.correct-answer{
+    background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1)) /* #dcfce7 */;
+    color: rgb(21 128 61 / var(--tw-text-opacity, 1)) /* #15803d */;
+    border-width: 1px;
+    border-color: rgb(34 197 94 / var(--tw-border-opacity, 1)) /* #22c55e */;
+}
+.incorrect-answer {
+    background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1)) /* #fee2e2 */;
+    color: rgb(185 28 28 / var(--tw-text-opacity, 1)) /* #b91c1c */;
+    width: 100%;
+    border-width: 1px;
+    border-color: rgb(239 68 68 / var(--tw-border-opacity, 1)) /* #ef4444 */;
+}
+
+//Game shut the box
+.checkBox:checked {
+    background-color: #4ade80;
+    border-color: #16a34a;
+    color: white;
+}
+.checkBox:disabled {
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+// ANIMASI KUBUS
+
+.cube-container {
+    perspective: 1000px;
+  }
+  .cube {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    cursor: grab;
+  }
+  .face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #081F5C;
+    border: 1px solid #D0E3FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+  }
+  .corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #FFF9F0;
+    color: #081F5C;
+    font-size: 0.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .corner-a { top: 0; left: 0; }
+  .corner-b { top: 0; right: 0; }
+  .corner-c { bottom: 0; left: 0; }
+  .corner-d { bottom: 0; right: 0; }
+
+  .front { transform: translateZ(75px); }
+  .back { transform: rotateY(180deg) translateZ(75px); }
+  .left { transform: rotateY(-90deg) translateZ(75px); }
+  .right { transform: rotateY(90deg) translateZ(75px); }
+  .top { transform: rotateX(90deg) translateZ(75px); }
+  .bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+ /*CSS Frekuensi Relatif*/
+
+/* Kotak yang sedang disorot selama animasi */
+.highlight {
+    background-color: #ffd700; /* Warna kuning untuk highlight */
+    transform: scale(1.1); /* Efek sedikit membesar */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Kotak hadiah yang terpilih */
+.selected-box {
+    background-color: #32cd32; /* Warna hijau cerah untuk menonjolkan hadiah */
+    color: white; /* Warna teks kontras */
+    transform: scale(1.2); /* Efek sedikit membesar */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}

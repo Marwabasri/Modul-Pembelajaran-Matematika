@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(/src/dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+</head>
+
+<body class="bg-secondary font-Poppins">
+    
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+          <img class="w-10 h-10 rounded-lg mt-5"
+                    src="/src/dist/img/cube-icon.png"
+                    alt="Beranda">
+          <a href="" class="font-bold text-2xl text-primary block py-6">Modul Matematika</a>
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4">
+            <span class="w-10 h-1 my-2 block rounded-full bg-black origin-center transition duration-300"></span>
+            <span class="w-8 h-1 my-2 block rounded-full bg-primary origin-center transition duration-300"></span>
+          </button>
+          <nav id="nav-menu" class="hidden absolute py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full">
+            <ul class="flex flex-col gap-2 max-w-[280px] mx-auto text-base">
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/beranda.svg"
+                    alt="Beranda">
+                  <a href="/src/index.html">Beranda</a>
+                </span>
+              </li>
+              <li>
+                <details class="group">
+                    <summary
+                        class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span class="flex gap-2">
+                          <img class="w-6 h-6 rounded-lg"
+                            src="/src/dist/img/Aktv belajar.svg"
+                            alt="">
+                          <span>
+                              Aktivitas Pembelajaran
+                          </span>
+                        </span>
+                        <svg class="w-5 h-5 text-primary transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                            </path>
+                        </svg>
+                    </summary>
+                    <article class="px-4 pb-4">
+                        <ul class="flex flex-col gap-4 pl-2 mt-4">
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./peluang.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/peluang.svg"
+                                alt="">
+                              <a href="./peluang.html">Peluang</a>
+                            </span>
+                          </li>
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./frekuensi-relatif.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre relatif.svg"
+                                alt="">
+                              <a href="./frekuensi-relatif.html">Frekuensi Relatif</a>
+                            </span>
+                          </li>   
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="./frekuensi-harapan.html" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre harapan.svg"
+                                alt="">
+                              <a href="./frekuensi-harapan.html">Frekuensi Harapan</a>
+                            </span>
+                          </li>                            
+                        </ul>
+                    </article>
+                </details>
+              </li>
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/close.svg"
+                    alt="Penutup">
+                  <a href="penutup.html">Penutup</a>
+                </span>
+              </li>       
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+  
+  <!--Hero Section Start-->
+  <section id="hero" class=" pt-20 body-font items-center justify-center">
+    <div class="bg-gradient-to-b from-[#ffa114] to-[#fef2c1] pt-10 pb-2 sm:pt-16 lg:pt-20 h-auto w-full overflow-x-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-start">
+          <h1 class="text-4xl font-bold text-[#fef2c1] sm:text-5xl lg:text-3xl">Penutup</h1>
+          <p class="text-4xl font-bold text-[#fef2c1]"> </p>
+        </div>
+      </div>
+    
+      <div class="flex items-center justify-center my-6 px-2">
+        <img src="/src/dist/img/CubeTugOfWar.gif" class="w-56 max-w-full" />
+        <div class="group relative flex h-20 w-full max-w-full items-center justify-center self-center overflow-hidden rounded-lg bg-white/80">
+          <p class="absolute left-1/2 top-1/2 text-primary -translate-x-1/2 -translate-y-1/2 text-lg font-semibold duration-500 group-hover:-translate-x-[500%]">
+            Tujuan Pembelajaran
+          </p>
+          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-base font-normal duration-500 group-hover:-translate-x-1/2 text-center">
+            Siswa dapat menghitung frekuensi harapan suatu kejadian berdasarkan peluang teoritis
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Hero Section End-->
+
+  <!--Study Activities Start-->
+<div class="flex gap-4">
+  <div class="w-[190px] h-[254px] bg-[#193f56] rounded-[15px]">
+    <div class="w-[60%] h-[3%] bg-[#95ccd5] mx-auto rounded-b-[15px]"></div>
+    <div class="w-[70px] h-[80px] bg-[#95ccd5] rounded-[15px] mx-auto mt-[25px]"></div>
+    <span class="font-semibold text-white text-center block pt-[10px] text-[16px]">Person</span>
+    <p class="font-normal text-white text-center pt-[3px] text-[12px]">Job Title</p>
+    <button class="px-[25px] py-[8px] block mx-auto rounded-[8px] border-none mt-[30px] bg-[#95ccd5] text-white font-semibold hover:bg-[#534bf3]">
+      Click
+    </button>
+  </div>
+
+  <div class="w-[190px] h-[254px] bg-[#193f56] rounded-[15px]">
+    <div class="w-[60%] h-[3%] bg-[#f7f2eb] mx-auto rounded-b-[15px]"></div>
+    <div class="w-[70px] h-[80px] bg-[#f7f2eb] rounded-[15px] mx-auto mt-[25px]"></div>
+    <span class="font-semibold text-white text-center block pt-[10px] text-[16px]">Person</span>
+    <p class="font-normal text-white text-center pt-[3px] text-[12px]">Job Title</p>
+    <button class="px-[25px] py-[8px] block mx-auto rounded-[8px] border-none mt-[30px] bg-[#f7f2eb] text-white font-semibold hover:bg-[#534bf3]">
+      Click
+    </button>
+  </div>
+</div>  
+
+<div class="flex gap-4 ml-10 mt-10">
+  <div class="w-[190px] h-[254px] bg-primary rounded-[15px]">
+    <div class="w-[60%] h-[3%] bg-secondary mx-auto rounded-b-[15px]"></div>
+    <div class="w-[70px] h-[80px] bg-[#193f56] rounded-[15px] mx-auto mt-[25px]"></div>
+    <span class="font-semibold text-white text-center block pt-[10px] text-[16px]">Person</span>
+    <p class="font-normal text-white text-center pt-[3px] text-[12px]">Job Title</p>
+    <button class="px-[25px] py-[8px] block mx-auto rounded-[8px] border-none mt-[30px] bg-[#193f56] text-white font-semibold hover:bg-[#534bf3]">
+      Click
+    </button>
+  </div>
+
+  <div class="w-[190px] h-[254px] bg-[#f7f2eb] rounded-[15px]">
+    <div class="w-[60%] h-[3%] bg-[#193f56] mx-auto rounded-b-[15px]"></div>
+    <div class="w-[70px] h-[80px] bg-[#193f56] rounded-[15px] mx-auto mt-[25px]"></div>
+    <span class="font-semibold text-[#193f56] text-center block pt-[10px] text-[16px]">Person</span>
+    <p class="font-normal text-[#193f56] text-center pt-[3px] text-[12px]">Job Title</p>
+    <button class="px-[25px] py-[8px] block mx-auto rounded-[8px] border-none mt-[30px] bg-[#193f56] text-[#193f56] font-semibold hover:bg-[#7C3AED]">
+      Click
+    </button>
+  </div>
+</div>
+  
+
+
+  <!--Study Activities End-->
+
+  
+    
+  <!--FOOTER START-->
+  <footer class="p-4">
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <span class="block text-sm text-gray-500 text-center">Universitas Negeri Makassar <a href="" target="_blank" class="hover:underline"><br>2025</a>.
+    </span>
+  </footer>
+  <!--FOOTER END-->
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+  <script src="/src/script.js"></script>
+  <script src="./quiztype2.js"></script>
+  <script src="/src/conten/frekuensi-harapan.js"></script>
+
+</body>
+
+</html>

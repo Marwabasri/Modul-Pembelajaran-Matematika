@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="/src/conten/style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(/src/dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+    </style>
+</head>
+<body class="bg-secondary font-Poppins">
+    
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+            <img class="w-10 h-10 rounded-lg mt-5"
+                      src="/src/dist/img/cube-icon.png"
+                      alt="icon">
+            <a href="" class="font-bold text-2xl text-primary block py-6">Modul Matematika</a>
+          </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4">
+            <span class="w-10 h-1 my-2 block rounded-full bg-black origin-center transition duration-300"></span>
+            <span class="w-8 h-1 my-2 block rounded-full bg-primary origin-center transition duration-300"></span>
+          </button>
+          <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full">
+            <ul class="flex flex-col gap-2 max-w-[280px] mx-auto">
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/beranda.svg"
+                    alt="Beranda">
+                  <a href="/src/index.html">Beranda</a>
+                </span>
+              </li>
+
+              <li>
+                <details class="group">
+                    <summary
+                        class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span class="flex gap-2">
+                          <img class="w-6 h-6 rounded-lg"
+                            src="/src/dist/img/Aktv belajar.svg"
+                            alt="">
+                          <span>
+                              Aktivitas Pembelajaran
+                          </span>
+                        </span>
+                        <svg class="w-5 h-5 text-primary transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                            </path>
+                        </svg>
+                    </summary>
+                    <article class="px-4 pb-4">
+                        <ul class="flex flex-col gap-4 pl-2 mt-4">
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/peluang.svg"
+                                alt="Peluang">
+                              <a href="peluang.html">Peluang</a>
+                            </span>
+                          </li>
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="/dist/img/fre relatif.svg" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre relatif.svg"
+                                alt="">
+                              <a href="/src/conten/frekuensi-relatif.html">Frekuensi Relatif</a>
+                            </span>
+                          </li>   
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img href="" class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre harapan.svg"
+                                alt="">
+                              <a href="./frekuensi-harapan.html">Frekuensi Harapan</a>
+                            </span>
+                          </li>                            
+                        </ul>
+                    </article>
+                </details>
+              </li> 
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/close.svg"
+                    alt="Penutup">
+                  <a href="./penutup.html">Penutup</a>
+                </span>
+              </li>       
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+  
+  <!--Hero Section Start-->
+  <section id="hero" class=" pt-20 body-font items-center justify-center">
+    <div class="bg-gradient-to-b from-[#ffa114] to-[#fef2c1] pt-10 pb-2 sm:pt-16 lg:pt-20 h-auto w-full overflow-x-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-start">
+          <h1 class="text-4xl font-bold text-[#fef2c1] sm:text-5xl lg:text-3xl">Aktivitas Belajar 1</h1>
+          <p class="text-4xl font-bold text-[#fef2c1]">Peluang</p>
+        </div>
+      </div>
+    
+      <div class="flex items-center justify-center my-6 px-2">
+        <img src="/src/dist/img/CubeTugOfWar.gif" class="w-56 max-w-full" />
+        <div class="group relative flex h-20 w-full max-w-full items-center justify-center self-center overflow-hidden rounded-lg bg-white/80">
+          <p class="absolute left-1/2 top-1/2 text-primary -translate-x-1/2 -translate-y-1/2 text-lg font-semibold duration-500 group-hover:-translate-x-[500%]">
+            Tujuan Pembelajaran
+          </p>
+          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-base font-normal duration-500 group-hover:-translate-x-1/2 text-center">
+            Siswa dapat menentukan titik sampel dan ruang sampel suatu kejadian sederhana
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Hero Section End-->
+ 
+  <!--Dasar-Dasar Peluang--> 
+
+    <div class="h-full min-h-screen w-full pt-10 p-10">
+      <div class="grid gap-1">
+        <ul class="space-y-6 border-l-2 border-dashed border-primary">
+          <!-- Timeline Experienece -->
+          <li class="mb-10 ml-8">
+            <!-- Icon & Title Experience -->
+            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+              <div class="flex items-center -ml-14 mb-4">
+                  <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                      <img src="/src/dist/img/E.svg" alt="Icon 1" class="border-dotted rounded-full">
+                  </div>
+                  <h2 class="ml-5 text-base font-bold text-white">Experience</h2>
+              </div>
+            </div>
+            <!-- Content Experience Start-->
+            <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 p-6 rounded-lg shadow-md">
+              <div class="gap-5">
+                <div class="flex items-center w-full">
+                  <img src="/src/dist/img/cube playing ball.gif" alt="" class="w-32 scale-x-[-1] md:w-24" />
+                  <div class="ml-2">
+                    <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                      <p class="text-xs text-justify">  
+                        Apakah kalian suka bermain gim? 
+                        <br>Saat memainkan sebuah permainan, apakah kalian ingin menang? 
+                        <br>Tahukah kalian bahwa beberapa gim yang kalian mainkan sehari-hari dapat dianalisis untuk menentukan seberapa besar kemungkinan kalian memenangkan permainan tersebut? 
+                        Mari kita pelajari lebih lanjut bersama Zuri!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--Artikel Berita Start-->
+                <div class="max-w-screen-xl ml-[65pxpx] p-5 sm:p-2 md:p-16">
+                  <div class="rounded-lg overflow-hidden flex flex-col max-w-xl mx-auto">          
+                    <a>
+                      <img class="w-full" src="/src/dist/img/rock paper scissors.png" alt="Batu, Gunting dan Kertas">
+                    </a>
+                    <div class="relative -mt-16 px-10 pt-5 pb-0 bg-white mx-10 ">
+                      <a class="font-semibold text-sm inline-block rounded-lg mb-2">
+                          Batu, Gunting, dan Kertas</a>
+                      <p class="text-gray-500 text-xs text-justify">
+                        Permainan suit "batu, gunting, dan kertas" adalah permian tradisional yang biasanya dimaiankan oleh dua orang dengan memilih salah satu dari tiga simbol:
+                        batu, gunting, atau kertas. Batu dilambangkan dengan kepalan tangan, gunting dengan dua jari membentuk huruf "V", dan kertas dengan telapak tangan terbuka.
+                        Simbol - simbol tersebut dihubungkan dengan aturan menang kalah yang kreatif: 
+                        Batu mengalahkan gunting (karena batu dapat menghancurkan gunting),
+                        Gunting mengalahkan kertas (karena gunting dapat memotong kertas),
+                        Kertas mengalahkan batu (karena kertas dapat membungkus batu).
+                      </p>
+                      <p class="mt-5 mb-0 text-gray-600 text-xs">
+                          By
+                          <a href="https://palembang.tribunnews.com/2021/09/07/apa-itu-permainan-batu-gunting-kertas-punya-filosofi-tersembunyi-ini-alasan-batu-kalah-dari-kertas?page=2" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                              Tribunnews.com
+                          </a> | img <a href="https://www.canva.com/p/jmstudio/?utm_medium=referral&utm_source=creator_share&utm_campaign=creator_share" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                              JM Studio
+                          </a>
+                      </p>
+                    </div>        
+                  </div>
+                </div>  
+                <!--Artikel Berita End-->
+
+                <!--QuestionType1_6 Start-->
+                <div class="mt-2 border-2 border-slate-400 rounded-lg bg-white p-[20px] text-start shadow-sm">   
+                  <div class="question">
+                    <p class="font-normal text-black text-xs text-left mb-2"> Berapa banyak pilihan yang dimiliki setiap pemain?</p>
+                    <form>
+                      <div class="text-xs grid gap-2">
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question6" value="a" onclick="showSubmitButton(this)" class="mr-2">
+                            1 Pilihan
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question6" value="b" onclick="showSubmitButton(this)" class="mr-2">
+                            2 Pilihan
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question6" value="c" onclick="showSubmitButton(this)" class="mr-2">
+                            3 Pilihan
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question6" value="d" onclick="showSubmitButton(this)" class="mr-2">
+                            4 Pilihan
+                        </label>
+                    </div>
+                    <button type="button" class="hidden text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 submit-btn" onclick="checkAnswerType1('question6', 'c','3 Pilihan', 'alert6', 'answer6',this)">Cek Jawaban</button>
+                    </form>
+                    <div class="alert" id="alert6"></div>
+                    <div class="answer" id="answer6"></div>
+                  </div>
+                </div>
+                <!--QuestionType1_6 End-->
+
+                <!--QuestionType1_7 Start-->
+                <div class="mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                  <div class="question">
+                    <p class="font-normal text-black text-xs text-left mb-2">Apa saja pilihan tersebut?</p>
+                    <form>
+                      <div class=" text-xs grid gap-2">
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                          <input type="radio" name="question7" value="a" onclick="showSubmitButton(this)" class="mr-2">
+                          Batu, Gunting, dan Kayu </label> 
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                          <input type="radio" name="question7" value="b" onclick="showSubmitButton(this)" class="mr-2">
+                          Batu, Gunting, dan Kertas</label> 
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                          <input type="radio" name="question7" value="c" onclick="showSubmitButton(this)" class="mr-2">
+                          Batu, Kertas, dan Pulpen</label> 
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                          <input type="radio" name="question7" value="d" onclick="showSubmitButton(this)" class="mr-2">
+                          Kertas, Pensil, dan Gunting</label> 
+                      </div>
+                    <button type="button" class="hidden text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 submit-btn" onclick="checkAnswerType1('question7', 'b','Batu, Gunting, dan Kertas', 'alert7', 'answer7',this)">Cek Jawaban</button>
+                    </form>
+                    <div class="alert" id="alert7"></div>
+                    <div class="answer" id="answer7"></div>
+                  </div>
+                </div>
+                <!--QuestionType1_7 End-->
+
+
+                <!--Ruang Sampel Kejadian Batu Gunting Kertas Start-->
+                <div class="flex items-center w-full">
+                  <img src="/src/dist/img/cube playing puzzle.gif" alt="" class="w-32 scale-x-[-1] md:w-24" />
+                  <div class="ml-2">
+                    <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                      <p class="text-xs text-justify">  
+                        Zuri mengajakmu untuk mendaftarkan semua kemungkinan hasil yang diperoleh jika memainkan permainan Batu, Gunting, dan Kertas yang dimainkan oleh 2 orang pemain. 
+                        <br>Coba lihat kemungkinan hasilnya dengan bermaian pada permainan berikut:
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container mx-auto p-4 bg-secondary rounded-sm shadow-md mt-5">
+                  <details class="group">
+                    <summary
+                        class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span class="flex gap-2">
+                          <h2 class="text-dark text-center mb-2 text-xl font-semibold">
+                            Semua kemungkinan hasil dari percobaan permainan suit 2 orang
+                          </h2>
+                        </span>
+                        <svg class="w-5 h-5 text-black transition group-open:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                          <path 
+                              d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
+                        </svg>
+                    </summary>
+                    <article class="px-4 pb-4">
+                        <ul class="flex flex-col gap-4 pl-2">
+                          <li class="flex">
+                            <ol class="text-xs text-gray-600 text-justif yps-5 mt-2 space-y-1 list-decimal list-outside">
+                              <li>Seret elemen "Batu", "Gunting", atau "Kertas" ke setiap kotak kosong.</li>
+                              <li>Setiap elemen dapat digunakan hingga tiga kali.</li>
+                              <li>Setiap kotak kosong hanya dapat diisi dengan dua elemen.</li>
+                              <li>Setelah semua kotak kosong terisi, tekan tombol "Periksa Jawaban" untuk mengecek hasilmu.</li>
+                              <li>Jika ingin mencoba ulang, tekan tombol "Mulai Kembali" untuk mengosongkan kotak dan memulai dari awal.</li>
+                              <li>Jika jawabanmu belum benar, teruslah mencoba hingga semua kotak terisi dengan kombinasi yang tepat.</li>
+                              <li>Setelah berhasil, kamu dapat melanjutkan ke permainan berikutnya.</li>
+                              <li>Selamat Mencoba!</li>
+                            </ol>
+                          </li>                           
+                        </ul>
+                    </article>
+                  </details>
+                  <div class="grid grid-cols-4 gap-4 text-xs">
+                      <div class="h-24 bg-transparent rounded content-center text-center">
+                        <img src="/src/dist/img/game1poster.svg"  class="h-full w-full object-contain"/>
+                      </div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                        <div id="itemBatu1" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#ff9441] bg-white px-4 py-2 rounded shadow cursor-move flex items-center space-x-2">
+                          <img src="/src/dist/img/player1_rock.svg" alt="Batu" class="h-6 w-6 object-contain" />
+                          <span class="ml-2 hidden sm:block">Batu</span>
+                        </div>
+                      </div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                        <div id="itemGunting1" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#fa0644] bg-white px-4 py-2 rounded shadow cursor-move flex items-center space-x-2">
+                          <img src="/src/dist/img/player1_scissors.svg" alt="Gunting"  class="h-6 w-6 object-contain"/>
+                          <span class="ml-2 hidden sm:block">Gunting</span>
+                        </div>
+                      </div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                          <div id="itemKertas1" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#84caed] bg-white px-4 py-2 rounded shadow cursor-move flex items-center space-x-2">
+                          <img src="/src/dist/img/player1_paper.svg" alt="Kertas" class="h-6 w-6 object-contain" />
+                          <span class="ml-2 hidden sm:block">Kertas</span>
+                        </div>
+                      </div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                          <div id="itemBatu2" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#3a5dc4] bg-white px-4 py-2 rounded shadow cursor-move flex items-center space-x-2">
+                          <img src="/src/dist/img/player2_rock.svg" alt="Batu" class="h-6 w-6 object-contain" />
+                          <span class="ml-2 hidden sm:block">Batu</span>
+                        </div>
+                      </div>
+                      <div id="dropZone2_2" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone3_2" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone4_2" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                          <div id="itemGunting2" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#ffde59] bg-white px-4 py-2 rounded shadow cursor-move flex items-center space-x-2">
+                          <img src="/src/dist/img/player2_scissors.svg" alt="Gunting" class="h-6 w-6 object-contain"/>
+                          <span class="ml-2 hidden sm:block">Gunting</span>
+                        </div>
+                      </div>
+                      <div id="dropZone2_3" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone3_3" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone4_3" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div class="h-24 bg-gray-200 rounded content-center text-center">
+                          <div id="itemKertas2" draggable="true" ondragstart="startDrag(event)" 
+                          class="text-[#05a552] bg-white px-4 py-2 rounded shadow cursor-move flex items-center">
+                          <img src="/src/dist/img/player2_paper.svg" alt="Kertas" class="h-6 w-6 object-contain"/>
+                          <span class="ml-2 hidden sm:block">Kertas</span>
+                        </div>
+                      </div>
+                      <div id="dropZone2_4" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone3_4" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                      <div id="dropZone4_4" ondragover="allowDrop(event)" ondrop="handleDrop(event)" 
+                          class="h-24 bg-gray-200 text-center rounded border-dashed border-2 border-tertiary"></div>
+                  </div>
+          
+                  <div class="text-center text-xs mt-6">
+                      <button class="bg-primary/70 text-white px-6 py-2 rounded" onclick="validateSampleSpace()">Periksa Jawaban</button>
+                      <button class="bg-tertiary text-quaternary px-6 py-2 rounded ml-4" onclick="restartGame()">Mulai Kembali</button>
+                  </div>
+          
+                  <div id="resultFeedback" class="text-center mt-4 text-lg font-bold"></div>
+                </div>  
+                <!--Ruang Sampel Kejadian Batu Gunting Kertas End-->
+
+                <!--Pemenang dari setiap kejadian Batu Gunting Kertas Start-->
+                <div id="nextGame" class="hidden"> 
+                  <div class="flex items-center w-full">
+                    <img src="/src/dist/img/cube and trophy.gif" alt="" class="w-32 scale-x-[-1] md:w-24" />
+                    <div class="ml-2">
+                      <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                        <p class="text-xs text-justify">  
+                          Selanjutnya bantu Zuri untuk menentukan pemenang dari setiap kemungkinan hasil yang diperoleh pada permainan sebelumnya. 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container mx-auto p-4 bg-secondary rounded-sm shadow-md mt-5">
+                    <details class="group">
+                      <summary
+                          class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                          <span class="flex gap-2">
+                            <h2 class="text-dark text-center mb-2 text-xl font-semibold">
+                              Permainan 
+                            </h2>
+                          </span>
+                          <svg class="w-5 h-5 text-black transition group-open:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path 
+                                d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
+                          </svg>
+                      </summary>
+                      <article class="px-4 pb-4">
+                          <ul class="flex flex-col gap-4 pl-2 mt-4">
+                            <li class="flex gap-2">
+                                <p class="text-base text-gray-600 text-justify">
+                                  Seret elemen "Batu", "Gunting", atau "Kertas" ke area yang sesuai untuk membentuk ruang sampel.
+                                </p>
+                            </li>                           
+                          </ul>
+                      </article>
+                    </details>
+                    <!-- Drop Zones -->
+                    <div class="grid grid-cols-4 gap-4 text-xs">
+                        <div class="h-24 bg-transparent rounded flex items-center justify-center">
+                        <img src="/src/dist/img/game1poster.svg"  class="h-full w-full object-contain"/>
+                        </div>
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player1_rock.svg" alt="Batu" class="h-16 w-full"/>
+                        </div>
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player1_scissors.svg" alt="Gunting" class="h-16 w-full"/>
+                        </div>
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player1_paper.svg" alt="Kertas" class="h-16 w-full"/>
+                        </div>
+            
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player2_rock.svg" alt="Batu" class="h-16 w-full"/>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/rock1 vs rock2.svg" alt="Batu vs Batu" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/scissors1 vs rock 2.svg" alt="Gunting vs Batu" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/paper1 vs rock2.svg" alt="Kertas vs Batu" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+            
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player2_scissors.svg" alt="Gunting" class="h-16 w-full"/>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/rock1 vs scissors2.svg" alt="Batu vs Gunting" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/scissors1 vs scissors2.svg" alt="Gunting vs Gunting" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/paper1 vs scissors 2.svg" alt="Kertas vs Gunting" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div class="h-24 bg-white rounded flex items-center justify-center">
+                          <img src="/src/dist/img/player2_paper.svg" alt="Kertas" class="h-16 w-full"/>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                            <img src="/src/dist/img/rock1 vs paper2.svg" alt="Batu vs Kertas" class="max-h-20 w-full object-contain"/>
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/scissors1 vs paper2.svg" alt="Gunting vs Kertas" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-24 bg-white rounded border-dashed border-2 border-blue-500 p-2">
+                          <img src="/src/dist/img/paper1 vs paper2.svg" alt="Kertas vs Kertas" class="max-h-20 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="text-center text-xs mt-6">
+                        <button id="checkWin" class="bg-primary/70 text-white px-6 py-2 rounded" onclick="validateAnswers()">Periksa Jawaban</button>
+                        <button class="bg-tertiary text-quaternary px-6 py-2 rounded ml-4" onclick="restartWin()">Mulai Kembali</button>
+                    </div>
+            
+                    <div id="resultWin" class="text-center mt-4 text-lg font-bold"></div>
+                  </div>
+                  <!--QuestionType1_8 Start-->
+                  <div class="mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                    <div class="question">
+                      <p class="font-normal text-black text-xs text-left mb-2">Misalkan P1: Pemain 1 dan P2: Pemain 2.
+                        <br>Himpunana manakah yang menujjukkan daftar semua kemungkinan hasil suit dimana Pemain 1 menang? </p>
+                      <form>
+                        <div class=" text-xs grid gap-2">
+                          <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question8" value="a" onclick="showSubmitButton(this)" class="mr-2">
+                            {(P1: batu, P2: batu), (P1: gunting, P2: gunting), (P1: kertas, P2: kertas)} </label> 
+                          <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question8" value="b" onclick="showSubmitButton(this)" class="mr-2">
+                            {(P1: batu, P2: gunting), (P1: gunting, P2: kertas), (P1: kertas, P2: batu)}</label> 
+                          <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question8" value="c" onclick="showSubmitButton(this)" class="mr-2">
+                            {(P1: gunting, P2: batu), (P1: kertas, P2: gunting), (P1: batu, P2: kertas)}</label> 
+                          <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="radio" name="question8" value="d" onclick="showSubmitButton(this)" class="mr-2">
+                            {(P1: batu, P2: gunting), (P1: gunting, P2: batu), (P1: kertas, P2: batu)}</label> 
+                        </div>
+                      <button type="button" class="hidden text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 submit-btn" onclick="checkAnswerType1('question8', 'b','{(P1: batu, P2: gunting), (P1: gunting, P2: kertas), (P1: kertas, P2: batu)}', 'alert8', 'answer8',this)">Cek Jawaban</button>
+                      </form>
+                      <div class="alert" id="alert8"></div>
+                      <div class="answer" id="answer8"></div>
+                    </div>
+                  </div>
+                  <!--QuestionType1_8 End-->
+
+                  <!--QuestionType2_1 Start-->
+                  <div class="mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                    <div class="question">
+                      <p class="font-normal text-black text-xs text-left mb-2">Berapa banyak kemungkinan hasil dari permainan suit dimana Pemain 1 menang?</p>
+                      <label class="font-normal text-black text-xs text-left mb-2" for="1"></label>
+                      <input 
+                        id="q1" 
+                        name="q1" 
+                        type="number" 
+                        class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                        placeholder="Masukkan jawaban"
+                      />
+                      <button id="quizBtnType2-q1"
+                        type="button" 
+                        onclick="checkAnswerType2('q1', 3, 'alertType2-1', 'quizBtnType2-q1')" 
+                        class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                        Submit
+                      </button>
+                      <div class="alert" id="alertType2-1"></div>
+                      <div class="answer" id="answerType2-q1"></div>
+                    </div>
+                  </div>
+                  <!--QuestionType2_1  End-->
+                  <!--QuestionType2_2 Start-->
+                  <div class="mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                    <div class="question">
+                      <p class="font-normal text-black text-xs text-left mb-2">Berapa banyak kemungkinan hasil dari permainan suit dimana mendaptkan hasil seri?</p>
+                      <label class="font-normal text-black text-xs text-left mb-2" for="1"></label>
+                      <input 
+                        id="q2" 
+                        name="q2" 
+                        type="number" 
+                        class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                        placeholder="Masukkan jawaban"
+                      />
+                      <button id="quizBtnType2-q2"
+                        type="button" 
+                        onclick="checkAnswerType2('q2', 3, 'alertType2-2', 'quizBtnType2-q2')" 
+                        class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                        Submit
+                      </button>
+                      <div class="alert" id="alertType2-2"></div>
+                      <div class="answer" id="answerType2-q2"></div>
+                    </div>
+                  </div>
+                  <!--QuestionType2_2  End-->
+                  
+                  <!--QuestionType2_3 Start-->
+                  <div class="mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                    <div class="question">
+                      <p class="font-normal text-black text-xs text-left mb-2">Berapa banyak kemungkinan hasil dari permainan suit dimana Pemain 2 menang?</p>
+                      <label class="font-normal text-black text-xs text-left mb-2" for="1"></label>
+                      <input 
+                        id="q3" 
+                        name="q3" 
+                        type="number" 
+                        class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                        placeholder="Masukkan jawaban"
+                      />
+                      <button id="quizBtnType2-q3"
+                        type="button" 
+                        onclick="checkAnswerType2('q3', 3, 'alertType2-3', 'quizBtnType2-q3')" 
+                        class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                        Submit
+                      </button>
+                      <div class="alert" id="alertType2-3"></div>
+                      <div class="answer" id="answerType2-q3"></div>
+                    </div>
+                  </div>
+                  <!--QuestionType2_3  End-->
+                </div>  
+                <!--Pemenang dari setiap kejadian Batu Gunting Kertas End-->
+              </div>  
+            </div>
+            <!--Content Experience End-->
+          </li>
+
+          <!-- Timeline Language -->
+          <li class="mb-10 ml-8">
+            <!-- Icon & Title  -->
+            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+              <div class="flex items-center -ml-14 mb-4">
+                  <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                      <img src="/src/dist/img/L.svg" alt="Icon 1" class="border-dotted rounded-full">
+                  </div>
+                  <h2 class="ml-5 text-base font-bold text-white">Languange</h2>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="bg-white border-2 border-primary text-xs -ml-0.6 px-6 rounded-lg shadow-md">
+              <div class="flex items-center w-full top-1">
+                <img src="/src/dist/img/cube conversetion.gif" alt="" class="w-32 scale-x-[-1] md:w-24" />
+                <div class="ml-2">
+                  <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                    <p class="text-xs text-justify">  
+                      Halo teman-teman, Terima kasih sudah mengikuti tahap <i>Experince</i> seru kita. 
+                      Sekarang ayo kita baca percakapan di bawah.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--Conversetion on chat-->
+                <div class="flex flex-col flex-grow w-full h-96 bg-white shadow-xl rounded-lg overflow-hidden">
+                  <div class="flex flex-col flex-grow h-0 p-4 overflow-auto">
+                    <div id="chatContainer" class="space-y-4">
+                      <!-- Box Chat -->
+                      <div class="flex items-start">
+                      </div>
+                    </div>   
+                    <!--QuestionType3_1 Start-->   
+                     <div id="languangEques1" class=" hidden mt-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">
+                      <form id="quizForm">
+                        <p class="mb-2 text-xs">Istilah apa saja yang kamu ketahui dari percakapan sebelumnya?</p>
+                        <div class="text-xs grid gap-2">
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="checkbox" name="answer" value="a" 
+                            class="form-checkbox text-blue-500 mr-2">
+                            Percobaan
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="checkbox" name="answer" value="b" 
+                            class="form-checkbox text-blue-500 mr-2">
+                            Tabel
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="checkbox" name="answer" value="c" 
+                            class="form-checkbox text-blue-500 mr-2">
+                            Ruang Sampel
+                        </label>
+                        <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="checkbox" name="answer" value="d" 
+                            class="form-checkbox text-blue-500 mr-2">
+                            Kejadian
+                        </label>
+                        </div>
+                        <button id="buttonQuizType3" type="button" class="bg-primary/70 text-white text-xs px-4 py-2 mt-2 rounded hover:bg-primary" onclick="checkAnswersType3()">
+                            Submit
+                        </button>
+                      </form>
+                      <div id="result" class="mt-4 hidden"></div>
+                     </div>  
+                    <!--QuestionType3End-->       
+                  </div>
+                  <div class="bg-gray-300 p-4">
+                    <div class="flex items-center justify-between w-full bg-white border border-gray-400 p-2 rounded">
+                      <p class="text-gray-200">Tekan tombol untuk melihat pesan</p>
+                      <div id="buttonContainer">
+                        <button 
+                        class="bg-primary/70 text-white px-4 py-2 rounded hover:bg-primary transition"
+                        onclick="showNextMessage()">
+                        Selanjutnya
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!--Conversetion on chat End-->
+              <!--Terminologi-->
+              <div id="terminologi1" class="hidden mt-2 border-2 border-slate-400 rounded-lg bg-white p-[20px] text-start shadow-sm">   
+                <p class="text-sm font-bold border-b text-primary text-start mb-2">Istilah</p>
+                <div class="flex w-full items-center justify-start mt-2 bg-white px-3 md:px-60">
+                  <div class="space-y-6 border-l-2 border-dashed">
+                    <div class="relative w-full">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -ml-3.5 h-7 w-7 rounded-full text-primary">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                      </svg>
+                      <div class="ml-6">
+                        <h4 class="font-semibold text-primary text-xs">Percobaan</h4>
+                        <p class="text-xs text-justify text-gray-500">
+                          Percobaan adalah aktivitas atau kegiatan yang mempunyai hasil yang dapat di amati.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="relative w-full mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -ml-3.5 h-7 w-7 rounded-full text-primary">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                      </svg>
+                      <div class="ml-6">
+                        <h4 class="font-semibold text-primary text-xs">Ruang Sampel</h4>
+                        <p class="text-xs text-justify text-gray-500">
+                          Ruang Sampel adalah himpunan dari semua hasil yang mungkin dari suatu percobaan. Setiap hasil tunggal yang mungkin disebut titik sampel.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="relative w-full">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -ml-3.5 h-7 w-7 rounded-full text-primary">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                      </svg>
+                      <div class="ml-6">
+                        <h4 class="font-semibold text-primary text-xs">Kejadian</h4>
+                        <p class="text-xs text-justify text-gray-500">
+                          Kejadian adalah himpunan yang memuat hasil percobaan dengan kriteria tertentu, sehingga kejadian adalah himpunan bagian dari ruang sampel. 
+                        </p>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+              <!--Terminologi-->
+
+            </div>
+          </li>
+          <!-- Timeline Picture Start -->
+          <li class="mb-10 ml-8">
+            <!-- Icon & Title Picture -->
+            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+              <div class="flex items-center -ml-14 mb-4">
+                  <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                      <img src="/src/dist/img/P.svg" alt="Icon 1" class="border-dotted rounded-full">
+                  </div>
+                  <h2 class="ml-5 text-base font-bold text-white">Picture</h2>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-2 rounded-lg shadow-md">
+              <div class="flex items-center w-full top-0">
+                <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+                <div class="ml-2">
+                  <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                    <p class="text-xs text-justify">  
+                      Sebelumnya kita telah mempelajari bagaimana mendaftarkan ruang sampel dari suatu percobaan menggunakan bantuan <b>tabel</b>. 
+                      <br> Nah, pada tahap ini kita akan melihat cara mendaftrakan ruang sampel dari suatu percobaan dengan cara lain</p>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-semibold text-sm inline-block rounded-lg mb-2">
+                Diagram Pohon </h4>
+                <p class="text-xs text-gray-500 text-justify">
+                  Diagram pohon adalah cara yang sangat membantu untuk melihat semua kemungkinan hasil dalam percobaan. 
+                  Diagram pohon di bawah memperlihatkan semua kemungkinan hasil dari <b>percobaan permainan suit yang dimaikan 2 orang</b>.
+                </p>
+              <div class="items-center">
+               <img src="/src/dist/img/SampleSpaceOfRockPaperScissorsfFor2Person.svg"/> 
+              </div>  
+              <!--QuestionType2_4 Start-->
+              <div class="mt-0  mb-2 border-2 border-slate-400 rounded-md bg-white p-[20px] text-start shadow-sm">   
+                <div class="question">
+                  <p class="font-normal text-black text-xs mb-2 text-justify">Berapa banyak ruang sampel dari percobaan permainan suit yang dimainkan 2 orang?</p>
+                  <label class="font-normal text-black text-xs text-left mb-2" for="4"></label>
+                  <input 
+                    id="q4" 
+                    name="q4" 
+                    type="number" 
+                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban"
+                  />
+                  <button id="quizBtnType2-q4"
+                    type="button" 
+                    onclick="checkAnswerType2('q4', 9, 'alertType2-4', 'quizBtnType2-q4')" 
+                    class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                    Submit
+                  </button>
+                  <div class="alert" id="alertType2-4"></div>
+                  <div class="answer" id="answerType2-q4"></div>
+                </div>
+              </div>
+              <!--QuestionType2_4  End-->
+            </div>
+          </li>    
+          <!-- Timeline Picture End -->
+           
+          <!-- Timeline Symbol Start -->
+          <li class="mb-10 ml-8">
+            <!-- Icon & Title Symbol -->
+            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+              <div class="flex items-center -ml-14 mb-4">
+                  <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                      <img src="/src/dist/img/S.svg" alt="Icon 1" class="border-dotted rounded-full">
+                  </div>
+                  <h2 class="ml-5 text-base font-bold text-white">Symbol</h2>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-2 rounded-lg shadow-md">
+              <div class="flex items-center w-full top-0">
+                <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+                <div class="ml-2">
+                  <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                    <p class="text-xs text-justify">  
+                      Cara terakhir untuk mendftarkan ruang sampel adalah dengan mendaftarkan satu 
+                      per satu. Jika kita daftarkan, ruang sampel dari percobaan ini terlihat seperti ini:
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-semibold text-sm inline-block mb-2">
+                Ruang Sampel yang disajikan dalam bentuk himpunan 
+              </h4>
+                <p class="text-xs text-gray-500 text-justify">
+                  Ruang Sampel dari percobaan permaianan suit 2 orang (P1: Pemaian 1, P2: Pemaian 2):
+                </p>
+                <div class="items-center bg-gray-100 rounded-sm p-3">
+                  <p class="text-black text-xs text-justify ">
+                    <i>S</i> = {(P1:batu, P2:batu), (P1:batu, P2:gunting), (P1:batu, P2:kertas),
+                      (P1:gunting, P2:batu), (P1:gunting, P2:gunting), (P1:gunting, P2:kertas),
+                      (P1:kertas, P2:batu), (P1:kertas, P2:gunting), (P1:kertas, P2:kertas)}
+                  </p>
+                </div>
+                <p class="text-xs text-gray-500 text-justify mt-4">
+                  Kita telah mengetahui semua anggota dari ruang sampel dari permainan suit yang dimaikan oleh dua orang. 
+                  <b>Banyak anggota ruang sampel disimbolkan dengan <i>n(S)</i>.</b>
+                </p>
+                <div class="items-center bg-gray-100 rounded-sm p-3">
+                  <p class="text-black text-xs ">
+                   Jadi, untuk percobaan permainan suit dua orang, <i>n(S)</i>= 9.
+                  </p>
+                </div>
+                <p class="text-xs text-gray-500 text-justify mt-4">
+                  Sedangakan untuk suatu kejadian A,
+                  <b>Banyak anggota kejadian A dapat disimbolkan dengan <i>n(A)</i>.</b>
+                </p>
+                <div class="items-center bg-gray-100 rounded-sm p-3">
+                  <p class="text-black text-xs ">
+                   Misalkan <i>A</i> = Kejadian hasil permiainan seri dari percobaan suit 2 oarang, maka <i>n(A)</i> = 3.
+                  </p>
+                </div>
+            </div>
+          </li>
+          <!-- Timeline Symbol End -->
+
+          <!-- Timeline Application Start -->
+          <li class="mb-10 ml-8">
+            <!-- Icon & Title Symbol -->
+            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+              <div class="flex items-center -ml-14 mb-4">
+                  <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                      <img src="/src/dist/img/A.svg" alt="Icon 1" class="border-dotted rounded-full">
+                  </div>
+                  <h2 class="ml-5 text-base font-bold text-white">Application</h2>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-4 rounded-lg shadow-md">
+              <!-- Soal 1 QuizType5_1 -->
+               <div class="mt-0 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+                <div id="questionType5-1" class="question-container">
+                  <h4 class="font-semibold text-xs inline-block mb-2">Tren Fahion</h4>
+                  <p class="text-gray-700 mb-4 text-xs text-justify">
+                    Di sebuah toko sepatu, setiap pembelian satu pasang sepatu akan disertai bonus dua pasang tali sepatu gratis. 
+                    Pembeli dapat memilih dari dua pilihan warna dasar tali (hitam dan putih) serta tiga pilihan warna lainnya 
+                    (merah, biru, dan hijau). Setiap pembeli dapat membuat kombinasi satu tali warna dasar dengan satu tali berwarna.
+                  </p>
+                  <div id="answerType5-box-1" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
+                    <div class="flex items-center">
+                      <div id="answerType5-list-1" class="flex items-center">{</div>
+                      <div id="answerType5-list-1-content" class=" items-center flex">
+                        <!-- Jawaban Anda dapat ditempatkan di sini -->
+                      </div>
+                      <div id="answerType5-list-1" class="ml-1 flex items-center">}</div>
+                    </div>
+                  </div>
+                  <div id="optionsType5-list-1" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 1">(Hitam, Merah),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 2">(Hitam, Biru),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 3">(Hitam, Hijau),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 4">(Hitam, Putih),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 5">(Putih, Merah),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 6">(Putih, Biru),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 7">(Putih, Hijau)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 8">(Biru, Hijau)</button>
+                  </div>
+                  <button id="submitType5-btn-1" class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 hover:bg-secondary hover:text-gray-700">Submit Jawaban</button>
+                  <div id="feedbackType5-1" class="mt-4 text-xs font-semibold text-gray-800"></div>
+                </div>
+               </div>
+
+              
+              <!--Soal 2--> 
+              <div class="mt-0 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+                <div id="questionType5-4" class="question-container">
+                  <h4 class="font-semibold text-xs inline-block mb-2"> Pewarisan Sifat Mahluk Hidup (Persilangan Monohohibrid)</h4>
+                  <p class="text-gray-700 mb-4 text-xs text-justify">
+                    Pada suatu jenis tanaman, warna bunga ditentukan oleh sifat genetik.
+                    <br> <b>Merah (R)</b> bersifat dominan
+                    <br> <b>Putih (r)</b> bersifat resesif
+                  </p>
+                  <p class="text-gray-700 text-xs text-justify">
+                    Perhatikan persilangan bunga merah yang <b>Genotip: (RR)</b> dengan bungan putih yang <b>Genootip: (rr)</b>
+                  </p>
+                  <img src="/src/dist/img/indukBunga.svg" class="mt-0"/>
+                  <p class="text-gray-700 text-xs text-justify">
+                    Selanjutnya anak Genarasi 2 akan berasal dari persilangan antara generasi 1 yang <b>bergenotip: (Rr)</b> dengan <b>genootip: (<Ri:a></Ri:a>r)</b>
+                    seperti pada gambar di bawah:
+                  </p>
+                  <div class="flex justify-center">
+                    <img src="/src/dist/img/Gen1Bunga.svg" class="w-64 h-auto" />
+                  </div>
+                  <p class="text-gray-700 text-xs text-justify">
+                    Tentukan ruang sampel dari percobaan persilangan antara generasi 1 di atas:
+                  </p>
+                  <div id="answerType5-box-4" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
+                    <div class="flex items-center">
+                      <div id="answerType5-list-4" class="flex items-center">{</div>
+                      <div id="answerType5-list-4-content" class=" items-center flex">
+                        <!-- Jawaban Anda dapat ditempatkan di sini -->
+                      </div>
+                      <div id="answerType5-list-4" class="ml-1 flex items-center">}</div>
+                    </div>
+                  </div>
+                  <div id="optionsType5-list-4" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 11">(rr),</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 12">(BR),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 13">(RR),</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 14">(Rr),</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 15">(Pr),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 16">(PR),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 17">(Rr),</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 18">(MP),</button>
+                  </div>
+                  <button id="submitType5-btn-4" class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 hover:bg-secondary hover:text-gray-700">Cek Jawaban</button>
+                  <div id="feedbackType5-4" class="mt-4 text-xs font-semibold text-gray-800"></div>
+                </div>
+
+                <div id="questionType5-5" class="question-container">
+                  <p class="text-gray-700 mb-4 text-xs text-justify">
+                    Berdasarkan ruang sampel percobaan persilangan antara genarasi 1. Tentukan Kejadian bunga genarasi 2 berwarna putih?
+                  </p>
+                  <div id="answerType5-box-5" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
+                    <div class="flex items-center">
+                      <div id="answerType5-list-5" class="flex items-center">{</div>
+                      <div id="answerType5-list-5-content" class=" items-center flex">
+                        <!-- Jawaban Anda dapat ditempatkan di sini -->
+                      </div>
+                      <div id="answerType5-list-5" class="ml-1 flex items-center">}</div>
+                    </div>
+                  </div>
+                  <div id="optionsType5-list-5" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 51">(RP)</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 52">(rr)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 53">(RR)</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 54">(Rr)</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 55">(Pr)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 56">(PR)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 57">(Rr)</button> <!--benar-->
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 58">(MP)</button>
+                  </div>
+                  <button id="submitType5-btn-5" class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 hover:bg-secondary hover:text-gray-700">Cek Jawaban</button>
+                  <div id="feedbackType5-5" class="mt-4 text-xs font-semibold text-gray-800"></div>
+                </div>
+
+                <div>
+                  <p class="text-xs text-justify">  
+                    Perbandingan banyaknya anggota kejadian bunga generasi 2 berwarna putih dengan banyaknya anggota ruang sampel percobaan persilangan antara generasi 1 adalah? 
+                  </p>
+                  <!--QuestionType4_5 Start-->
+                  <label class="font-normal text-black text-xs text-left mb-2" for="5"></label>
+                  <input 
+                    id="q5" 
+                    name="q5" 
+                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                  <button id="quizBtnType4-q5"
+                    type="button" 
+                    onclick="checkAnswerType4('q5', '1/4', 'alertType4-5', 'quizBtnType4-q5')" 
+                    class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                    Cek Jawaban
+                  </button>
+                  <div class="alert" id="alertType4-5"></div>
+                  <div class="answer" id="answerType4-q5"></div>
+                </div>
+              </div>  
+            </div>
+          </li>
+          <!-- Timeline Application End-->    
+        </ul>
+
+        <!--Button Next Page-->  
+        <div class="flex justify-end mt-2">
+          <a href="./peluangSecondPage.html" class="bg-primary/70 text-white rounded-r-md py-2 rounded-lg px-3 flex flex-row items-center hover:bg-white hover:text-primary">
+            <span class="mr-2">Selanjutnya</span>
+            <svg class="w-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+        <!--Button Next Page End-->
+      </div> 
+    </div> 
+    
+  <!--Dasar-Dasar Peluang End-->  
+    
+</div> 
+
+  <!--FOOTER START-->
+  <footer class="p-4 bg-primary/50">
+    <hr class="my-6 border-white sm:mx-auto lg:my-8" />
+    <span class="block text-base text-white text-center">Universitas Negeri Makassar <a href="https://flowbite.com" target="_blank" class="hover:underline"><br>2025</a>
+    </span>
+  </footer>
+  <!--FOOTER END-->
+
+  <script src="/src/script.js"></script>
+  <script src="/src/conten/peluang.js"></script>
+  <script src="./quiztype1.js"></script>
+  <script src="./quiztype2.js"></script>
+  <script src="./quiztype3.js"></script>
+  <script src="./quiztype4.js"></script>
+  
+  
+</body>
+</html>

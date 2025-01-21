@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="/src/conten/style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(/src/dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+    </style>
+</head>
+<body class="bg-secondary font-Poppins">
+    
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+            <img class="w-10 h-10 rounded-lg mt-5"
+                      src="/src/dist/img/cube-icon.png"
+                      alt="icon">
+            <a href="" class="font-bold text-2xl text-primary block py-6">Modul Matematika</a>
+          </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4 z-40">
+            <span class="w-10 h-1 my-2 block rounded-full bg-black origin-center transition duration-300"></span>
+            <span class="w-8 h-1 my-2 block rounded-full bg-primary origin-center transition duration-300"></span>
+          </button>
+          <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full">
+            <ul class="flex flex-col gap-2 max-w-[280px] mx-auto">
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/beranda.svg"
+                    alt="Beranda">
+                  <a href="/src/index.html">Beranda</a>
+                </span>
+              </li>
+
+              <li>
+                <details class="group">
+                    <summary
+                        class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                        <span class="flex gap-2">
+                          <img class="w-6 h-6 rounded-lg"
+                            src="/src/dist/img/Aktv belajar.svg"
+                            alt="">
+                          <span>
+                              Aktivitas Pembelajaran
+                          </span>
+                        </span>
+                        <svg class="w-5 h-5 text-primary transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                            </path>
+                        </svg>
+                    </summary>
+                    <article class="px-4 pb-4">
+                        <ul class="flex flex-col gap-4 pl-2 mt-4">
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/peluang.svg"
+                                alt="">
+                              <a href="./peluang.html">Peluang</a>
+                            </span>
+                          </li>
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre relatif.svg"
+                                alt="">
+                              <a href="./frekuensi-relatif.html">Frekuensi Relatif</a>
+                            </span>
+                          </li>   
+                          <li class="flex gap-2">
+                            <span class="flex gap-2">
+                              <img class="w-6 h-6 rounded-lg"
+                                src="/src/dist/img/fre harapan.svg "
+                                alt="">
+                              <a href="./frekuensi-harapan.html">Frekuensi Harapan</a>
+                            </span>
+                          </li>   
+                        </ul>
+                    </article>
+                </details>
+              </li> 
+              <li class="flex gap-2">
+                <span class="flex gap-2 p-2">
+                  <img href="" class="w-6 h-6 rounded-lg"
+                    src="/src/dist/img/close.svg"
+                    alt="Penutup">
+                  <a href="./penutup.html">Penutup</a>
+                </span>
+              </li>       
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+  
+
+  
+   <!--Hero Section Start-->
+   <section id="hero" class=" pt-20 body-font items-center justify-center">
+    <div class="bg-gradient-to-b from-[#ffa114] to-[#fef2c1] pt-10 pb-2 sm:pt-16 lg:pt-20 h-auto w-full overflow-x-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-start">
+          <h1 class="text-4xl font-bold text-[#fef2c1] sm:text-5xl lg:text-3xl">Aktivitas Belajar 2</h1>
+          <p class="text-4xl font-bold text-[#fef2c1]">Frekuensi Relatif</p>
+        </div>
+      </div>
+    
+      <div class="flex items-center justify-center my-6 px-2">
+        <img src="/src/dist/img/CubeTugOfWar.gif" class="w-56 max-w-full sm:hidden"/>
+        <div class="group relative flex h-20 w-full max-w-full items-center justify-center self-center overflow-hidden rounded-lg bg-white/80">
+          <p class="absolute left-1/2 top-1/2 text-primary -translate-x-1/2 -translate-y-1/2 text-lg font-semibold duration-500 group-hover:-translate-x-[500%]">
+            Tujuan Pembelajaran
+          </p>
+          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-base font-normal duration-500 group-hover:-translate-x-1/2 text-center">
+            Siswa dapat menjelaskan pengertian frekuensi relatif (peluang empiris) suatu kejadian dalam percobaan sederhana 
+          </p>
+        </div>
+      </div>
+    </div>
+    
+   </section>
+   <!--Hero Section End-->
+
+  <!--Study Activities Start-->
+  <div class="h-full min-h-screen w-full pt-1 p-10">
+    <div class="grid gap-1">
+      <ul class="space-y-6 border-l-2 border-dashed border-primary">
+        <!-- Timeline Experienece -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Experience -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/E.svg" alt="Icon 1" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Experience</h2>
+            </div>
+          </div>
+          <!-- Content Experience Start-->
+            <div class="bg-white border-2 border-primary  -ml-0.6 -mt-2 py-4 px-6 rounded-lg shadow-md">
+              <!-- Quis Experience-->
+              <div class="mt-2 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+                <h4 class="font-semibold text-sm inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4>
+                <!--Quiztype2 n(S) pelemparab 2 dadu-->
+                <div class="question">
+                  <p class="font-normal text-black text-xs mb-2 text-justify">Berapa banyak anggota ruang sampel dari percobaan pelemparan 2 buah dadu?</p>
+                  <label class="font-normal text-black text-sm text-left mb-2" for="5"></label>
+                  <input 
+                    id="q5" 
+                    name="q5" 
+                    type="number" 
+                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban"
+                  />
+                  <div class="flex justify-end">
+                    <button id="quizBtnType2-q5"
+                            type="button" 
+                            onclick="checkAnswerSpecialType2('q5', 36, 'alertType2-5', 'quizBtnType2-q5')" 
+                            class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                        Cek Jawaban
+                    </button>
+                  </div>
+                  <div class="alert" id="alertType2-5"></div>
+                  <div class="answer" id="answerType2-q5"></div>
+                </div>
+
+                <!--Ruang Sampel Pelemparan 2 buah dadu Start-->
+                <div id="sampleSpaceOfTwoDices" class="hidden">
+                  <div class="border border-gray-300 shadow-sm rounded-lg overflow-hidden mt-2 mx-auto">
+                    <table class="w-full text-xs leading-5 text-gray-600">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="py-2 px-4 text-center">
+                                  <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 1" />
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 1" />
+                                  </div>
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                                  </div>
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                                  </div>
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                                  </div>
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                                  </div>
+                                </th>
+                                <th class="py-2 px-4 text-center">
+                                  <div class="flex justify-center">
+                                    <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                                  </div>
+                                </th>
+                            </tr>
+                        </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice1.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice2.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice3.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/dist/img/RedDice4.svg" class="w-5 h-5"/>
+                              <img src="/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice5.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                          <td class="py-2 px-4 text-center bg-gray-100">
+                            <div class="flex justify-center">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice1.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice2.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice3.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice4.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice5.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                          <td class="py-2 px-4 text-center">
+                            <div class="flex justify-center gap-1">
+                              <img src="/src/dist/img/RedDice6.svg" class="w-5 h-5"/>
+                              <img src="/src/dist/img/OrangDice6.svg" class="w-5 h-5" alt="Dice 2" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div> 
+                  <div class="mt-2 items-center text-justify bg-gray-100 rounded-sm p-3">
+                    <p class="text-black text-xs mb-1">
+                      Berdasarkan tabel di atas maka Ruang Sampel dari pelemparan dua buah dadu adalah:
+                    </p>
+                    <p class="text-black text-xs ">
+                      <i>S</i> = { (1,1), (1,2), (1,3), (1,4), (1,5), (1,6),
+                        (2,1), (2,2), (2,3), (2,4), (2,5), (2,6),
+                        (3,1), (3,2), (3,3), (3,4), (3,5), (3,6),
+                        (4,1), (4,2), (4,3), (4,4), (4,5), (4,6),
+                        (5,1), (5,2), (5,3), (5,4), (5,5), (5,6),
+                        (6,1), (6,2), (6,3), (6,4), (6,5), (6,6) }
+                    </p>
+                  </div>
+                </div>
+                <!--Ruang Sampel Pelemparan 2 buah dadu end-->
+
+                <!--Quiztype5 n(S) pelemparab 2 dadu Start-->
+                <div id="questionType5-2" class="question-container">
+                  <p class="text-black mb-2 mt-2 text-xs text-justify">
+                    Tentukan anggota Kejadian jumlah mata dadu 9?
+                  </p>
+                  <div id="answerType5-box-2" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
+                    <div class="flex items-center">
+                      <div id="answerType5-list-2" class="flex items-center">{</div>
+                      <div id="answerType5-list-2-content" class=" items-center flex">
+                        <!-- Jawaban Anda dapat ditempatkan di sini -->
+                      </div>
+                      <div id="answerType5-list-2" class="ml-1 flex items-center">}</div>
+                    </div>
+                  </div>
+                  <div id="optionsType5-list-2" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi A">(1, 1),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi B">(5, 4),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi C">(2, 1),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi D">(3, 6),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi E">(1, 7),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi F">(6, 3),</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi G">(4, 5)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi H">(1, 6)</button>
+                    <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi I">(1, 5)</button>
+                  </div>
+                  <div class="flex justify-end">
+                    <button id="submitType5-btn-2" class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2 hover:bg-secondary hover:text-gray-700">
+                        Cek Jawaban
+                    </button>
+                  </div>
+                  <div id="feedbackType5-2" class="mt-4 text-xs font-semibold text-gray-800"></div>
+                </div>
+                <!--Quiztype5 n(S) pelemparab 2 dadu End-->
+              </div>
+              <!--Quiz Experience-->
+
+              <div class="flex items-center w-full top-0">
+                <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+                <div class="ml-2">
+                  <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                    <p class="text-xs text-justify">  
+                      Teman-teman kalian telah mengetahui ruang sampel dari pelemparan dua buah dadu. 
+                      Tahap selanjutnya kalian akan bermain sebuah permaianan yang menggunakan dua buah dadu.
+                      Namun sebelum itu, jawab pertanyaan di bawah ini, untuk membantu kalian membangun stategi memenangkan permaian di bawah.
+                    </p>
+                  </div>
+                </div>
+              </div>   
+
+              <!--QuestionType4_6 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 9 adalah 
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="6">P(A) = </label>
+                  <input 
+                    id="q6" 
+                    name="q6" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q6"
+                  type="button" 
+                  onclick="checkAnswerType4('q6', '4/36', 'alertType4-6', 'quizBtnType4-q6')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-6"></div>
+                <div class="answer" id="answerType4-q6"></div>
+              </div>
+              <!--QuestionType4_6 End-->
+              <!--QuestionType4_7 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 8 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="6">P(A) = </label>
+                  <input 
+                    id="q7" 
+                    name="q7" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q7"
+                  type="button" 
+                  onclick="checkAnswerType4('q7', '5/36', 'alertType4-7', 'quizBtnType4-q7')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-7"></div>
+                <div class="answer" id="answerType4-q7"></div>
+              </div>
+              <!--QuestionType4_7 End-->
+              <!--QuestionType4_8 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 7 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="8">P(A) = </label>
+                  <input 
+                    id="q8" 
+                    name="q8" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q8"
+                  type="button" 
+                  onclick="checkAnswerType4('q8', '6/36', 'alertType4-8', 'quizBtnType4-q8')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-8"></div>
+                <div class="answer" id="answerType4-q8"></div>
+              </div>
+              <!--QuestionType4_8 End-->
+              <!--QuestionType4_9 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 6 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="9">P(A) = </label>
+                  <input 
+                    id="q9" 
+                    name="q9" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q9"
+                  type="button" 
+                  onclick="checkAnswerType4('q9', '5/36', 'alertType4-9', 'quizBtnType4-q9')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-9"></div>
+                <div class="answer" id="answerType4-q9"></div>
+              </div>
+              <!--QuestionType4_9 End-->
+              <!--QuestionType4_10 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 5 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="10">P(A) = </label>
+                  <input 
+                    id="q10" 
+                    name="q10" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q10"
+                  type="button" 
+                  onclick="checkAnswerType4('q10', '4/36', 'alertType4-10', 'quizBtnType4-q10')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-10"></div>
+                <div class="answer" id="answerType4-q10"></div>
+              </div>
+              <!--QuestionType4_10 End-->
+              <!--QuestionType4_11 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 4 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="11">P(A) = </label>
+                  <input 
+                    id="q11" 
+                    name="q11" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q11"
+                  type="button" 
+                  onclick="checkAnswerType4('q11', '3/36', 'alertType4-11', 'quizBtnType4-q11')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-11"></div>
+                <div class="answer" id="answerType4-q11"></div>
+              </div>
+              <!--QuestionType4_11 End-->
+              <!--QuestionType4_12 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 3 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="12">P(A) = </label>
+                  <input 
+                    id="q12" 
+                    name="q12" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q12"
+                  type="button" 
+                  onclick="checkAnswerType4('q12', '2/36', 'alertType4-12', 'quizBtnType4-q12')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-12"></div>
+                <div class="answer" id="answerType4-q12"></div>
+              </div>
+              <!--QuestionType4_12 End-->
+              <!--QuestionType4_13 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 2 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="13">P(A) = </label>
+                  <input 
+                    id="q13" 
+                    name="q13" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q13"
+                  type="button" 
+                  onclick="checkAnswerType4('q13', '1/36', 'alertType4-13', 'quizBtnType4-q13')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-13"></div>
+                <div class="answer" id="answerType4-q13"></div>
+              </div>
+              <!--QuestionType4_13 End-->
+              <!--QuestionType4_14 Start-->
+              <div>
+                <p class="text-xs text-justify">  
+                  Peluang munculnya jumlah mata dadu 1 adalah
+                </p>
+                <div class="flex items-center">
+                  <label class="text-black text-sm text-left" for="14">P(A) = </label>
+                  <input 
+                    id="q14" 
+                    name="q14" 
+                    class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    placeholder="Masukkan jawaban, misalnya 1/2"
+                  />
+                </div>
+                <div class="flex justify-end">
+                  <button id="quizBtnType4-q14"
+                  type="button" 
+                  onclick="checkAnswerType4('q14', '0/36', 'alertType4-14', 'quizBtnType4-q14')" 
+                  class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-1">
+                  Cek Jawaban
+                  </button>
+                </div>
+                <div class="alert" id="alertType4-14"></div>
+                <div class="answer" id="answerType4-q14"></div>
+              </div>
+              <!--QuestionType4_14 End-->
+            </div>
+        </li>
+        <!--Timeline Experience End-->
+
+        <!-- Timeline Picture Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title Symbol -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/P.svg" alt="Icon 1" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Picture</h2>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-4 rounded-lg shadow-md">
+            <!--Shut The Box Game-->
+            <div class="flex items-center w-full top-0">
+              <div class="border-gray-200 rounded-lg mt-1 rounded-tl-none">
+                <p class="text-xs text-justify"> 
+                <span class="text-start text-slate-600 text-lg font-bold">
+                  Shut The Box
+                </span>
+                adalah permainan untuk meningkatkan keterampilan matematika,
+                di mana pemain harus menutup angka berdasarkan hasil lemparan dua dadu.
+                Permainan ini bertujuan untuk mengasah kemampuan penjumlahan dan strategi 
+                dengan menutup angka yang sesuai dengan total dadu yang dilempar. 
+                Terdapat berbagai variasi permainan, dengan ukuran papan dan sistem skor yang dapat disesuaikan.
+                </p>
+              </div>
+            </div>   
+            
+            <div id="interactiveCard" class="fixed inset-0 hidden items-center justify-center bg-gray-900 bg-opacity-50 z-20">
+              <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                <h2 class="text-lg font-bold mb-4 text-center">Aturan Permainan</h2>
+                <ul class="text-xs text-gray-600 text-justify yps-5 mt-2 space-y-1 px-2 list-decimal list-outside">
+                  <li>Semua angka dari 1 hingga 9 di kotak dalam posisi "terbuka".</li>
+                  <li>Pemaian menekan tombol "Lempar Dadu". Jumlahkan angka dari kedua dadu. Misalnya, jika dadu menunjukkan angka 3 dan 5, maka totalnya 8.</li>
+                  <li>Pemain menutup angka-angka di kotak dengan jumlah sesuai hasil lemparan dadu.</li>
+                  <li>Tekan tombol "Kunci Jawaban" untuk mengirim jawaban</li>
+                  <li>Jika pemain menutup angka-angka yang <b>benar</b> sesuai dengan total dadu, maka pemaian akan melakukan lemparan dadu berikutnya.</li>
+                  <li>Jika pemain menutup angka-angka yang <b>salah</b> maka akan muncul tombol "Lembar Dadu Berikutnya" dan "Ulangi Memilih Angka". Pemain hanya boleh menekan salah satu dari tombol tersebut.</li>
+                  <li>Pemain boleh mengahiri permaianan dengan menekan tombol "Akhiri Permainan".</li>
+                </ul>
+                <div class="flex justify-end mt-4">
+                  <button id="closeCardButton" class="bg-primary/80 text-white py-1 px-2 rounded-sm hover:bg-primary text-xs">Tutup</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center w-full top-0">
+              <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+              <div class="ml-2">
+                <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                  <p class="text-xs text-justify">  
+                   Mainkan Game ini 15 putaran dadu!!!
+                   <br>Isi tabel di bawah untuk mencatat seluruh hasil yang kalian lakukan di dalam game!
+                  </p>
+                </div>
+              </div>
+            </div>  
+            
+
+
+            <div class="bg-white border border-slate-200 gap-2 rounded-xl p-2 mb-2 text-sm">
+              <div class="flex items-center justify-center">
+                <button
+                  id="showCardButton"
+                  class="overflow-hidden w-48 p-2 h-12 bg-white text-slate-600 border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group">
+                  Shut The Box
+                  <span
+                    class="absolute w-48 h-32 -top-8 -left-2 bg-secondary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right">
+                  </span>
+                  <span
+                    class="absolute w-48 h-32 -top-8 -left-2 bg-primary/75 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right">
+                  </span>
+                  <span
+                    class="absolute w-48 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right">
+                  </span>
+                  <span
+                    class="group-hover:opacity-100 group-hover:duration-1000 duration-100 text-white opacity-0 absolute top-2.5 left-9 z-10"
+                    >Cara Bermain
+                  </span>
+               </button>
+              </div>
+              <!-- Box Selection -->
+              <div class="bg-slate-100 text-slate-600 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 mt-0 focus:border-slate-600">
+                <h2 class="text-lg font-semibold text-primary/70">Kotak Pilihan</h2>
+                <div class="flex flex-wrap gap-2 mt-2 justify-center">
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="1" value="1" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">1</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="2" value="2" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375  group-checked:text-blue-600">2</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="3" value="3" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">3</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="4" value="4" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">4</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="5" value="5" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">5</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="6" value="6" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">6</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="7" value="7" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">7</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="8" value="8" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">8</span>
+                    </span>
+                  </label>
+                  <label class="relative group w-10 h-10 flex flex-col justify-center rounded-sm border-2 border-gray-300 bg-white transition-all ease-in-out duration-150 cursor-pointer">
+                    <input type="checkbox" id="9" value="9" class="checkBox w-3 h-3 justify-start mt-1 items-center bg-slate-100 border-1 border-slate-300 rounded-lg cursor-pointer">
+                    <span class="flex flex-col items-center">
+                      <span class="text-gray-600 text-lg font-bold transition-all duration-375 group-checked:text-blue-600">9</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <!-- Buttons For Game-->
+              <div class="grid grid-cols-3 gap 2 mt-2">
+                <!-- Dice Roll -->
+                <div class="bg-slate-100 text-slate-600 border border-slate-200 outline-none rounded-lg p-2 flex flex-col items-center gap-1">
+                  <div class="flex gap-2 justify-center">
+                      <img id="dice1" class="w-10 h-10" alt="Dice 1" src="/src/dist/img/dice1.svg">
+                      <img id="dice2" class="w-10 h-10" alt="Dice 2" src="/src/dist/img/dice1.svg">
+                  </div>
+                  <button class="content-center w-28 roll-dice px-2 py-2 bg-secondary text-slate-600 rounded hover:bg-primary/70 disabled:opacity-50 disabled:cursor-not-allowed">
+                      Lempar Dadu
+                  </button>
+                  <div class="text-center mt-2">
+                      <span class="text-xs block">Jumlah lemparan dadu:</span>
+                      <span id="diceRollCount" class="text-xl font-semibold text-primary">0</span>
+                  </div>
+                </div>
+                <!--Buttons-->
+                <div class="">
+                  <div class="grid gap-1">
+                    <button class="submit-selection bg-slate-100 text-slate-600 border border-slate-200 outline-none rounded-lg p-2 ml-2 focus:border-slate-600 hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                      Kunci Jawaban
+                    </button>
+                    <button class="give-up bg-slate-100 text-slate-600 border border-slate-200 py-2 ml-2 outline-none rounded-lg focus:border-slate-600 hover:bg-secondary disabled:opacity-50">
+                      Akhiri Perminan
+                    </button>
+                    <button class="next-roll hidden bg-slate-100 text-slate-600 border border-slate-200 outline-none rounded-lg p-2 ml-2 focus:border-slate-600 hover:bg-primary/70 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next Roll
+                  </button>
+                  <button class="retry-selection hidden bg-slate-100 text-slate-600 border border-slate-200 outline-none rounded-lg p-2 ml-2 focus:border-slate-600 hover:bg-primary/70 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Retry Selection
+                  </button>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <div class="justify-center ml-2 gameover-message text-primary font-bold text-xs"></div>
+                </div>  
+              </div>
+              
+            </div>
+            <!-- Shut The Box End-->
+
+            <div class="border border-gray-300 shadow-sm rounded-lg overflow-auto h-56 mx-auto">
+              <table class="w-full text-xs leading-5 text-gray-600 ">
+                <thead class="bg-gray-100">
+                  <tr>
+                    <th class="py-2 px-4 text-center">Mata Dadu yang muncul</th>
+                    <th class="py-2 px-4 text-center">Kotak yang di tutup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Misal: (1,1)"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Misal: 2"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-2"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-3"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-4"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-5"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-6"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-7"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-8"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-9"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-10"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr><tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-11"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr><tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-12"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr><tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-13"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr><tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-14"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr><tr class="bg-gray-50">
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Lemparan ke-15"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                    <td class="py-1 px-4">
+                      <input
+                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        placeholder="Masukkan Teks"
+                        type="text"
+                        id="unique-input"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> 
+          </div>
+        </li>
+        <!-- Timeline Picture End-->  
+
+        <!-- Timeline Languange Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/L.svg" alt="Languange" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Languange</h2>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-4 rounded-lg shadow-md">
+            <div class="flex items-center w-full top-0">
+              <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+              <div class="ml-2">
+                <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                  <p class="text-xs text-justify">  
+                   Berdasarkan tabel di atas, ayo jawab pertanyaan berikut ini!
+                  </p>
+                </div>
+              </div>
+            </div> 
+            
+            <div class="mt-2 border-2 border-slate-400 rounded-lg bg-white p-[20px] text-start shadow-sm">   
+              <div class="question1 mb-4">
+                  <p class="font-normal text-black text-sm text-left mb-2"> 
+                      Berapa total munculnya jumlah mata dadu 9?
+                  </p>
+                  <input 
+                      type="number" 
+                      id="inputNumber" 
+                      class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Masukkan Angka" 
+                  />
+              </div>
+              <div id="question2" class="mt-3">
+                  <p class="font-normal text-black text-sm text-left mb-2"> 
+                      Maka perbandingan antara banyaknya munculnya mata dadu berjumlah 9 pada saat memainkan permainan dengan banyaknya percobaan melempar dadu adalah?
+                  </p>
+                  <input 
+                      type="text" 
+                      id="inputAnswer" 
+                      class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Masukkan Jawaban, Misalnya 1/2" 
+                  />
+              </div>
+              <button onclick="submitAnswers()" 
+                      class="text-xs bg-primary/70 text-white px-4 py-2 rounded mt-2">
+                  Cek Jawaban
+              </button>
+              <p id="resultMessage" class="text-lg font-semibold mt-4"></p>
+            </div>
+
+            <div class="items-center bg-gray-100 rounded-sm mt-3 p-3">
+              <p class="text-black text-sm text-justify">
+               Nilai perbandingan banyaknya munculnya mata dadu berjumlah 9 pada saat memainkan 
+               permainan terhadap banyaknya percobaan melempar dadu disebut <b>Frekuensi Relatif</b> 
+               atau <b>Peluang Empiris</b>
+              </p>
+            </div>
+
+            <div class="flex items-center w-full top-0">
+              <img src="/src/dist/img/cubeWithHandLens.gif" alt="" class="w-32 scale-x-[-1] md:w-24 flip" />
+              <div class="ml-2">
+                <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                  <p class="text-xs text-justify">  
+                     Menurut kalian apa perbedaan antara peluang (peluang teoritis) dengan frekuensi relatif?
+                  </p>
+                </div>
+              </div>
+            </div>  
+
+           
+        </li>  
+        <!-- Timeline Languange End  -->
+
+        <!-- Timeline Symbol Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/S.svg" alt="Symbol" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Symbol</h2>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-4 rounded-lg shadow-md">
+            <div class="items-center bg-gray-100 rounded-sm p-3">
+              <p class="text-black text-sm text-justify">
+               Secara umum <b>Frekuensi Relatif</b> atau <b>Peluang Empiris</b> dapat simbolkan sebagai berikut:
+              </p>
+              <div class="py-2 rounded-sm bg-white text-center">
+                <p class="text-base">
+                  \[
+                  F_A = \frac{n(A)}{M}
+                  \]
+                </p>
+              </div>
+              <p class="text-black text-justify text-sm ">
+                Dimana: 
+              </p>
+              <ul class="text-sm text-black">
+                <li> \( F_A  \) : Frekuensi Relatif / Peluang Empiris kejadian A</li>
+                <li> \( n(A) \) : adalah banyaknya kemunculan kejadian A </li>
+                <li> \( M \) : adalah banyaknya percobaan</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <!-- Timeline Symbol End -->
+
+        <!-- Timeline Application Start -->
+        <li class="mb-10 ml-8">
+          <!-- Icon & Title -->
+          <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
+            <div class="flex items-center -ml-14 mb-4">
+                <div class="w-8 h-8 ml-[9px] bg-white rounded-full flex items-center justify-center">
+                    <img src="/src/dist/img/A.svg" alt="Icon 1" class="border-dotted rounded-full">
+                </div>
+                <h2 class="ml-5 text-base font-bold text-white">Application</h2>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="bg-white border-2 border-primary  -ml-0.6 px-6 py-4 rounded-lg shadow-md">
+            <!-- Soal 1 -->
+             
+
+            <!--Soal 2--> 
+            <div class="mt-0 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+              <h4 class="font-semibold text-sm inline-block mb-2">Marketing</h4>
+              <p class="text-gray-700 text-xs text-justify">
+                Sebuah toko menjual terigu dengan empat merek berbeda. Selama sebulan terakhir, ditemukan jumlah penjulan untuk masing-masing merek tersebut sebagai berikut:  
+              </p> 
+              <div class="border border-gray-300 shadow-sm rounded-lg overflow-hidden max-w-sm mx-auto">
+                <table class="w-full text-xs leading-5 text-gray-600 ">
+                  <thead class="bg-gray-100">
+                    <tr>
+                      <th class="py-2 px-4 text-center">Merek</th>
+                      <th class="py-2 px-4 text-left">Jumalah Penjualan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-1 px-4 text-center">A</td>
+                      <td class="py-1 px-4 text-left">20 Kardus</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="py-1 px-4 text-center">B</td>
+                      <td class="py-1 px-4 text-left">60 Kardus</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1 px-4 text-center"> C</td>
+                      <td class="py-1 px-4 text-left">100 Kardus</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="py-1 px-4 text-center">D</td>
+                      <td class="py-1 px-4 text-left">70 Kardus</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> 
+              <p class="text-gray-700 mb-2 text-xs text-justify">
+                Berapa probabilitas empiris bahwa seorang pelanggan yang dipilih secara acak dari toko tersebut akan membeli:
+              </p>  
+              <div class="overflow-hidden max-w-sm mx-auto">
+                <table class="w-full text-xs leading-4 text-gray-600 ">
+                  <tbody>
+                    <tr>
+                      <td class="py-1 px-4 text-left">Merek A :</td>
+                      <td class="py-1 px-4 text-left">
+                        <!--QuestionType4_1 Start-->
+                        <div class="flex gap-1">
+                          <label class="font-light text-black text-xs text-left mb-2" for="1">
+                          </label>
+                          <input 
+                            id="q1" 
+                            name="q1" 
+                            class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-4 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                            placeholder="Masukkan jawaban, misalnya 1/2"
+                          />
+                          <button id="quizBtnType4-q1"
+                            type="button" 
+                            onclick="checkAnswerType4('q1', '20/250', 'alertType4-1', 'quizBtnType4-q1')" 
+                            class="text-xs bg-primary/70 text-white px-2 py-1 rounded mt-1 mb-1">
+                            Cek
+                          </button>
+                        </div>
+                        <div class="alert" id="alertType4-1"></div>
+                        <div class="answer" id="answerType4-q1"></div>
+                        <!--QuestionType4_1  End-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1 px-4 text-left">Merek B :</td>
+                      <td class="py-1 px-4 text-left">
+                        <!--QuestionType4_2 Start-->
+                        <div class="flex gap-1">
+                          <label class="font-light text-black text-xs text-left mb-2" for="2">
+                          </label>
+                          <input 
+                            id="q2" 
+                            name="q2" 
+                            class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-4 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                            placeholder="Masukkan jawaban, misalnya 1/2"
+                          />
+                          <button id="quizBtnType4-q2"
+                            type="button" 
+                            onclick="checkAnswerType4('q2', '60/250', 'alertType4-2', 'quizBtnType4-q2')" 
+                            class="text-xs bg-primary/70 text-white px-2 py-1 rounded mt-1 mb-1">
+                            Cek
+                          </button>
+                        </div>
+                        <div class="alert" id="alertType4-2"></div>
+                        <div class="answer" id="answerType4-q2"></div>
+                        <!--QuestionType4_2  End-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1 px-4 text-left">Merek C :</td>
+                      <td class="py-1 px-4 text-left">
+                        <!--QuestionType4_3 Start-->
+                        <div class="flex gap-1">
+                          <label class="font-light text-black text-xs text-left mb-2" for="3">
+                          </label>
+                          <input 
+                            id="q3" 
+                            name="q3" 
+                            class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-4 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                            placeholder="Masukkan jawaban, misalnya 1/2"
+                          />
+                          <button id="quizBtnType4-q3"
+                            type="button" 
+                            onclick="checkAnswerType4('q3', '100/250', 'alertType4-3', 'quizBtnType4-q3')" 
+                            class="text-xs bg-primary/70 text-white px-2 py-1 rounded mt-1 mb-1">
+                            Cek
+                          </button>
+                        </div>
+                        <div class="alert" id="alertType4-3"></div>
+                        <div class="answer" id="answerType4-q3"></div>
+                        <!--QuestionType4_3  End-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1 px-4 text-left">Merek D :</td>
+                      <td class="py-1 px-4 text-left">
+                        <!--QuestionType4_4 Start-->
+                        <div class="flex gap-1">
+                          <label class="font-light text-black text-xs text-left mb-2" for="4">
+                          </label>
+                          <input 
+                            id="q4" 
+                            name="q4" 
+                            class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-4 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                            placeholder="Masukkan jawaban, misalnya 1/2"
+                          />
+                          <button id="quizBtnType4-q4"
+                            type="button" 
+                            onclick="checkAnswerType4('q4', '70/250', 'alertType4-4', 'quizBtnType4-q4')" 
+                            class="text-xs bg-primary/70 text-white px-2 py-1 rounded mt-1 mb-1">
+                            Cek
+                          </button>
+                        </div>
+                        <div class="alert" id="alertType4-4"></div>
+                        <div class="answer" id="answerType4-q4"></div>
+                        <!--QuestionType4_4  End-->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </div>
+            
+            </div>
+
+            <!--Soal 3--> 
+            <div class="mt-0 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+              <h4 class="font-semibold text-sm inline-block mb-2">Jalur Pemberian Makanan Satwa di Kebun Binatang</h4>
+
+            </div>
+          </div>
+        </li>
+        <!-- Timeline Application End--> 
+      </ul> 
+    </div>
+  </div>    
+  <!--Study Activities End-->
+
+  
+  
+
+  <script src="/src/script.js"></script>
+  <script src="./frekeunsi-relatif.js"></script>
+  <script src="./quiztype4.js"></script>
+  <script src="./quiztype2.js"></script>
+
+ 
+ 
+</body>
+</html>
