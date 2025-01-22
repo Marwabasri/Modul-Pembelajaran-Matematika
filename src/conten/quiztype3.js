@@ -22,10 +22,10 @@ function checkAnswersType3() {
     
 
     if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswersType3.sort())) {
-        resultDiv.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
+        resultDiv.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
         resultDiv.className = "alert correct";
     } else {
-        resultDiv.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span>Jawaban salah atau belum lengkap!</span>';
+        resultDiv.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah atau belum lengkap!</span>';
         resultDiv.className = "alert incorrect";
     }
 

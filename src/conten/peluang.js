@@ -223,16 +223,16 @@ function restartWin() {
 (function() {
     // Daftar pesan obrolan
     const chatMessages = [
-        { text: "Tahu nggak, waktu kita main batu, gunting, kertas itu sebenarnya ada istilah khusus untuk aktivitasnya?", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-        { text: "Hah? Istilah khusus? Apa tuh maksudnya?", sender: "Rani", avatar: "/src/dist/img/person1.svg" },
-        { text: "Jadi, saat kita memilih antara batu, gunting, atau kertas, kegiatan itu disebut 'percobaan'. Maksudnya, aktivitas yang punya hasil yang bisa diamati.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-        { text: "Oh, jadi pas kita pilih batu dan lawan kita pilih gunting, itu disebut percobaan ya?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
-        { text: "Betul! Nah, dari percobaan itu, kita bisa bikin daftar semua kemungkinan hasilnya. Misalnya, batu vs batu, batu vs kertas, gunting vs kertas hingga semua kemungkinan hasilnya terdaftar. Itu namanya ruang sampel.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-        { text: "Ooo... Ruang sampel tuh himpunan semua kemungkinan hasil. artinya permainan pertama tadi kita sedang mendaftarkan ruang sampel, ya? Terus, kalau cuma lihat hasil di mana aku menang aja, itu apa?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
-        { text: "Kalau gitu, itu disebut kejadian. Jadi, kejadian itu bagian dari ruang sampel, tapi sesuai dengan kriteria tertentu, seperti 'pemain 1 menang'.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-        { text: "Wah, keren juga ya. Jadi percobaan menghasilkan ruang sampel, terus kejadian itu subset dari ruang sampel. Gitu kan?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
-        { text: "Yup, tepat sekali!", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-        { text: "Teman-teman, ayo lanjutkan pembelajaran kita ke tahap berikutnya. Namun, sebelum itu jawab dulu pertanyaan di bawah ini, yah.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Tahu nggak, waktu kita main batu, gunting, kertas itu sebenarnya ada istilah khusus untuk aktivitasnya?", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
+        { text: "Hah? Istilah khusus? Apa tuh maksudnya?", sender: "Rani", avatar: "../dist/img/person1.svg" },
+        { text: "Jadi, saat kita memilih antara batu, gunting, atau kertas, kegiatan itu disebut 'percobaan'. Maksudnya, aktivitas yang punya hasil yang bisa diamati.", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
+        { text: "Oh, jadi pas kita pilih batu dan lawan kita pilih gunting, itu disebut percobaan ya?", sender: "Person1", avatar: "../dist/img/person1.svg" },
+        { text: "Betul! Nah, dari percobaan itu, kita bisa bikin daftar semua kemungkinan hasilnya. Misalnya, batu vs batu, batu vs kertas, gunting vs kertas hingga semua kemungkinan hasilnya terdaftar. Itu namanya ruang sampel.", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
+        { text: "Ooo... Ruang sampel tuh himpunan semua kemungkinan hasil. artinya permainan pertama tadi kita sedang mendaftarkan ruang sampel, ya? Terus, kalau cuma lihat hasil di mana aku menang aja, itu apa?", sender: "Person1", avatar: "../dist/img/person1.svg" },
+        { text: "Kalau gitu, itu disebut kejadian. Jadi, kejadian itu bagian dari ruang sampel, tapi sesuai dengan kriteria tertentu, seperti 'pemain 1 menang'.", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
+        { text: "Wah, keren juga ya. Jadi percobaan menghasilkan ruang sampel, terus kejadian itu subset dari ruang sampel. Gitu kan?", sender: "Person1", avatar: "../dist/img/person1.svg" },
+        { text: "Yup, tepat sekali!", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
+        { text: "Teman-teman, ayo lanjutkan pembelajaran kita ke tahap berikutnya. Namun, sebelum itu jawab dulu pertanyaan di bawah ini, yah.", sender: "Zari", avatar: "../dist/img/chillCube.svg" },
     ];
 
     let currentIndex = 0;
