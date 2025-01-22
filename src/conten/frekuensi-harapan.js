@@ -114,7 +114,7 @@ spinButton.addEventListener('click', () => {
       const correctAnswer = "5/10";
 
       if (userAnswer === correctAnswer) {
-        ticketFeedback.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+        ticketFeedback.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
         ticketFeedback.className = 'alert correct';
         ticketFeedback.style.display = "block";
         ticketAnswer.classList.add('correct-answer');
@@ -131,7 +131,7 @@ spinButton.addEventListener('click', () => {
             element.disabled = true;
         });
       } else {
-        ticketFeedback.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
+        ticketFeedback.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
         ticketFeedback.className = 'alert incorrect';
         ticketFeedback.style.display = "block";
 
@@ -151,7 +151,7 @@ spinButton.addEventListener('click', () => {
         const correctAnswer2 = "3/10";
 
         if (userAnswer2 === correctAnswer2) {
-            ticketFeedback2.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+            ticketFeedback2.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
             ticketFeedback2.className = 'alert correct';
             ticketFeedback2.style.display = "block";
             ticketAnswer2.classList.add('correct-answer');
@@ -168,7 +168,7 @@ spinButton.addEventListener('click', () => {
                 element.disabled = true;
             });
         } else {
-            ticketFeedback2.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
+            ticketFeedback2.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
             ticketFeedback2.className = 'alert incorrect';
             ticketFeedback2.style.display = "block";
 
@@ -188,7 +188,7 @@ spinButton.addEventListener('click', () => {
     const correctAnswer3 = "2/10";
 
     if (userAnswer3 === correctAnswer3) {
-        ticketFeedback3.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+        ticketFeedback3.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
         ticketFeedback3.className = 'alert correct';
         ticketFeedback3.style.display = "block";
         ticketAnswer3.classList.add('correct-answer');
@@ -205,7 +205,7 @@ spinButton.addEventListener('click', () => {
             element.disabled = true;
         });
     } else {
-        ticketFeedback3.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
+        ticketFeedback3.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
         ticketFeedback3.className = 'alert incorrect';
         ticketFeedback3.style.display = "block";
 
@@ -222,7 +222,7 @@ function checkGeneralFormula(element, isCorrect) {
         document.querySelectorAll('.optionFH').forEach(div => {
             if (div !== element) {
                 div.style.display = 'none';
-                alertFH.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+                alertFH.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
                 alertFH.className = 'alert correct';
                 alertFH.style.display = "block";
                 secondChoice.style.display = "block";
@@ -230,7 +230,7 @@ function checkGeneralFormula(element, isCorrect) {
         });
     } else {
         element.style.display = 'none';
-        alertFH.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
+        alertFH.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
         alertFH.className = 'alert incorrect';
         alertFH.style.display = "block";
 

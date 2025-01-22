@@ -16,7 +16,7 @@ function checkAnswerType4(questionId, correctAnswer, alertId, buttonId) {
     // Validasi format jawaban (pecahan seperti 1/2)
     const fractionRegex = /^\d+\/\d+$/; // Pola: angka/angka
     if (!fractionRegex.test(userInput)) {
-      alertBoxType4.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Format jawaban salah! Harus berupa pecahan, misalnya 1/2.</span>';
+      alertBoxType4.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Format jawaban salah! Harus berupa pecahan, misalnya 1/2.</span>';
       alertBoxType4.className = 'alert incorrect';
       alertBoxType4.style.display = 'flex';
       return;
@@ -24,13 +24,13 @@ function checkAnswerType4(questionId, correctAnswer, alertId, buttonId) {
   
     // Bandingkan jawaban
     if (userInput === correctAnswer) {
-      alertBoxType4.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+      alertBoxType4.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
       alertBoxType4.className = 'alert correct';
       userAnswer.classList.add('correct-answer');
       userAnswer.classList.remove('incorrect-answer');
       answer.style.display = 'none';
     } else {
-      alertBoxType4.innerHTML = '<img src="/dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
+      alertBoxType4.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
       alertBoxType4.className = 'alert incorrect';
       userAnswer.classList.add('incorrect-answer');
       userAnswer.classList.remove('correct-answer');

@@ -114,11 +114,11 @@ function checkAnswerType1Special() {
   const userAnswer = selectedOption.value;
 
   if (userAnswer === correctAnswer) {
-    alertBoxType1.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
+    alertBoxType1.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
     alertBoxType1.className = "alert correct";
     selectedLabel.classList.add("correct-answer"); // Tambahkan warna hijau pada jawaban benar
   } else {
-    alertBoxType1.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span>Jawaban Salah!</span>';
+    alertBoxType1.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span>Jawaban Salah!</span>';
     alertBoxType1.className = "alert incorrect";
     selectedLabel.classList.add("incorrect-answer"); // Tambahkan warna merah pada jawaban salah
     correctAnswerBox.textContent = `Jawaban yang benar adalah: ${correctAnswerText}`;

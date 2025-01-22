@@ -220,73 +220,90 @@ function restartWin() {
 //
 //Conversetion on Chat
 
-const chatMessages = [
-    { text: "Tahu nggak, waktu kita main batu, gunting, kertas itu sebenarnya ada istilah khusus untuk aktivitasnya?", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-    { text: "Hah? Istilah khusus? Apa tuh maksudnya?", sender: "Rani", avatar: "/src/dist/img/person1.svg" },
-    { text: "Jadi, saat kita memilih antara batu, gunting, atau kertas, kegiatan itu disebut 'percobaan'. Maksudnya, aktivitas yang punya hasil yang bisa diamati.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-    { text: "Oh, jadi pas kita pilih batu dan lawan kita pilih gunting, itu disebut percobaan ya?", sender: "Person1", avatar: "/src/dist/img/person1.svg"},
-    { text: "Betul! Nah, dari percobaan itu, kita bisa bikin daftar semua kemungkinan hasilnya. Misalnya, batu vs batu, batu vs kertas, gunting vs kertas hingga semua kemugkinan hasilnya terdaftar. Itu namanya ruang sampel.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg"  },
-    { text: "Ooo... Ruang sampel tuh himpunan semua kemungkinan hasil. artinya permainan pertama tadi kita sedang mendaftarakn ruang sampel, ya? Terus, kalau cuma lihat hasil di mana aku menang aja, itu apa?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
-    { text: "Kalau gitu, itu disebut kejadian. Jadi, kejadian itu bagian dari ruang sampel, tapi sesuai dengan kriteria tertentu, seperti 'pemain 1 menang'.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
-    { text: "Wah, keren juga ya. Jadi percobaan menghasilkan ruang sampel, terus kejadian itu subset dari ruang sampel. Gitu kan?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
-    { text: "Yup, tepat sekali!", sender: "Zari", avatar: "/src/dist/img/chillCube.svg"  },
-    { text: "Teman-teman, ayo lanjuntkan pembelajaran kita ke tahap berikutnya. Namun, sebelum itu jawab dulu pernyaan di bawah ini, yah. ", sender: "Zari", avatar: "/src/dist/img/chillCube.svg"  },
-];
+(function() {
+    // Daftar pesan obrolan
+    const chatMessages = [
+        { text: "Tahu nggak, waktu kita main batu, gunting, kertas itu sebenarnya ada istilah khusus untuk aktivitasnya?", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Hah? Istilah khusus? Apa tuh maksudnya?", sender: "Rani", avatar: "/src/dist/img/person1.svg" },
+        { text: "Jadi, saat kita memilih antara batu, gunting, atau kertas, kegiatan itu disebut 'percobaan'. Maksudnya, aktivitas yang punya hasil yang bisa diamati.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Oh, jadi pas kita pilih batu dan lawan kita pilih gunting, itu disebut percobaan ya?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
+        { text: "Betul! Nah, dari percobaan itu, kita bisa bikin daftar semua kemungkinan hasilnya. Misalnya, batu vs batu, batu vs kertas, gunting vs kertas hingga semua kemungkinan hasilnya terdaftar. Itu namanya ruang sampel.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Ooo... Ruang sampel tuh himpunan semua kemungkinan hasil. artinya permainan pertama tadi kita sedang mendaftarkan ruang sampel, ya? Terus, kalau cuma lihat hasil di mana aku menang aja, itu apa?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
+        { text: "Kalau gitu, itu disebut kejadian. Jadi, kejadian itu bagian dari ruang sampel, tapi sesuai dengan kriteria tertentu, seperti 'pemain 1 menang'.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Wah, keren juga ya. Jadi percobaan menghasilkan ruang sampel, terus kejadian itu subset dari ruang sampel. Gitu kan?", sender: "Person1", avatar: "/src/dist/img/person1.svg" },
+        { text: "Yup, tepat sekali!", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+        { text: "Teman-teman, ayo lanjutkan pembelajaran kita ke tahap berikutnya. Namun, sebelum itu jawab dulu pertanyaan di bawah ini, yah.", sender: "Zari", avatar: "/src/dist/img/chillCube.svg" },
+    ];
 
-let currentIndex = 0;
+    let currentIndex = 0;
 
-function showNextMessage() {
-    if (currentIndex < chatMessages.length) {
-        const message = chatMessages[currentIndex];
-        const chatContainer = document.getElementById("chatContainer");
+    function showNextMessage() {
+        if (currentIndex < chatMessages.length) {
+            const message = chatMessages[currentIndex];
+            const chatContainer = document.getElementById("chatContainer");
 
-        // Membuat elemen chat
-        const chatElement = document.createElement("div");
-        chatElement.classList.add("flex", "items-start", "space-y-4", "mt-4");
+            if (!chatContainer) {
+                console.error("Elemen #chatContainer tidak ditemukan.");
+                return;
+            }
 
-        // Membuat elemen untuk foto profil dan pesan
-        const profilePic = `<img src="${message.avatar}" alt="${message.sender}'s avatar" class="bg-gray-100 w-10 h-10 rounded-full mr-3">`;
-        
+            // Membuat elemen chat
+            const chatElement = document.createElement("div");
+            chatElement.classList.add("flex", "items-start", "space-y-4", "mt-4");
 
-        // Menambahkan foto profil dan pesan ke chat element
-        if (message.sender === "Zari") {
-            chatElement.innerHTML = `
-                <div class="flex items-start">
-                    ${profilePic}
-                    <div class="bg-gray-300 max-w-80 text-gray-800 p-2 rounded-r-lg rounded-bl-lg">
-                        ${message.text}
+            // Membuat elemen untuk foto profil dan pesan
+            const profilePic = `<img src="${message.avatar}" alt="${message.sender}'s avatar" class="bg-gray-100 w-10 h-10 rounded-full mr-3">`;
+
+            // Menambahkan foto profil dan pesan ke chat element
+            if (message.sender === "Zari") {
+                chatElement.innerHTML = `
+                    <div class="flex items-start">
+                        ${profilePic}
+                        <div class="bg-gray-300 max-w-80 text-gray-800 p-2 rounded-r-lg rounded-bl-lg">
+                            ${message.text}
+                        </div>
                     </div>
-                </div>
-            `;
-        } else {
-            chatElement.classList.add("ml-auto");  // Menambahkan margin kiri otomatis untuk membuatnya di sebelah kanan
-            chatElement.innerHTML = `
-                <div class="flex justify-end space-x-3 ml-auto">
-                    <div class="bg-blue-500 max-w-80 text-white p-2 rounded-l-lg rounded-br-lg">
-                        ${message.text}
+                `;
+            } else {
+                chatElement.classList.add("ml-auto");  // Menambahkan margin kiri otomatis untuk membuatnya di sebelah kanan
+                chatElement.innerHTML = `
+                    <div class="flex justify-end space-x-3 ml-auto">
+                        <div class="bg-blue-500 max-w-80 text-white p-2 rounded-l-lg rounded-br-lg">
+                            ${message.text}
+                        </div>
+                        ${profilePic}
                     </div>
-                    ${profilePic}
-                </div>
-            `;
+                `;
+            }
+
+            // Menambahkan chat ke container
+            chatContainer.appendChild(chatElement);
+
+            // Update indeks
+            currentIndex++;
         }
 
-        // Menambahkan chat ke container
-        chatContainer.appendChild(chatElement);
+        // Menghapus tombol jika semua pesan sudah ditampilkan
+        if (currentIndex >= chatMessages.length) {
+            const buttonContainer = document.getElementById("buttonContainer");
+            if (buttonContainer) buttonContainer.remove();
 
-        // Update indeks
-        currentIndex++;
+            // Menampilkan elemen terminologi setelah tombol Next dihapus
+            const languangEques1 = document.getElementById("languangEques1");
+            if (languangEques1) languangEques1.classList.remove("hidden");
+        }
     }
 
-    // Menghapus tombol jika semua pesan sudah ditampilkan
-    if (currentIndex >= chatMessages.length) {
-        const buttonContainer = document.getElementById("buttonContainer");
-        buttonContainer.remove();
+    // Menambahkan event listener setelah halaman dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        const nextButton = document.querySelector("#buttonContainer button");
+        if (nextButton) {
+            nextButton.addEventListener("click", showNextMessage);
+        }
+    });
 
-        // Menampilkan elemen terminologi setelah tombol Next dihapus
-        const languangEques1 = document.getElementById("languangEques1");
-        languangEques1.style.display = "block";  // Menampilkan elemen terminologi
-    }
-}
+})();
+
  
 
 //
