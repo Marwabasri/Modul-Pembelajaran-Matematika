@@ -15,12 +15,12 @@
     const userAnswer = selectedOption.value;
 
     if (userAnswer === correctAnswer.toString()) {
-      alertBoxType1.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
+      alertBoxType1.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
       alertBoxType1.className = 'alert correct';
       selectedLabel.classList.add('correct-answer'); // Tambahkan warna hijau pada jawaban benar
       score++;
     } else {
-      alertBoxType1.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span>Jawaban salah!</span>';
+      alertBoxType1.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span>Jawaban salah!</span>';
       alertBoxType1.className = 'alert incorrect';
       selectedLabel.classList.add('incorrect-answer'); // Tambahkan warna merah pada jawaban salah
       correctAnswerBox.textContent = `Jawaban yang benar adalah: ${correctAnswerText}`;

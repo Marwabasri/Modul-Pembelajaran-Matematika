@@ -28,8 +28,8 @@ rollDiceButton.addEventListener("click", () => {
     sumOfRolls = dice1 + dice2;
 
     // Update the dice images to reflect the new roll
-    document.getElementById("dice1").src = `/src/dist/img/dice${dice1}.svg`;
-    document.getElementById("dice2").src = `/src/dist/img/dice${dice2}.svg`;
+    document.getElementById("dice1").src = `../dist/img/dice${dice1}.svg`;
+    document.getElementById("dice2").src = `../dist/img/dice${dice2}.svg`;
 
     // Enable the submit selection buttob, disable the roll button
     submitSelectionButton.disabled = false;
@@ -251,12 +251,12 @@ function submitAnswers() {
     const alertBoxType6 = document.getElementById('resultMessage');
 
     if (formattedInputAnswer === formattedCorrectAnswer) {
-        alertBoxType6.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+        alertBoxType6.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
         alertBoxType6.className = 'alert correct text-green-600';
         inputAnswer.classList.add('correct-answer');
         inputAnswer.classList.remove('incorrect-answer');
     } else {
-        alertBoxType6.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
+        alertBoxType6.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
         alertBoxType6.className = 'alert incorrect text-red-600';
         alertBoxType6.innerHTML += `<div>Jawaban yang benar adalah: ${correctAnswer}</div>`;
         inputAnswer.classList.add('incorrect-answer');

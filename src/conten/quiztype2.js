@@ -5,13 +5,13 @@ function checkAnswerType2(questionId, correctAnswer, alertId, buttonId) {
     const buttonQuizType2 = document.getElementById(buttonId);
 
     if (parseInt(userAnswer.value) === correctAnswer) {
-      alertBoxType2.innerHTML = '<img src="/src/dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+      alertBoxType2.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
       alertBoxType2.className = 'alert correct';
       userAnswer.classList.add('correct-answer');
       userAnswer.classList.remove('incorrect-answer');
       answer.style.display = 'none';
     } else {
-      alertBoxType2.innerHTML = '<img src="/src/dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
+      alertBoxType2.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah!</span>';
       alertBoxType2.className = 'alert incorrect';
       userAnswer.classList.add('incorrect-answer');
       userAnswer.classList.remove('correct-answer');
