@@ -2467,6 +2467,10 @@ video {
   border-top-right-radius: 0.25rem;
 }
 
+.rounded-tr-none {
+  border-top-right-radius: 0px;
+}
+
 .border {
   border-width: 1px;
 }

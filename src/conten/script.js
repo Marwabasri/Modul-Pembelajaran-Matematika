@@ -34,47 +34,41 @@ document.querySelectorAll('details').forEach((detail) => {
     });
 });
 
-//frekeuensi relatif js
-
-  const showCardButton = document.getElementById('showCardButton');
-  const interactiveCard = document.getElementById('interactiveCard');
-  const closeCardButton = document.getElementById('closeCardButton');
-
-  showCardButton.addEventListener('click', () => {
-    interactiveCard.classList.remove('hidden');
-    interactiveCard.style.display = 'flex';
-  });
-
-  closeCardButton.addEventListener('click', () => {
-    interactiveCard.classList.add('hidden');
-    interactiveCard.style.display = 'none';
-  });
 
     
 
 //Slider  
   
-    const sliderItems = document.querySelectorAll('[data-carousel-item]');
-    const prevButton = document.querySelector('[data-carousel-prev]');
-    const nextButton = document.querySelector('[data-carousel-next]');
+const sliderItems = document.querySelectorAll('[data-carousel-item]');
+const prevButton = document.querySelector('[data-carousel-prev]');
+const nextButton = document.querySelector('[data-carousel-next]');
 
-    let currentIndex = 0;
+// Periksa apakah elemen ditemukan
+if (sliderItems.length === 0 || !prevButton || !nextButton) {
+  console.error('Elemen slider tidak ditemukan.');
+} else {
+  let currentIndex = 0;
 
-    function updateCarousel(index) {
-      sliderItems.forEach((item, i) => {
-        item.classList.toggle('block', i === index);
-        item.classList.toggle('hidden', i !== index);
-      });
-    }
-
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
-      updateCarousel(currentIndex);
+  function updateCarousel(index) {
+    sliderItems.forEach((item, i) => {
+      item.classList.toggle('block', i === index);
+      item.classList.toggle('hidden', i !== index);
     });
+  }
 
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % sliderItems.length;
-      updateCarousel(currentIndex);
-    });
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+    updateCarousel(currentIndex);
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % sliderItems.length;
+    updateCarousel(currentIndex);
+  });
+
+  // Inisialisasi slider pertama
+  updateCarousel(currentIndex);
+}
+
 
    

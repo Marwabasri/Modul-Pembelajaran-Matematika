@@ -1,3 +1,23 @@
+ 
+////Button aturan permainan
+
+const showCardButton = document.getElementById('showCardButton');
+const interactiveCard = document.getElementById('interactiveCard');
+const closeCardButton = document.getElementById('closeCardButton');
+
+showCardButton.addEventListener('click', () => {
+  interactiveCard.classList.remove('hidden');
+  interactiveCard.style.display = 'flex';
+});
+
+closeCardButton.addEventListener('click', () => {
+  interactiveCard.classList.add('hidden');
+  interactiveCard.style.display = 'none';
+});
+
+
+
+///Shut the box
 let rollDiceButton = document.querySelector(".roll-dice");
 let submitSelectionButton = document.querySelector(".submit-selection");
 let nextRollButton = document.querySelector(".next-roll");
@@ -180,7 +200,7 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
   // Initialize question 2
   setupQuestionType5(2, ['Opsi B','Opsi D', 'Opsi F', 'Opsi G']);
 
-  setupQuestionType5(3, ['Opsi 1','Opsi 3', 'Opsi 2', 'Opsi 4']);
+  
 
   
 
@@ -230,7 +250,7 @@ function checkAnswerSpecialType2(questionId, correctAnswer, alertId, buttonId) {
     }, 2000);
 }
 
-//QuisType6
+//QuisType6 Luaguange
 function submitAnswers() {
     const inputNumber = document.getElementById('inputNumber').value;
     const inputAnswer = document.getElementById('inputAnswer');
@@ -274,5 +294,5 @@ function submitAnswers() {
 
 }
 
- 
-//
+
+
