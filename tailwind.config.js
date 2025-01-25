@@ -14,6 +14,10 @@ module.exports = {
         tertiary: '#95ccd5',
         quaternary: '#193f56',
       },
+
+      fontSize:{
+        xxs: '0.5rem',
+      }
     },
   },
   plugins: [],
