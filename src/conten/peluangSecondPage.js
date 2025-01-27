@@ -239,35 +239,43 @@ let previousX, previousY;
 let currentRotationX = 0;
 let currentRotationY = 0;
 
-// Fungsi untuk memulai interaksi (mouse & touch)
+// Fungsi untuk mendapatkan posisi yang sesuai (mouse atau touch)
+function getClientPos(e) {
+  if (e.type.startsWith("touch")) {
+    return { x: e.touches[0].pageX, y: e.touches[0].pageY };
+  } else {
+    return { x: e.clientX, y: e.clientY };
+  }
+}
+
+// Fungsi untuk memulai interaksi
 function startDrag(e) {
+  e.preventDefault(); // Hindari scrolling pada touch
   isDragging = true;
-  previousX = e.clientX || e.touches[0].clientX;
-  previousY = e.clientY || e.touches[0].clientY;
+  const pos = getClientPos(e);
+  previousX = pos.x;
+  previousY = pos.y;
   cube.style.cursor = "grabbing";
 }
 
-// Fungsi untuk menangani pergerakan (mouse & touch)
+// Fungsi untuk menangani pergerakan
 function onDrag(e) {
   if (!isDragging) return;
 
-  // Gunakan event touch atau mouse
-  const clientX = e.clientX || e.touches[0].clientX;
-  const clientY = e.clientY || e.touches[0].clientY;
-
-  const deltaX = clientX - previousX;
-  const deltaY = clientY - previousY;
+  const pos = getClientPos(e);
+  const deltaX = pos.x - previousX;
+  const deltaY = pos.y - previousY;
 
   currentRotationX -= deltaY * 0.5;
   currentRotationY += deltaX * 0.5;
 
   cube.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
 
-  previousX = clientX;
-  previousY = clientY;
+  previousX = pos.x;
+  previousY = pos.y;
 }
 
-// Fungsi untuk menghentikan interaksi (mouse & touch)
+// Fungsi untuk menghentikan interaksi
 function stopDrag() {
   isDragging = false;
   cube.style.cursor = "grab";
@@ -278,7 +286,7 @@ cube.addEventListener("mousedown", startDrag);
 window.addEventListener("mousemove", onDrag);
 window.addEventListener("mouseup", stopDrag);
 
-// Event listener untuk touch
-cube.addEventListener("touchstart", startDrag, { passive: true });
-window.addEventListener("touchmove", onDrag, { passive: true });
+// Event listener untuk touch (mobile/tablet)
+cube.addEventListener("touchstart", startDrag, { passive: false });
+window.addEventListener("touchmove", onDrag, { passive: false });
 window.addEventListener("touchend", stopDrag);
