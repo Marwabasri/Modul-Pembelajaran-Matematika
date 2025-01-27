@@ -114,17 +114,17 @@
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-start">
           <h1 class="text-xl font-bold text-[#fef2c1] sm:text-5xl lg:text-3xl">Aktivitas Belajar 2</h1>
-          <p class="text-lg font-bold text-[#fef2c1]">Frekuensi Relatif</p>
+          <p class="text-lg font-bold text-[#fef2c1] sm:text-4xl lg:text-2xl">Frekuensi Relatif</p>
         </div>
       </div>
     
       <div class="flex items-center justify-center my-6 px-2">
-        <img src="../dist/img/CubeTugOfWar.gif" class="w-56 max-w-full sm:hidden"/>
+        <img src="../dist/img/CubeTugOfWar.gif" class="hidden sm:w-56 sm:max-w-full sm:block"/>
         <div class="group relative flex h-20 w-full max-w-full items-center justify-center self-center overflow-hidden rounded-lg bg-white/80">
           <p class="absolute left-1/2 top-1/2 text-primary -translate-x-1/2 -translate-y-1/2 text-lg font-semibold duration-500 group-hover:-translate-x-[500%]">
             Tujuan Pembelajaran
           </p>
-          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-base font-normal duration-500 group-hover:-translate-x-1/2 text-center">
+          <p class="absolute left-1/2 top-1/2 text-primary h-fit w-full max-w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-sm font-normal duration-500 group-hover:-translate-x-1/2 text-center">
             Siswa dapat menjelaskan pengertian frekuensi relatif (peluang empiris) suatu kejadian dalam percobaan sederhana 
           </p>
         </div>
@@ -133,20 +133,7 @@
    </section>
    <!--Hero Section End-->
 
-    <!-- Aktivitas Pembelajaran Peluang --> 
-    <div class="h-full min-h-screen w-full pt-10 p-2">
-      <div class="grid gap-1">
-        <ul class="">
-          <!-- Timeline Experienece Start -->
-          <li class="mb-10">
-            <!-- Icon & Title Experience -->
-            <div class="mt-0 sticky top-20 z-10 bg-primary/70 backdrop-blur-sm rounded-sm">
-              <div class="flex items-center mb-2">
-                <h2 class="ml-2 text-sm font-bold text-white sm:text-start sm:ml-20">Experience</h2>
-              </div>
-            </div>
-            <!-- Content Experience Start-->
-            <div class="bg-white border-2 border-primary p-2 rounded-lg shadow-md"> 
+   
   <!--Study Activities Start-->
   <div class="h-full min-h-screen w-full pt-1 p-2">
     <div class="grid gap-1">
@@ -162,7 +149,9 @@
           <!-- Content Experience Start-->
             <div class="bg-white border-2 border-primary p-2 rounded-lg shadow-md">
               <!-- Quis Experience-->
-              <div class="mt-2 py-2 px-3 mb-2 border-2 border-slate-400 rounded-md bg-white text-start shadow-sm">
+                <div class="flex items-center justify-center">
+                  <img src="../dist/img/twoDices.svg" class="w-20"/>
+                </div>
                 <h4 class="font-semibold text-sm inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4>
                 <!--Quiztype2 n(S) pelemparab 2 dadu-->
                 <div class="question">
@@ -539,7 +528,7 @@
                   <div id="feedbackType5-2" class="mt-4 text-xs font-semibold text-gray-800"></div>
                 </div>
                 <!--Quiztype5 n(S) pelemparab 2 dadu End-->
-              </div>
+              
               <!--Quiz Experience-->
 
               <div class="flex items-start w-full top-0">
@@ -979,10 +968,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="bg-gray-50">
+                  <tr class="bg-gray-50 text-xs">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Misal: (1,1)"
                         type="text"
                         id="unique-input"
@@ -990,7 +979,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Misal: 2"
                         type="text"
                         id="unique-input"
@@ -1000,7 +989,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-2"
                         type="text"
                         id="unique-input"
@@ -1008,7 +997,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1018,7 +1007,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-3"
                         type="text"
                         id="unique-input"
@@ -1026,7 +1015,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1036,7 +1025,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-4"
                         type="text"
                         id="unique-input"
@@ -1044,7 +1033,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1054,7 +1043,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-5"
                         type="text"
                         id="unique-input"
@@ -1062,7 +1051,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1072,7 +1061,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-6"
                         type="text"
                         id="unique-input"
@@ -1080,7 +1069,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1090,7 +1079,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-7"
                         type="text"
                         id="unique-input"
@@ -1098,7 +1087,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1108,7 +1097,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-8"
                         type="text"
                         id="unique-input"
@@ -1116,7 +1105,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1126,7 +1115,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-9"
                         type="text"
                         id="unique-input"
@@ -1134,7 +1123,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1144,7 +1133,7 @@
                   <tr class="bg-gray-50">
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Lemparan ke-10"
                         type="text"
                         id="unique-input"
@@ -1152,92 +1141,7 @@
                     </td>
                     <td class="py-1 px-4">
                       <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Masukkan Teks"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                  </tr><tr class="bg-gray-50">
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Lemparan ke-11"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Masukkan Teks"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                  </tr><tr class="bg-gray-50">
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Lemparan ke-12"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Masukkan Teks"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                  </tr><tr class="bg-gray-50">
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Lemparan ke-13"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Masukkan Teks"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                  </tr><tr class="bg-gray-50">
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Lemparan ke-14"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Masukkan Teks"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                  </tr><tr class="bg-gray-50">
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                        placeholder="Lemparan ke-15"
-                        type="text"
-                        id="unique-input"
-                      />
-                    </td>
-                    <td class="py-1 px-4">
-                      <input
-                        class="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                        class="custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100"
                         placeholder="Masukkan Teks"
                         type="text"
                         id="unique-input"
@@ -1513,7 +1417,15 @@
     </div>
   </div>    
   <!--Study Activities End-->
-
+  
+  <!--FOOTER START-->
+  <footer class="p-4 bg-primary/50">
+    <hr class="my-6 border-white sm:mx-auto lg:my-8" />
+    <span class="block text-xs text-white text-center">Universitas Negeri Makassar 
+      <a href="" target="_blank" class="hover:underline"><br>2025</a>
+    </span>
+  </footer>
+  <!--FOOTER END-->
   
   
 
