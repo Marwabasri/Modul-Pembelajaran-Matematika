@@ -232,7 +232,7 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
 setupQuestionType5(3, ['Opsi 34','Opsi 36']);
 
 
-//
+//kubus
 const cube = document.getElementById("cube");
 let isDragging = false;
 let previousMouseX, previousMouseY;
