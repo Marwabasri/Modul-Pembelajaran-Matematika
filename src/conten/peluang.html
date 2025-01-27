@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -365,7 +365,7 @@
                 <!--Ruang Sampel Kejadian Batu Gunting Kertas End-->
 
                 <!--Pemenang dari setiap kejadian Batu Gunting Kertas Start-->
-                <div id="nextGame" class="hidden"> 
+                <div id="nextGame" class=""> 
                   <div class="flex items-center w-full">
                     <img src="../dist/img/cube and trophy.gif" alt="" class="w-16 sm:w-32 scale-x-[-1] md:w-24" />
                     <div class="ml-2">
@@ -394,122 +394,125 @@
                           <ul class="flex flex-col gap-4 pl-2 mt-4">
                             <li class="flex gap-2">
                                 <p class="text-xs text-gray-600 text-justify">
-                                  Seret elemen "Batu", "Gunting", atau "Kertas" ke area yang sesuai untuk membentuk ruang sampel.
+                                  Tentukan pemenang/seri dari setiap kemungkinan 
                                 </p>
                             </li>                           
                           </ul>
                       </article>
                     </details>
                     <!-- Drop Zones -->
-                    <div class="flex gap-1 text-xs">
-                        <div class="h-8 w-7 bg-transparent rounded flex items-center justify-center">
+                    <div class="flex flex-col items-center justify-center"> 
+                      <div class="flex gap-1 text-xs">
+                          <div class="h-8 w-7 bg-transparent rounded flex items-center justify-center sm:h-10 sm:w-10">
+                          </div>
+                          <div class="h-8 w-20 bg-white rounded flex items-center justify-center sm:h-10">
+                            <img src="../dist/img/player1_rock.svg" alt="Batu" class="h-5 w-full sm:h-8"/>
+                          </div>
+                          <div class="h-8 w-20 bg-white rounded flex items-center justify-center sm:h-10">
+                            <img src="../dist/img/player1_scissors.svg" alt="Gunting" class="h-5 w-full sm:h-8"/>
+                          </div>
+                          <div class="h-8 w-20 bg-white rounded flex items-center justify-center sm:h-10">
+                            <img src="../dist/img/player1_paper.svg" alt="Kertas" class="h-5 w-full sm:h-8"/>
+                          </div>
+                      </div>    
+                      <div class="flex gap-1 mt-1 text-xxs sm:text-xs">
+                        <div class="h-20 w-8 bg-white rounded flex items-center justify-center sm:w-10">
+                          <img src="../dist/img/player2_rock.svg" alt="Batu" class="h-5 w-full sm:h-8"/>
                         </div>
-                        <div class="h-8 w-20 bg-white rounded flex items-center justify-center">
-                          <img src="../dist/img/player1_rock.svg" alt="Batu" class="h-5 w-full"/>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/rock1 vs rock2.svg" alt="Batu vs Batu" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
                         </div>
-                        <div class="h-8 w-20 bg-white rounded flex items-center justify-center">
-                          <img src="../dist/img/player1_scissors.svg" alt="Gunting" class="h-5 w-full"/>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/scissors1 vs rock 2.svg" alt="Gunting vs Batu" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
                         </div>
-                        <div class="h-8 w-20 bg-white rounded flex items-center justify-center">
-                          <img src="../dist/img/player1_paper.svg" alt="Kertas" class="h-5 w-full"/>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/paper1 vs rock2.svg" alt="Kertas vs Batu" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
                         </div>
-                    </div>    
-                    <div class="flex gap-1 mt-1 text-xxs">
-                      <div class="h-20 w-8 bg-white rounded flex items-center justify-center">
-                        <img src="../dist/img/player2_rock.svg" alt="Batu" class="h-5 w-full"/>
                       </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/rock1 vs rock2.svg" alt="Batu vs Batu" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full text-xxs border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
+                      <div class="flex gap-1 mt-1 text-xxs sm:text-xs">
+                        <div class="h-20 w-8 bg-white rounded flex items-center justify-center sm:w-10">
+                          <img src="../dist/img/player2_scissors.svg" alt="Gunting" class="h-5 w-full sm:h-8"/>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/rock1 vs scissors2.svg" alt="Batu vs Gunting" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/scissors1 vs scissors2.svg" alt="Gunting vs Gunting" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/paper1 vs scissors 2.svg" alt="Kertas vs Gunting" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
                       </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/scissors1 vs rock 2.svg" alt="Gunting vs Batu" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border text-xxs border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
+                      <div class="flex gap-1 mt-1 text-xxs sm:text-xs">
+                        <div class="h-20 w-8 bg-white rounded flex items-center justify-center sm:w-10">
+                          <img src="../dist/img/player2_paper.svg" alt="Kertas" class="h-5 w-full sm:h-8"/>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                            <img src="../dist/img/rock1 vs paper2.svg" alt="Batu vs Kertas" class="max-h-16 w-full object-contain"/>
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/scissors1 vs paper2.svg" alt="Gunting vs Kertas" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
+                        <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
+                          <img src="../dist/img/paper1 vs paper2.svg" alt="Kertas vs Kertas" class="max-h-16 w-full object-contain"/>  
+                            <select class="mt-2 w-full border border-gray-300 rounded">
+                                <option value="" selected hidden>Pilih Hasil</option>
+                                <option value="seri">Seri</option>
+                                <option value="p1">Pemain 1 Menang</option>
+                                <option value="p2">Pemain 2 Menang</option>
+                            </select>
+                        </div>
                       </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/paper1 vs rock2.svg" alt="Kertas vs Batu" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border text-xxs border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                    </div>
-                    <div class="flex gap-1 mt-1 text-xxs">
-                      <div class="h-20 w-8 bg-white rounded flex items-center justify-center">
-                        <img src="../dist/img/player2_scissors.svg" alt="Gunting" class="h-5 w-full"/>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/rock1 vs scissors2.svg" alt="Batu vs Gunting" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/scissors1 vs scissors2.svg" alt="Gunting vs Gunting" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/paper1 vs scissors 2.svg" alt="Kertas vs Gunting" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                    </div>
-                    <div class="flex gap-1 mt-1 text-xxs">
-                      <div class="h-20 w-8 bg-white rounded flex items-center justify-center">
-                        <img src="../dist/img/player2_paper.svg" alt="Kertas" class="h-5 w-full"/>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                          <img src="../dist/img/rock1 vs paper2.svg" alt="Batu vs Kertas" class="max-h-16 w-full object-contain"/>
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/scissors1 vs paper2.svg" alt="Gunting vs Kertas" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                      <div id="HowWin" class="h-20 w-20 bg-white rounded p-0.5">
-                        <img src="../dist/img/paper1 vs paper2.svg" alt="Kertas vs Kertas" class="max-h-16 w-full object-contain"/>  
-                          <select class="mt-2 w-full border border-gray-300 rounded">
-                              <option value="" selected hidden>Pilih Hasil</option>
-                              <option value="seri">Seri</option>
-                              <option value="p1">Pemain 1 Menang</option>
-                              <option value="p2">Pemain 2 Menang</option>
-                          </select>
-                      </div>
-                    </div>
+                    </div>  
+                      
             
                     <div class="flex text-center text-xs mt-6 justify-around">
                         <button id="checkWin" class="bg-primary/70 text-white px-2 py-1.5 rounded" onclick="validateAnswers()">Periksa Jawaban</button>
@@ -762,7 +765,7 @@
                 <img src="../dist/img/cubeWithHandLens.gif" alt="" class="w-16 sm:w-32 scale-x-[-1] md:w-24 flip" />
                 <div class="ml-2">
                   <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
-                    <p class="text-xxs text-justify">  
+                    <p class="text-xxs text-justify sm:text-xs">  
                       Sebelumnya kita telah mempelajari bagaimana mendaftarkan ruang sampel dari suatu percobaan menggunakan bantuan <b>tabel</b>. 
                       <br> Nah, pada tahap ini kita akan melihat cara mendaftrakan ruang sampel dari suatu percobaan dengan cara lain</p>
                     </p>
@@ -775,8 +778,8 @@
                   Diagram pohon adalah cara yang sangat membantu untuk melihat semua kemungkinan hasil dalam percobaan. 
                   Diagram pohon di bawah memperlihatkan semua kemungkinan hasil dari <b>percobaan permainan suit yang dimaikan 2 orang</b>.
                 </p>
-              <div class="items-center">
-               <img src="../dist/img/SampleSpaceOfRockPaperScissorsfFor2Person.svg"/> 
+              <div class="items-center flex justify-center">
+               <img src="../dist/img/SampleSpaceOfRockPaperScissorsfFor2Person.svg" class="sm:w-10/12"/> 
               </div>  
               <!--QuestionType2_4 Start-->
               <div class="mt-0  mb-2 border-2 border-slate-400 rounded-md bg-white p-2 text-start shadow-sm">   
@@ -819,7 +822,7 @@
                 <img src="../dist/img/cubeWithHandLens.gif" alt="" class="w-16 sm:w-32 scale-x-[-1] md:w-24 flip" />
                 <div class="ml-2">
                   <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
-                    <p class="text-xxs text-justify">  
+                    <p class="text-xxs text-justify sm:text-xs">  
                       Cara terakhir untuk mendftarkan ruang sampel adalah dengan mendaftarkan satu 
                       per satu. Jika kita daftarkan, ruang sampel dari percobaan ini terlihat seperti ini:
                     </p>
@@ -917,13 +920,15 @@
                   <p class="text-gray-700 text-xs text-justify">
                     Perhatikan persilangan bunga merah yang <b>Genotip: (RR)</b> dengan bungan putih yang <b>Genootip: (rr)</b>
                   </p>
-                  <img src="../dist/img/indukBunga.svg" class="mt-0"/>
+                  <div class="flex justify-center">
+                    <img src="../dist/img/indukBunga.svg" class="mt-0 sm:w-8/12"/>
+                  </div>
                   <p class="text-gray-700 text-xs text-justify">
                     Selanjutnya anak Genarasi 2 akan berasal dari persilangan antara generasi 1 yang <b>bergenotip: (Rr)</b> dengan <b>genootip: (<Ri:a></Ri:a>r)</b>
                     seperti pada gambar di bawah:
                   </p>
                   <div class="flex justify-center">
-                    <img src="../dist/img/Gen1Bunga.svg" class="w-64 h-auto" />
+                    <img src="../dist/img/Gen1Bunga.svg" class="w-64 h-auto sm:w-6/12" />
                   </div>
                   <p class="text-gray-700 text-xs text-justify">
                     Tentukan ruang sampel dari percobaan persilangan antara generasi 1 di atas:
@@ -987,7 +992,7 @@
                   <input 
                     id="q5" 
                     name="q5" 
-                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
                     placeholder="Masukkan jawaban, misalnya 1/2"
                   />
                   <button id="quizBtnType4-q5"
