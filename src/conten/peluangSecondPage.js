@@ -235,33 +235,50 @@ setupQuestionType5(3, ['Opsi 34','Opsi 36']);
 //kubus
 const cube = document.getElementById("cube");
 let isDragging = false;
-let previousMouseX, previousMouseY;
+let previousX, previousY;
 let currentRotationX = 0;
 let currentRotationY = 0;
 
-cube.addEventListener("mousedown", (e) => {
+// Fungsi untuk memulai interaksi (mouse & touch)
+function startDrag(e) {
   isDragging = true;
-  previousMouseX = e.clientX;
-  previousMouseY = e.clientY;
+  previousX = e.clientX || e.touches[0].clientX;
+  previousY = e.clientY || e.touches[0].clientY;
   cube.style.cursor = "grabbing";
-});
+}
 
-window.addEventListener("mousemove", (e) => {
+// Fungsi untuk menangani pergerakan (mouse & touch)
+function onDrag(e) {
   if (!isDragging) return;
 
-  const deltaX = e.clientX - previousMouseX;
-  const deltaY = e.clientY - previousMouseY;
+  // Gunakan event touch atau mouse
+  const clientX = e.clientX || e.touches[0].clientX;
+  const clientY = e.clientY || e.touches[0].clientY;
+
+  const deltaX = clientX - previousX;
+  const deltaY = clientY - previousY;
 
   currentRotationX -= deltaY * 0.5;
   currentRotationY += deltaX * 0.5;
 
   cube.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
 
-  previousMouseX = e.clientX;
-  previousMouseY = e.clientY;
-});
+  previousX = clientX;
+  previousY = clientY;
+}
 
-window.addEventListener("mouseup", () => {
+// Fungsi untuk menghentikan interaksi (mouse & touch)
+function stopDrag() {
   isDragging = false;
   cube.style.cursor = "grab";
-});
+}
+
+// Event listener untuk mouse
+cube.addEventListener("mousedown", startDrag);
+window.addEventListener("mousemove", onDrag);
+window.addEventListener("mouseup", stopDrag);
+
+// Event listener untuk touch
+cube.addEventListener("touchstart", startDrag, { passive: true });
+window.addEventListener("touchmove", onDrag, { passive: true });
+window.addEventListener("touchend", stopDrag);
