@@ -1,3 +1,86 @@
+//
+//Script Pemenang Kejadian Batu Gunting Kertas
+//
+
+function validateAnswers() {
+  // Mengambil semua dropdown (select elements)
+  const selects = document.querySelectorAll("select");
+  let correctAnswers = 0;
+  let totalQuestions = selects.length;
+
+  // Jawaban yang benar untuk setiap pertandingan
+  const correctResults = {
+      "Batu vs Batu": "seri",
+      "Batu vs Gunting": "p1",
+      "Batu vs Kertas": "p2",
+      "Gunting vs Batu": "p2",
+      "Gunting vs Gunting": "seri",
+      "Gunting vs Kertas": "p1",
+      "Kertas vs Batu": "p1",
+      "Kertas vs Gunting": "p2",
+      "Kertas vs Kertas": "seri"
+  };
+
+  // Cek setiap dropdown
+  selects.forEach((select) => {
+      const img = select.parentElement.querySelector('img'); //mengambil elemen gambar
+      const label = img.alt.trim();//mengambil atribut alt sebagai label
+      const selectedValue = select.value;
+
+      // Cek apakah hasil yang dipilih sesuai dengan jawaban yang benar
+      if (correctResults[label] === selectedValue) {
+          correctAnswers++;
+          // Menghapus kelas merah jika jawaban benar
+          select.classList.remove("border-red-500");
+          select.classList.add("border-green-500");
+      } else if (selectedValue !== "") {
+          // Menandai kotak dengan border merah jika jawaban salah
+          select.classList.remove("border-green-500");
+          select.classList.add("border-red-500");
+      }
+  });
+
+  // Menampilkan hasil
+  const feedbackElement = document.getElementById("resultWin");
+  if (correctAnswers === totalQuestions) {
+      feedbackElement.textContent = "Selamat! Semua jawaban benar.";
+      feedbackElement.classList.add("text-green-500");
+      feedbackElement.classList.remove("text-red-500");
+  } else {
+      feedbackElement.textContent = `Anda benar ${correctAnswers} dari ${totalQuestions} jawaban.`;
+      feedbackElement.classList.add("text-red-500");
+      feedbackElement.classList.remove("text-green-500");
+  }
+
+  // Menonaktifkan semua dropdown setelah memeriksa jawaban
+  selects.forEach((select) => {
+      select.disabled = true;  // Menonaktifkan dropdown
+  });
+
+  // Menonaktifkan tombol "Periksa Jawaban"
+  document.getElementById("checkWin").disabled = true;
+}
+
+function restartWin() {
+  // Mengambil semua elemen dropdown
+  const selects = document.querySelectorAll("select");
+
+  // Mengatur ulang setiap dropdown ke opsi default
+  selects.forEach(select => {
+      select.value = "";  // Kembali ke opsi awal
+      select.disabled = false;  // Mengaktifkan dropdown
+      select.classList.remove("border-red-500", "border-green-500");  // Hapus highlight
+  });
+
+  // Kosongkan hasil feedback
+  const feedbackElement = document.getElementById("resultWin");
+  feedbackElement.textContent = "";
+  feedbackElement.classList.remove("text-green-500", "text-red-500");
+
+  // Mengaktifkan tombol "Periksa Jawaban"
+  document.getElementById("checkWin").disabled = false;
+}
+
 //SPINNER
 
 const createSpinner = (canvasId, buttonId, spinnerIndex, colors) => {
@@ -230,6 +313,9 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
 
 // Initialize question 2
 setupQuestionType5(3, ['Opsi 34','Opsi 36']);
+setupQuestionType5(7, ['Opsi 34','Opsi 36']);
+
+
 
 
 //kubus

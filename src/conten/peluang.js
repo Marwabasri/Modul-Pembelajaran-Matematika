@@ -88,11 +88,11 @@ function validateSampleSpace() {
     }
 
     const resultFeedback = document.getElementById("resultFeedback");
-    const nextGame = document.getElementById("nextGame");
+    const EvenQuestion = document.getElementById("EvenQuestion");
     if (allCorrect) {
         resultFeedback.textContent = "Selamat! Anda berhasil melengkapi ruang sampel dengan benar.";
         resultFeedback.className = "text-center mt-4 text-green-600 text-lg font-bold";
-        nextGame.style.display = 'block';
+        EvenQuestion.style.display = 'block';
     } else {
         resultFeedback.textContent = "Jawaban Anda belum tepat. Coba lagi!";
         resultFeedback.className = "text-center mt-4 text-red-600 text-lg font-bold";
@@ -131,88 +131,7 @@ function restartGame() {
 
    
 
-//
-//Script Pemenang Kejadian Batu Gunting Kertas
-//
 
-function validateAnswers() {
-    // Mengambil semua dropdown (select elements)
-    const selects = document.querySelectorAll("select");
-    let correctAnswers = 0;
-    let totalQuestions = selects.length;
-
-    // Jawaban yang benar untuk setiap pertandingan
-    const correctResults = {
-        "Batu vs Batu": "seri",
-        "Batu vs Gunting": "p1",
-        "Batu vs Kertas": "p2",
-        "Gunting vs Batu": "p2",
-        "Gunting vs Gunting": "seri",
-        "Gunting vs Kertas": "p1",
-        "Kertas vs Batu": "p1",
-        "Kertas vs Gunting": "p2",
-        "Kertas vs Kertas": "seri"
-    };
-
-    // Cek setiap dropdown
-    selects.forEach((select) => {
-        const img = select.parentElement.querySelector('img'); //mengambil elemen gambar
-        const label = img.alt.trim();//mengambil atribut alt sebagai label
-        const selectedValue = select.value;
-
-        // Cek apakah hasil yang dipilih sesuai dengan jawaban yang benar
-        if (correctResults[label] === selectedValue) {
-            correctAnswers++;
-            // Menghapus kelas merah jika jawaban benar
-            select.classList.remove("border-red-500");
-            select.classList.add("border-green-500");
-        } else if (selectedValue !== "") {
-            // Menandai kotak dengan border merah jika jawaban salah
-            select.classList.remove("border-green-500");
-            select.classList.add("border-red-500");
-        }
-    });
-
-    // Menampilkan hasil
-    const feedbackElement = document.getElementById("resultWin");
-    if (correctAnswers === totalQuestions) {
-        feedbackElement.textContent = "Selamat! Semua jawaban benar.";
-        feedbackElement.classList.add("text-green-500");
-        feedbackElement.classList.remove("text-red-500");
-    } else {
-        feedbackElement.textContent = `Anda benar ${correctAnswers} dari ${totalQuestions} jawaban.`;
-        feedbackElement.classList.add("text-red-500");
-        feedbackElement.classList.remove("text-green-500");
-    }
-
-    // Menonaktifkan semua dropdown setelah memeriksa jawaban
-    selects.forEach((select) => {
-        select.disabled = true;  // Menonaktifkan dropdown
-    });
-
-    // Menonaktifkan tombol "Periksa Jawaban"
-    document.getElementById("checkWin").disabled = true;
-}
-
-function restartWin() {
-    // Mengambil semua elemen dropdown
-    const selects = document.querySelectorAll("select");
-
-    // Mengatur ulang setiap dropdown ke opsi default
-    selects.forEach(select => {
-        select.value = "";  // Kembali ke opsi awal
-        select.disabled = false;  // Mengaktifkan dropdown
-        select.classList.remove("border-red-500", "border-green-500");  // Hapus highlight
-    });
-
-    // Kosongkan hasil feedback
-    const feedbackElement = document.getElementById("resultWin");
-    feedbackElement.textContent = "";
-    feedbackElement.classList.remove("text-green-500", "text-red-500");
-
-    // Mengaktifkan tombol "Periksa Jawaban"
-    document.getElementById("checkWin").disabled = false;
-}
 
 
 //SCRIPT LANGUANGE
@@ -395,4 +314,6 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
   setupQuestionType5(1, ['Opsi 1', 'Opsi 2', 'Opsi 3', 'Opsi 5', 'Opsi 6', 'Opsi 7']);
   setupQuestionType5(4, ['Opsi 11', 'Opsi 13', 'Opsi 14', 'Opsi 17']);
   setupQuestionType5(5, ['Opsi 52', ]);
+  setupQuestionType5(6, ['Opsi 60', 'Opsi 61','Opsi 62', 'Opsi 63','Opsi 64', 'Opsi 65', 'Opsi 67', 'Opsi 69','Opsi 601']);
+
 

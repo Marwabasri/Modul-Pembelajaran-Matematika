@@ -58,7 +58,9 @@ QUIZ TYPE 4 (isian langsung pecahan)
 
 //peluangSecondPage.html
     ///LANGUANGE
-        /q2 
+        /q11 
+        /q9
+        /q10
     ///APPLICATION   
         /q8
 
@@ -76,7 +78,9 @@ QUIZ TYPE5
     ///APPLICATION
         /questionType5-1 (Tren Fasion)
         /questionType5-4 (RS Bunga)
-        /questionType5-5 (K Bunga Putih) working?
+        /questionType5-5 (K Bunga Putih)
+    ///SYMBOL    
+        /questionType5-6 (Ruang sampel Suit)
 
 //frekuensi-relatif.html
     ///EXPERINECE

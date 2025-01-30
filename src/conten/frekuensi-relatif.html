@@ -149,21 +149,24 @@
           <!-- Content Experience Start-->
             <div class="bg-white border-2 border-primary p-2 rounded-lg shadow-md">
               <!-- Quis Experience-->
-                <div class="flex items-center justify-center">
+                <div class="flex items-center justify-start">
                   <img src="../dist/img/twoDices.svg" class="w-20"/>
+                  <h4 class="font-semibold text-sm inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4>
                 </div>
-                <h4 class="font-semibold text-sm inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4>
                 <!--Quiztype2 n(S) pelemparab 2 dadu-->
                 <div class="question">
                   <p class="font-normal text-black text-xs mb-2 text-justify">Berapa banyak anggota ruang sampel dari percobaan pelemparan 2 buah dadu?</p>
-                  <label class="font-normal text-black text-sm text-left mb-2" for="5"></label>
-                  <input 
-                    id="q5" 
-                    name="q5" 
-                    type="number" 
-                    class="flex items-center text-xs appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
-                    placeholder="Masukkan jawaban"
-                  />
+                  <div class="flex items-center justify-between">
+                    <label class="font-normal text-black text-xs text-left" for="5">n(s)=</label>
+                    <input 
+                      id="q5" 
+                      name="q5" 
+                      type="number" 
+                      class="flex items-center text-xs appearance-none w-11/12 bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+                      placeholder="Masukkan jawaban"
+                    />
+                  </div>
+                  
                   <div class="flex justify-end">
                     <button id="quizBtnType2-q5"
                             type="button" 
