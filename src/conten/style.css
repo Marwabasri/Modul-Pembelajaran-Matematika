@@ -74,18 +74,12 @@
   }
   .cube {
     position: relative;
-    height: 200px;
-    width: 200px;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg);
     cursor: grab;
   }
   .face {
     position: absolute;
-    width: 150px;
-    height: 150px;
-    background-color: #081F5C;
-    border: 1px solid #D0E3FF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +90,6 @@
     width: 15px;
     height: 15px;
     background-color: #FFF9F0;
-    color: #081F5C;
     font-size: 0.75em;
     display: flex;
     justify-content: center;
@@ -113,6 +106,13 @@
   .right { transform: rotateY(90deg) translateZ(75px); }
   .top { transform: rotateX(90deg) translateZ(75px); }
   .bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+.front1 { transform: translateZ(40px); }
+.back1 { transform: rotateY(180deg) translateZ(40px); }
+.left1 { transform: rotateY(-90deg) translateZ(40px); }
+.right1 { transform: rotateY(90deg) translateZ(40px); }
+.top1 { transform: rotateX(90deg) translateZ(40px); }
+.bottom1 { transform: rotateX(-90deg) translateZ(40px); }
 
  /*CSS Frekuensi Relatif*/
 

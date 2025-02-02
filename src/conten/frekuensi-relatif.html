@@ -148,11 +148,46 @@
           </div>
           <!-- Content Experience Start-->
             <div class="bg-white border-2 border-primary p-2 rounded-lg shadow-md">
-              <!-- Quis Experience-->
-                <div class="flex items-center justify-start">
-                  <img src="../dist/img/twoDices.svg" class="w-20"/>
-                  <h4 class="font-semibold text-sm inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4>
+              <div class="flex items-start w-full top-0">
+                <img src="../dist/img/cubeWithHandLens.gif" alt="" class="sm:w-32 w-16 scale-x-[-1] md:w-24 flip" />
+                <div class="ml-2">
+                  <div class="bg-secondary border-gray-200 px-4 py-3 rounded-lg mt-1 rounded-tl-none">
+                    <p class="text-xxs text-justify">  
+                      Halo teman-teman hebat, bertemu lagi dengan zuri.
+                      <br>Teman-teman apa kalian pernah bermain permainan yang menggunakan dua buah dadu?
+                      <br>Pada kesempatan kali zuri akan memperkenalkan sebuah permainan yang menggunakan dua buah dadu lohh! Ayo ikuti tahap belajarnya dan mainkan permainannya.
+                    </p>
+                  </div>
                 </div>
+              </div> 
+                <div class="text-center">
+                  <h4 class="font-semibold text-sm text-center inline-block mb-2">Percobaan pelemparan 2 buah dadu</h4> 
+                </div>
+                <div class="flex items-center content-center justify-around ml-2">
+                  <div class="cube-container">
+                    <div class="cube w-[100px] h-[100px]" id="cube1">
+                      <div class="face front1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice1.svg" alt="1"></div>
+                      <div class="face back1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice6.svg" alt="6"></div>
+                      <div class="face left1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice3.svg" alt="3"></div>
+                      <div class="face right1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice4.svg" alt="4"></div>
+                      <div class="face top1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice5.svg" alt="5"></div>
+                      <div class="face bottom1 bg-tertiary rounded-3xl h-20 w-20"><img src="../dist/img/dice2.svg" alt="2"></div>
+                    </div>
+                  </div>
+                  <div class="cube-container">
+                    <div class="cube w-[100px] h-[100px]" id="cube2">
+                      <div class="face front1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice1.svg" alt="1"></div>
+                      <div class="face back1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice6.svg" alt="6"></div>
+                      <div class="face left1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice3.svg" alt="3"></div>
+                      <div class="face right1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice4.svg" alt="4"></div>
+                      <div class="face top1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice5.svg" alt="5"></div>
+                      <div class="face bottom1 bg-secondary rounded-3xl h-20 w-20"><img src="../dist/img/dice2.svg" alt="2"></div>
+                    </div>
+                  </div>
+                </div>
+              
+               
+              <!-- Quis Experience-->  
                 <!--Quiztype2 n(S) pelemparab 2 dadu-->
                 <div class="question">
                   <p class="font-normal text-black text-xs mb-2 text-justify">Berapa banyak anggota ruang sampel dari percobaan pelemparan 2 buah dadu?</p>
@@ -1211,7 +1246,7 @@
 
             <div class="items-center bg-gray-100 rounded-sm mt-3 p-3">
               <p class="text-black text-xs text-justify">
-               Nilai perbandingan banyaknya munculnya mata dadu berjumlah 9 pada saat memainkan 
+               Rasio banyaknya munculnya mata dadu berjumlah 9 pada saat memainkan 
                permainan terhadap banyaknya percobaan melempar dadu disebut <b>Frekuensi Relatif</b> 
                atau <b>Peluang Empiris</b>
               </p>

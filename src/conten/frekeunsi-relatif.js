@@ -294,5 +294,90 @@ function submitAnswers() {
 
 }
 
+///kubus
+let isDragging1 = false, isDragging2 = false;
+let previousX1, previousY1, previousX2, previousY2;
+let currentRotationX1 = 0, currentRotationY1 = 0, currentRotationX2 = 0, currentRotationY2 = 0;
 
+const cube1 = document.getElementById("cube1");
+const cube2 = document.getElementById("cube2");
+
+function getClientPos(e) {
+    if (e.type.startsWith("touch")) {
+        return { x: e.touches[0].pageX, y: e.touches[0].pageY };
+    } else {
+        return { x: e.clientX, y: e.clientY };
+    }
+}
+
+function startDrag(e, cubeId) {
+    e.preventDefault();
+    const pos = getClientPos(e);
+
+    if (cubeId === 1) {
+        isDragging1 = true;
+        previousX1 = pos.x;
+        previousY1 = pos.y;
+        cube1.style.cursor = "grabbing";
+    } else if (cubeId === 2) {
+        isDragging2 = true;
+        previousX2 = pos.x;
+        previousY2 = pos.y;
+        cube2.style.cursor = "grabbing";
+    }
+}
+
+function onDrag(e, cubeId) {
+    if (cubeId === 1 && isDragging1) {
+        const pos = getClientPos(e);
+        const deltaX = pos.x - previousX1;
+        const deltaY = pos.y - previousY1;
+
+        currentRotationX1 -= deltaY * 0.5;
+        currentRotationY1 += deltaX * 0.5;
+
+        cube1.style.transform = `rotateX(${currentRotationX1}deg) rotateY(${currentRotationY1}deg)`;
+
+        previousX1 = pos.x;
+        previousY1 = pos.y;
+    } else if (cubeId === 2 && isDragging2) {
+        const pos = getClientPos(e);
+        const deltaX = pos.x - previousX2;
+        const deltaY = pos.y - previousY2;
+
+        currentRotationX2 -= deltaY * 0.5;
+        currentRotationY2 += deltaX * 0.5;
+
+        cube2.style.transform = `rotateX(${currentRotationX2}deg) rotateY(${currentRotationY2}deg)`;
+
+        previousX2 = pos.x;
+        previousY2 = pos.y;
+    }
+}
+
+function stopDrag(cubeId) {
+    if (cubeId === 1) {
+        isDragging1 = false;
+        cube1.style.cursor = "grab";
+    } else if (cubeId === 2) {
+        isDragging2 = false;
+        cube2.style.cursor = "grab";
+    }
+}
+
+cube1.addEventListener("mousedown", (e) => startDrag(e, 1));
+window.addEventListener("mousemove", (e) => onDrag(e, 1));
+window.addEventListener("mouseup", () => stopDrag(1));
+
+cube2.addEventListener("mousedown", (e) => startDrag(e, 2));
+window.addEventListener("mousemove", (e) => onDrag(e, 2));
+window.addEventListener("mouseup", () => stopDrag(2));
+
+cube1.addEventListener("touchstart", (e) => startDrag(e, 1), { passive: false });
+window.addEventListener("touchmove", (e) => onDrag(e, 1), { passive: false });
+window.addEventListener("touchend", () => stopDrag(1));
+
+cube2.addEventListener("touchstart", (e) => startDrag(e, 2), { passive: false });
+window.addEventListener("touchmove", (e) => onDrag(e, 2), { passive: false });
+window.addEventListener("touchend", () => stopDrag(2));
 

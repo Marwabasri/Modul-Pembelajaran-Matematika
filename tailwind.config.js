@@ -12,7 +12,7 @@ module.exports = {
         primary: '#ffa114',
         secondary: '#fef2c1',
         tertiary: '#95ccd5',
-        quaternary: '#193f56',
+        quaternary: '#081F5C',
       },
 
       fontSize:{
