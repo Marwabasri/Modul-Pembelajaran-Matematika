@@ -297,7 +297,7 @@ document.getElementById('check-all').addEventListener('click', () => {
 
     // Check Question 4
     const q4Answer = document.querySelector('input[name="q4"]:checked');
-    const isQ4Correct = q4Answer && q4Answer.value === '1/2';
+    const isQ4Correct = q4Answer && q4Answer.value === 'b';
     if (isQ4Correct) {
         score++;
     } else {
@@ -306,7 +306,7 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-4',
         isQ4Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ4Correct,
-        isQ4Correct ? '' : '1/2 (Karena ada 3 angka ganjil dari 6 angka pada dadu)'
+        isQ4Correct ? '' : 'Peluang teoritis adalah rasio antara banyaknya kejadian yang diharapkan dengan banyaknya anggota ruang sampel'
     );
 
     // Check Question 5
