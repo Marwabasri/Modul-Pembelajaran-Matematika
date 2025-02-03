@@ -355,8 +355,8 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-1', 
         isQ1Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ1Correct,
-        isQ1Correct ? '' : '{(P1:Batu, P2:Batu), (P1:Batu, P2:Gunting), (P1:Batu, P2:Kertas), (P1:Gunting, P2:Batu), (P1:Gunting, P2:Gunting), (P1:Gunting, P2:Kertas), (P1:Kertas, P2:Batu)}'
-    );
+        isQ1Correct ? '' : '{ 1, 2, 3, 4, 5, 6, 7, 8 }'
+    );    
 
     // Check Question 2
     const q2Answers = new Set(Array.from(document.getElementById('selected-answers-2').children).map(div => div.dataset.value));
@@ -382,7 +382,7 @@ document.getElementById('check-all').addEventListener('click', () => {
 
     // Check Question 3
     const q3Answer = document.getElementById('answer-3').value.trim();
-    const correctQ3Answers = ['12'];
+    const correctQ3Answers = ['12'].map(ans => ans.replace(/\s+/g, ''));
     const isQ3Correct = correctQ3Answers.includes(q3Answer);
     if (isQ3Correct) {
         score++;
@@ -410,8 +410,8 @@ document.getElementById('check-all').addEventListener('click', () => {
     );
 
     // Check Question 5
-    const q5Answer = document.getElementById('answer-5').value.trim();
-    const correctQ5Answers = ['1/4', '0,25', '25%'];
+    const q5Answer = document.getElementById('answer-5').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ5Answers = ['1/4', '0.25', '25%'].map(ans => ans.replace(/\s+/g, ''));
     const isQ5Correct = correctQ5Answers.includes(q5Answer);
     if (isQ5Correct) {
         score++;
@@ -425,8 +425,8 @@ document.getElementById('check-all').addEventListener('click', () => {
     );
 
     // Check Question 6
-    const q6Answer = document.getElementById('answer-6').value.trim();
-    const correctQ6Answers = ['1/10', '0.1','10%'];
+    const q6Answer = document.getElementById('answer-6').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ6Answers = ['1/10', '0.1','10%'].map(ans => ans.replace(/\s+/g, ''));
     const isQ6Correct = correctQ6Answers.includes(q6Answer);
     if (isQ6Correct) {
         score++;
