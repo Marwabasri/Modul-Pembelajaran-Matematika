@@ -1,5 +1,5 @@
 
-//Alert quiz
+/*Alert quiz*/
 
 .alert {
     padding: 10px;
@@ -55,7 +55,7 @@
     border-color: rgb(239 68 68 / var(--tw-border-opacity, 1)) /* #ef4444 */;
 }
 
-//Game shut the box
+/*Game shut the box*/
 .checkBox:checked {
     background-color: #4ade80;
     border-color: #16a34a;
@@ -67,7 +67,7 @@
     cursor: not-allowed;
 }
 
-// ANIMASI KUBUS
+/* ANIMASI KUBUS*/
 
 .cube-container {
     perspective: 1000px;
@@ -129,4 +129,105 @@
     color: white; /* Warna teks kontras */
     transform: scale(1.2); /* Efek sedikit membesar */
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/*Kubus 8 sisi*/
+.octa-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.octa {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(45deg);
+    cursor: grab;
+    transition: transform 0.1s ease-out;
+}
+
+.d8 {
+    --width: 50px;
+    --height: calc(0.8660254 * var(--width));
+    --center: 0.288675;
+    --center-height: calc(var(--height)*var(--center));
+    --co-center: calc((0.5 - var(--center))*var(--height));
+    --offset: 0.33;
+    --dihedral-angle: 54deg;
+    --co-dihedral: calc(90deg - var(--dihedral-angle));
+    --extrude: calc(var(--width)*var(--offset));
+    --luminance: 100%;
+    --hue: 210;
+    --saturation: 70%;
+    font-size: 1.5rem;
+    width: calc(2 * var(--width));
+    height: calc(2 * var(--height));
+    background-color: hsl(var(--hue), var(--saturation), calc(var(--luminance) * 0.6));
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: 50% 28.8675%;
+    transform-style: preserve-3d;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.d8::after {
+    background-color: transparent;
+    position: absolute;
+    content: attr(data-side);
+    bottom: calc((100%*var(--center)) - 0.5em);
+    text-align: center;
+    left: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.d8[data-side='1'] {
+    --luminance: 65%;
+    transform: rotateY(90deg) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='2'] {
+    --luminance: 70%;
+    transform: rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='3'] {
+    --luminance: 75%;
+    transform: rotateY(180deg) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='4'] {
+    --luminance: 80%;
+    transform: rotateY(270deg) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='5'] {
+    --luminance: 85%;
+    transform: rotateX(180deg) translateY(calc(var(--co-center) - (2* var(--height)))) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='6'] {
+    --luminance: 90%;
+    transform: rotateX(180deg) rotateY(90deg) translateY(calc(var(--co-center) - (2* var(--height)))) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='7'] {
+    --luminance: 95%;
+    transform: rotateX(180deg) rotateY(180deg) translateY(calc(var(--co-center) - (2* var(--height)))) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
+}
+
+.d8[data-side='8'] {
+    --luminance: 100%;
+    transform: rotateX(180deg) rotateY(270deg) translateY(calc(var(--co-center) - (2* var(--height)))) rotateX(var(--co-dihedral)) translateZ(var(--extrude));
 }

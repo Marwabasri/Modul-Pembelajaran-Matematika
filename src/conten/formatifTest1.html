@@ -66,20 +66,42 @@
           <!-- Question 1: Drag & Drop -->
           <section id="question-1" class="transition-all duration-300">
             <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan semua hasil yang mungkin dari pelemparan dadu du bawah ini?</p>
+              <div class="flex items-center justify-center">
+                <div class="octa-container ">
+                  <div class="octa" id="octa1">
+                      <div class="d8" data-side="1"></div>
+                      <div class="d8" data-side="2"></div>
+                      <div class="d8" data-side="3"></div>
+                      <div class="d8" data-side="4"></div>
+                      <div class="d8" data-side="5"></div>
+                      <div class="d8" data-side="6"></div>
+                      <div class="d8" data-side="7"></div>
+                      <div class="d8" data-side="8"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan semua hasil yang mungkin dari pelemparan dadu di atas?</p>
               <div id="answer-box-1" class="border-2 border-dashed border-gray-300 p-4 rounded-lg mb-4 min-h-[60px] bg-gray-100">
                 <div class="flex flex-wrap gap-2" id="selected-answers-1"></div>
               </div>
               <div id="options-1" class="flex justify-center flex-wrap gap-2 mb-4">
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Batu-P2:Batu">(P1:Batu, P2:Batu)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Batu-P2:Gunting">(P1:Batu, P2:Gunting)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Batu-P2:Kertas">(P1:Batu, P2:Kertas)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Gunting-P2:Batu">(P1:Gunting, P2:Batu)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Gunting-P2:Gunting">(P1:Gunting, P2:Gunting)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Gunting-P2:Kertas">(P1:Gunting, P2:Kertas)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Kertas-P2:Batu">(P1:Kertas, P2:Batu)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Kertas-P2:Gunting">(P1:Kertas, P2:Gunting)</button>
-                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="P1:Kertas-P2:Kertas">(P1:Kertas, P2:Kertas)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="1">1</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,5)">(1,5)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="2">2</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="8">8</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,6)">(1,6)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,7)">(1,7)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="6">6</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="16">16</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="3">3</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,2)">(1,2)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,3)">(1,3)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="7">7</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="5">5</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,8)">(1,8)</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="9">9</button>
+                <button class="option-btn-q1 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(1,4)">(1,4)</button>
+                
               </div>
               <p id="feedback-1" class="mt-4 text-xs"></p>
             </div>
@@ -121,7 +143,7 @@
           <!-- Question 3: Short Answer -->
           <section id="question-3" class="hidden transition-all duration-300">
             <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs">Tentukan <i>n(S)</i> dari percobaan pelemparan sebuah dadu dan sebuah koin?</p>
+              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan <i>n(S)</i> dari percobaan pelemparan sebuah dadu dan sebuah koin?</p>
               <input type="text" id="answer-3" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-3" class="mt-4 text-xs"></p>
             </div>
@@ -130,19 +152,19 @@
           <!-- Question 4: Multiple Choice -->
           <section id="question-4" class="hidden transition-all duration-300">
             <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs">Peluang teoritis adalah ...</p>
-              <div class="space-y-3 text-xs">
+              <p class="text-gray-800 mb-4 text-xs text-justify">Peluang teoritis adalah ...</p>
+              <div class="space-y-3 text-xs text-justify">
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                   <input type="radio" name="q4" value="a" class="text-primary">
                   <span class="text-gray-700">Peluang adalah suatu nilai antara 0 dan 1</span>
                 </label>
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                   <input type="radio" name="q4" value="b" class="text-primary">
-                  <span class="text-gray-700">Rasio antara banyaknya kejadian yang diamati dengan banyaknya percobaan</span>
+                  <span class="text-gray-700">Rasio banyaknya kejadian yang diamati terhadap banyaknya percobaan</span>
                 </label>
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                   <input type="radio" name="q4" value="c" class="text-primary">
-                  <span class="text-gray-700">Rasio antara banyaknya kejadian yang diharapkan dengan banyaknya anggota ruang sampel</span>
+                  <span class="text-gray-700">Rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel</span>
                 </label>
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                   <input type="radio" name="q4" value="d" class="text-primary">
@@ -156,8 +178,10 @@
           <!-- Question 5: Short Answer -->
           <section id="question-5" class="hidden transition-all duration-300">
             <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
-              <img src="../dist/img/Gen1Bunga.svg"/>
+              <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
+              <div class="flex items-center justify-center">
+                <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+              </div>
               <input type="text" id="answer-5" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-5" class="mt-4 text-xs"></p>
             </div>
@@ -166,8 +190,10 @@
           <!-- Question 6: Short Answer -->
           <section id="question-6" class="hidden transition-all duration-300">
             <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs">Tentukan peluang kejadian mendapatkan hadiah buku  pada percobaan memutar spinner keberuntungan?</p>
-              <img src="../dist/img/Gen1Bunga.svg"/>
+              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan peluang kejadian mendapatkan hadiah buku  pada percobaan memutar spinner keberuntungan?</p>
+              <div class="flex items-center justify-center">
+                <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+              </div>
               <input type="text" id="answer-6" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-6" class="mt-4 text-xs"></p>
             </div>

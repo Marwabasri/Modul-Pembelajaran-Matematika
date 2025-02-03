@@ -1,3 +1,101 @@
+let isDragging = false;
+let previousX, previousY;
+let currentRotationX = 30;
+let currentRotationY = 45;
+let velocityX = 0;
+let velocityY = 0;
+let lastTime = performance.now();
+
+const octa1 = document.getElementById("octa1");
+
+function getClientPos(e) {
+    return e.type.startsWith("touch") 
+        ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+        : { x: e.clientX, y: e.clientY };
+}
+
+function startDrag(e) {
+    isDragging = true;
+    const pos = getClientPos(e);
+    previousX = pos.x;
+    previousY = pos.y;
+    velocityX = 0;
+    velocityY = 0;
+    octa1.style.cursor = "grabbing";
+    
+    if (e.type === "touchstart") {
+        e.preventDefault();
+    }
+}
+              
+function onDrag(e) {
+    if (!isDragging) return;
+    
+    const pos = getClientPos(e);
+    const deltaX = pos.x - previousX;
+    const deltaY = pos.y - previousY;
+    
+    const currentTime = performance.now();
+    const dt = (currentTime - lastTime) || 16.7;
+    lastTime = currentTime;
+
+    velocityX = deltaX / dt;
+    velocityY = deltaY / dt;
+    
+    currentRotationX = currentRotationX + deltaY * 0.5;
+    currentRotationY = currentRotationY + deltaX * 0.5;
+    
+    updateTransform();
+    
+    previousX = pos.x;
+    previousY = pos.y;
+    
+    if (e.type === "touchmove") {
+        e.preventDefault();
+    }
+}
+              
+function stopDrag() {
+    isDragging = false;
+    octa1.style.cursor = "grab";
+}
+
+function updateTransform() {
+    octa1.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
+}
+
+function animate() {
+    if (!isDragging) {
+        const friction = 0.95;
+        velocityX *= friction;
+        velocityY *= friction;
+
+        if (Math.abs(velocityX) > 0.01 || Math.abs(velocityY) > 0.01) {
+            currentRotationY += velocityX;
+            currentRotationX += velocityY;
+        } else {
+            // Gentle continuous rotation when no interaction
+            currentRotationY += 0.05;
+        }
+        
+        updateTransform();
+    }
+    requestAnimationFrame(animate);
+}
+              
+animate();
+
+octa1.addEventListener("mousedown", startDrag);
+window.addEventListener("mousemove", onDrag);
+window.addEventListener("mouseup", stopDrag);
+window.addEventListener("mouseleave", stopDrag);
+
+octa1.addEventListener("touchstart", startDrag);
+window.addEventListener("touchmove", onDrag);
+window.addEventListener("touchend", stopDrag);
+window.addEventListener("touchcancel", stopDrag);
+
+
 let currentQuestion = 1;
 const totalQuestions = 6;
 
@@ -124,13 +222,14 @@ const disableAllInputs = () => {
 (() => {
     const selectedAnswers = new Set();
     const correctAnswers = new Set([
-        'P1:Batu-P2:Batu',
-        'P1:Batu-P2:Gunting',
-        'P1:Batu-P2:Kertas',
-        'P1:Gunting-P2:Batu',
-        'P1:Gunting-P2:Gunting',
-        'P1:Gunting-P2:Kertas',
-        'P1:Kertas-P2:Batu'
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8'
     ]);
 
     document.querySelectorAll('.option-btn-q1').forEach(btn => {
@@ -237,13 +336,14 @@ document.getElementById('check-all').addEventListener('click', () => {
     // Check Question 1
     const q1Answers = new Set(Array.from(document.getElementById('selected-answers-1').children).map(div => div.dataset.value));
     const correctQ1Answers = new Set([
-        'P1:Batu-P2:Batu',
-        'P1:Batu-P2:Gunting',
-        'P1:Batu-P2:Kertas',
-        'P1:Gunting-P2:Batu',
-        'P1:Gunting-P2:Gunting',
-        'P1:Gunting-P2:Kertas',
-        'P1:Kertas-P2:Batu'
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8'
     ]);
     const isQ1Correct = q1Answers.size === correctQ1Answers.size && 
         [...q1Answers].every(answer => correctQ1Answers.has(answer));
@@ -282,7 +382,7 @@ document.getElementById('check-all').addEventListener('click', () => {
 
     // Check Question 3
     const q3Answer = document.getElementById('answer-3').value.trim();
-    const correctQ3Answers = ['1/6', '0.1667', '0.167', '16.67%', '16,67%'];
+    const correctQ3Answers = ['12'];
     const isQ3Correct = correctQ3Answers.includes(q3Answer);
     if (isQ3Correct) {
         score++;
@@ -292,7 +392,7 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-3',
         isQ3Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ3Correct,
-        isQ3Correct ? '' : '1/6 atau 0.1667 atau 16.67%'
+        isQ3Correct ? '' : '12'
     );
 
     // Check Question 4
@@ -306,12 +406,12 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-4',
         isQ4Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ4Correct,
-        isQ4Correct ? '' : 'Peluang teoritis adalah rasio antara banyaknya kejadian yang diharapkan dengan banyaknya anggota ruang sampel'
+        isQ4Correct ? '' : 'Peluang teoritis adalah rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel'
     );
 
     // Check Question 5
     const q5Answer = document.getElementById('answer-5').value.trim();
-    const correctQ5Answers = ['1/6', '0.1667', '0.167', '16.67%', '16,67%'];
+    const correctQ5Answers = ['1/4', '0,25', '25%'];
     const isQ5Correct = correctQ5Answers.includes(q5Answer);
     if (isQ5Correct) {
         score++;
@@ -321,12 +421,12 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-5',
         isQ5Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ5Correct,
-        isQ5Correct ? '' : '1/6 atau 0.1667 atau 16.67%'
+        isQ5Correct ? '' : '1/4 atau 25%'
     );
 
     // Check Question 6
     const q6Answer = document.getElementById('answer-6').value.trim();
-    const correctQ6Answers = ['1/6', '0.1667', '0.167', '16.67%', '16,67%'];
+    const correctQ6Answers = ['1/10', '0.1','10%'];
     const isQ6Correct = correctQ6Answers.includes(q6Answer);
     if (isQ6Correct) {
         score++;
@@ -336,7 +436,7 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-6',
         isQ6Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ6Correct,
-        isQ6Correct ? '' : '1/6 atau 0.1667 atau 16.67%'
+        isQ6Correct ? '' : '1/10 atau 10%'
     );
 
     // Show all questions for review
