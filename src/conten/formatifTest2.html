@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pembelajaran Peluang</title>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link href="../output.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url(../dist/font/Poppins-Regular.ttf) format('truetype');
+      }
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+</head>
+
+<body class="bg-secondary font-Poppins">
+    
+  <!--Header Start-->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4 flex gap-1">
+          <img class="w-10 h-10 rounded-lg mt-5"
+                    src="../dist/img/cube-icon.png"
+                    alt="Beranda">
+          <div class="flex flex-col items-start justify-center py-6">
+            <a href="" class="font-bold sm:text-2xl text-lg text-primary block">Modul Matematika</a>
+          </div>          
+          
+        </div>
+        <div class="flex items-center px-4">
+          <a href="./frekuensi-relatif.html" id="endTheTest"  class="block absolute right-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7" viewBox="0 0 448 512">
+              <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm79 143c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Header End-->
+
+  <div class="min-h-screen p-2 mt-20">
+    <div class="max-w-3xl mx-auto space-y-0.5">
+      <!-- Progress Bar Container -->
+      <div class="mt-0 sticky top-20 z-10 bg-white p-4 rounded-xl rounded-b-none">
+          <div class="flex justify-center sm:text-sm text-sm text-primary font-bold text-center mb-2">
+             <p>Tes Formatif 2</p> 
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 33%"></div>
+          </div>
+      </div>
+
+      <!-- Question Container -->
+      <div id="question-container" class="bg-white rounded-xl rounded-t-none shadow-lg overflow-hidden">
+        <!-- Question 1: Multiple Choice -->
+        <section id="question-1" class="hidden transition-all duration-300">
+          <div class="p-4">
+            <p class="text-gray-800 mb-4 text-xs text-justify">Peluang empiris adalah ...</p>
+            <div class="space-y-3 text-xs text-justify">
+              <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <input type="radio" name="q1" value="a" class="text-primary">
+                <span class="text-gray-700">Rasio banyaknya kejadian yang diamati terhadap banyaknya percobaan</span>
+              </label>
+              <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <input type="radio" name="q1" value="b" class="text-primary">
+                <span class="text-gray-700">Rasio banyaknya percobaan terhadap banyaknya kejadian yang diamati</span>
+              </label>
+              <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <input type="radio" name="q1" value="c" class="text-primary">
+                <span class="text-gray-700">Rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel</span>
+              </label>
+              <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <input type="radio" name="q1" value="d" class="text-primary">
+                <span class="text-gray-700">Rasio banyaknya ruang sampel terhadap banyaknya percobaan</span>
+              </label>
+            </div>
+            <p id="feedback-1" class="mt-4 text-xs"></p>
+          </div>
+        </section> 
+        
+        <!-- Question 2: Short Answer -->
+        <section id="question-2" class="hidden transition-all duration-300">
+          <div class="p-4">
+            <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
+            <div class="flex items-center justify-center">
+              <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+            </div>
+            <input type="text" id="answer-2" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-2" class="mt-4 text-xs"></p>
+          </div>
+        </section>
+        <section id="question-2" class="hidden transition-all duration-300">
+          <div class="p-4">
+            <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
+            <div class="flex items-center justify-center">
+              <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+            </div>
+            <input type="text" id="answer-2" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-2" class="mt-4 text-xs"></p>
+          </div>
+        </section>
+      </div>
+
+     
+      <!-- Final Score Section -->
+      <section class="flex items-center justify-center">
+          <button id="check-all" class="bg-primary hover:bg-primary/90 text-white px-3 py-3 text-xs rounded-lg font-medium transition-colors">Periksa Semua Jawaban</button>
+          <div id="final-score" class="mt-4 text-lg font-bold text-center"></div>
+      </section>
+      <!-- Navigation Buttons -->
+      <div class="fixed bottom-0 left-0 w-full bg-white p-3 shadow-md flex justify-between gap-4 text-xs">
+        <button id="prev-btn" class="flex-1 bg-gray-500 text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors" disabled>Sebelumnya</button>
+        <button id="next-btn" class="flex-1 bg-primary text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors">Selanjutnya</button>
+      </div>
+    </div>
+  </div>  
+
+    
+    
+
+
+
+  
+
+  <script src="./script.js"></script>
+  <script src="./secondTest.js"></script>
+
+</body>
+
+</html>
