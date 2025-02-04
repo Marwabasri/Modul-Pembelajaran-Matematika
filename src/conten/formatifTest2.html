@@ -7,6 +7,7 @@
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
     <link href="../output.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
     <style>
@@ -92,27 +93,52 @@
         <!-- Question 2: Short Answer -->
         <section id="question-2" class="hidden transition-all duration-300">
           <div class="p-4">
-            <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
-            <div class="flex items-center justify-center">
-              <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+            <p class="text-gray-800 text-xs text-justify">
+              Empat tim <i>esports</i> mengkuti turnamen "Champions League"
+            </p>
+
+            <div class=" flex justify-center">
+              <div class="max-w-sm w-full bg-white rounded-lg shadow-sm dark:bg-gray-800 p-4 md:p-6">
+                <div id="column-chart"></div>
+                  <div class="grid grid-cols-1 items-center text-center border-gray-200 border-t justify-between -mt-2">
+                  <p class="text-xs text-gray-600">Statistik Pertandingan Tim Esports</p>
+                  </div>
+              </div>
             </div>
+
+            <p class="text-gray-800 text-xs text-justify">
+              Berapa besar peluang empiris untuk kemenangan tim Phoenix?
+            </p>  
             <input type="text" id="answer-2" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
             <p id="feedback-2" class="mt-4 text-xs"></p>
-          </div>
-        </section>
-        <section id="question-2" class="hidden transition-all duration-300">
-          <div class="p-4">
-            <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
-            <div class="flex items-center justify-center">
-              <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
-            </div>
-            <input type="text" id="answer-2" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
-            <p id="feedback-2" class="mt-4 text-xs"></p>
+            
+            <p class="text-gray-800 text-xs text-justify">
+              Berapa besar peluang empiris untuk kemenangan tim Shadow?
+            </p> 
+            <input type="text" id="answer-3" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-3" class="mt-4 text-xs"></p>
+            
+            <p class="text-gray-800 text-xs text-justify">
+              Berapa besar peluang empiris untuk kemenangan tim Titan?
+            </p> 
+            <input type="text" id="answer-4" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-4" class="mt-4 text-xs"></p>
+            
+            <p class="text-gray-800 text-xs text-justify">
+              Berapa besar peluang empiris untuk kemenangan tim Nova?
+            </p> 
+            <input type="text" id="answer-5" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-5" class="mt-4 text-xs"></p>
+            
+            <p class="text-gray-800 text-xs text-justify">
+              Tim mana yang memiliki peluang terbesar memenangkan turnamen "Champions League"?
+            </p> 
+            <input type="text" id="answer-6" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            <p id="feedback-6" class="mt-4 text-xs"></p>
           </div>
         </section>
       </div>
-
-     
+    
       <!-- Final Score Section -->
       <section class="flex items-center justify-center">
           <button id="check-all" class="bg-primary hover:bg-primary/90 text-white px-3 py-3 text-xs rounded-lg font-medium transition-colors">Periksa Semua Jawaban</button>
@@ -125,13 +151,6 @@
       </div>
     </div>
   </div>  
-
-    
-    
-
-
-
-  
 
   <script src="./script.js"></script>
   <script src="./secondTest.js"></script>
