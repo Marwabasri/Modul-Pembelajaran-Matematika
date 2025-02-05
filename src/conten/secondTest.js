@@ -17,14 +17,23 @@ const areAllQuestionsAnswered = () => {
     // Check Question 2 (short answer)
     const q2Answered = document.getElementById('answer-2').value.trim() !== '';
 
-    // Check Question 2 (short answer)
+    // Check Question 3 (short answer)
     const q3Answered = document.getElementById('answer-3').value.trim() !== '';
-    
+
+    // Check Question 4 (short answer)
+    const q4Answered = document.getElementById('answer-4').value.trim() !== '';
+
+    // Check Question 5 (short answer)
+    const q5Answered = document.getElementById('answer-5').value.trim() !== '';
+
+    // Check Question 6 (short answer)
+    const q6Answered = document.getElementById('answer-6').value.trim() !== '';
+
     // Show/hide check all button based on answers
     const checkAllButton = document.getElementById('check-all');
-    checkAllButton.style.display = (q1Answered && q2Answered) ? 'block' : 'none';
+    checkAllButton.style.display = (q1Answered && q2Answered && q3Answered && q4Answered && q5Answered && q6Answered) ? 'block' : 'none';
     
-    return q1Answered && q2Answered;
+    return q1Answered && q2Answered && q3Answered && q4Answered && q5Answered && q6Answered;
 };
 
 // Navigation functions
@@ -63,11 +72,11 @@ const setFeedback = (elementId, message, isCorrect, correctAnswer = '') => {
     
     let feedbackMessage = message;
     if (!isCorrect && correctAnswer) {
-        feedbackMessage += `<br><span class="text-gray-600 mt-2 block">Jawaban yang benar: ${correctAnswer}</span>`;
+        feedbackMessage += `<br><span class="text-gray-600 block">Jawaban yang benar: ${correctAnswer}</span>`;
     }
     
     element.innerHTML = feedbackMessage;
-    element.className = `mt-4 text-xs font-medium ${feedbackClass}`;
+    element.className = `mt-2 text-xs font-medium ${feedbackClass}`;
 };
 
 // Disable all inputs function
@@ -78,6 +87,22 @@ const disableAllInputs = () => {
     });
     // Disable selected answers interaction
     document.querySelectorAll('#selected-answers-2 div').forEach(div => {
+        div.style.pointerEvents = 'none';
+        div.classList.add('opacity-50');
+    });
+    document.querySelectorAll('#selected-answers-3 div').forEach(div => {
+        div.style.pointerEvents = 'none';
+        div.classList.add('opacity-50');
+    });
+    document.querySelectorAll('#selected-answers-4 div').forEach(div => {
+        div.style.pointerEvents = 'none';
+        div.classList.add('opacity-50');
+    });
+    document.querySelectorAll('#selected-answers-5 div').forEach(div => {
+        div.style.pointerEvents = 'none';
+        div.classList.add('opacity-50');
+    });
+    document.querySelectorAll('#selected-answers-6 div').forEach(div => {
         div.style.pointerEvents = 'none';
         div.classList.add('opacity-50');
     });
@@ -106,8 +131,11 @@ document.querySelectorAll('input[name="q1"]').forEach(radio => {
 });
 
 document.getElementById('answer-2').addEventListener('input', areAllQuestionsAnswered);
-
 document.getElementById('answer-3').addEventListener('input', areAllQuestionsAnswered);
+document.getElementById('answer-4').addEventListener('input', areAllQuestionsAnswered);
+document.getElementById('answer-5').addEventListener('input', areAllQuestionsAnswered);
+document.getElementById('answer-6').addEventListener('input', areAllQuestionsAnswered);
+
 
 
 // Check All Answers with confirmation
@@ -130,12 +158,12 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-1',
         isQ1Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ1Correct,
-        isQ1Correct ? '' : 'Frekuensi relaif atau peluang empiris  adalah rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel'
+        isQ1Correct ? '' : 'Frekuensi relatif atau peluang empiris  adalah rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel'
     );
 
     // Check Question 2
     const q2Answer = document.getElementById('answer-2').value.trim().replace(/\s+/g, '').replace(',', '.');
-    const correctQ2Answers = ['1/4', '0.25', '25%'].map(ans => ans.replace(/\s+/g, ''));
+    const correctQ2Answers = ['34/50', '17/25', '0.68', '68%'].map(ans => ans.replace(/\s+/g, ''));
     const isQ2Correct = correctQ2Answers.includes(q2Answer);
     if (isQ2Correct) {
         score++;
@@ -145,11 +173,12 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-2',
         isQ2Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ2Correct,
-        isQ2Correct ? '' : '1/4 atau 25%'
+        isQ2Correct ? '' : '34/50 atau 68%'
     );
 
+    // Check Question 2
     const q3Answer = document.getElementById('answer-3').value.trim().replace(/\s+/g, '').replace(',', '.');
-    const correctQ3Answers = ['1/4', '0.25', '25%'].map(ans => ans.replace(/\s+/g, ''));
+    const correctQ3Answers = ['30/40', '3/4','0.75', '75%'].map(ans => ans.replace(/\s+/g, ''));
     const isQ3Correct = correctQ3Answers.includes(q3Answer);
     if (isQ3Correct) {
         score++;
@@ -159,7 +188,52 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-3',
         isQ3Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ3Correct,
-        isQ3Correct ? '' : '1/4 atau 25%'
+        isQ3Correct ? '' : '30/40 atau 75%'
+    );
+
+    // Check Question 4
+    const q4Answer = document.getElementById('answer-4').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ4Answers = ['37/60', '0.6167', '61.67%'].map(ans => ans.replace(/\s+/g, ''));
+    const isQ4Correct = correctQ4Answers.includes(q4Answer);
+    if (isQ4Correct) {
+        score++;
+    } else {
+        wrongQuestions.push(4);
+    }
+    setFeedback('feedback-4',
+        isQ4Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
+        isQ4Correct,
+        isQ4Correct ? '' : '37/60 atau 61.67%'
+    );
+
+    // Check Question 5
+    const q5Answer = document.getElementById('answer-5').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ5Answers = ['39/55','0.7091', '70.91%'].map(ans => ans.replace(/\s+/g, ''));
+    const isQ5Correct = correctQ5Answers.includes(q5Answer);
+    if (isQ5Correct) {
+        score++;
+    } else {
+        wrongQuestions.push(5);
+    }
+    setFeedback('feedback-5',
+        isQ5Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
+        isQ5Correct,
+        isQ5Correct ? '' : '39/55 atau 70.91%'
+    );
+
+    // Check Question 6
+    const q6Answer = document.getElementById('answer-6').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ6Answers = ['Shadow', 'shadow'].map(ans => ans.replace(/\s+/g, ''));
+    const isQ6Correct = correctQ6Answers.includes(q6Answer);
+    if (isQ6Correct) {
+        score++;
+    } else {
+        wrongQuestions.push(6);
+    }
+    setFeedback('feedback-6',
+        isQ6Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
+        isQ6Correct,
+        isQ6Correct ? '' : 'Tim Shadow'
     );
 
     // Show all questions for review
@@ -168,8 +242,8 @@ document.getElementById('check-all').addEventListener('click', () => {
     });
 
     // Display results
-    document.getElementById('final-score').textContent = `Skor Total: ${score}/3`;
-    document.getElementById('final-score').className = 'mt-4 text-lg font-bold text-center text-primary';
+    document.getElementById('final-score').textContent = `Skor Total: ${score}/6`;
+    document.getElementById('final-score').className = 'mt-4 w-full p-3 bg-primary/20 text-lg rounded-md font-bold border border-primary text-primary text-center';
 
     // Hide navigation buttons after showing final score
     hideNavButtons();

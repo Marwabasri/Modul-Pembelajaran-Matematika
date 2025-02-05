@@ -49,7 +49,7 @@
   </header>
   <!--Header End-->
 
-  <div class="min-h-screen p-2 mt-20">
+  <div class="p-2 mt-20">
     <div class="max-w-3xl mx-auto space-y-0.5">
       <!-- Progress Bar Container -->
       <div class="mt-0 sticky top-20 z-10 bg-white p-4 rounded-xl rounded-b-none">
@@ -65,7 +65,10 @@
       <div id="question-container" class="bg-white rounded-xl rounded-t-none shadow-lg overflow-hidden">
           <!-- Question 1: Drag & Drop -->
           <section id="question-1" class="transition-all duration-300">
-            <div class="p-4">
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 1</p> 
+            </div>
+            <div class="px-4 py-2">
               <div class="flex items-center justify-center">
                 <div class="octa-container ">
                   <div class="octa" id="octa1">
@@ -114,7 +117,10 @@
 
           <!-- Question 2: Drag & Drop -->
           <section id="question-2" class="transition-all duration-300">
-            <div class="p-4">
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 2</p> 
+            </div>
+            <div class="px-4 py-2">
               <p class="text-gray-800 text-xs text-justify">Percobaan pelemparan dua buah dadu</p>
               <p class="text-gray-800 mb-4 text-xs text-justify">
                 <i>S</i> = { (1,1), (1,2), (1,3), (1,4), (1,5), (1,6),
@@ -151,7 +157,10 @@
 
           <!-- Question 3: Short Answer -->
           <section id="question-3" class="hidden transition-all duration-300">
-            <div class="p-4">
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 3</p> 
+            </div>
+            <div class="px-4 py-2">
               <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan <i>n(S)</i> dari percobaan pelemparan sebuah dadu dan sebuah koin?</p>
               <input type="text" id="answer-3" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-3" class="mt-4 text-xs"></p>
@@ -160,7 +169,10 @@
 
           <!-- Question 4: Multiple Choice -->
           <section id="question-4" class="hidden transition-all duration-300">
-            <div class="p-4">
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 4</p> 
+            </div>
+            <div class="px-4 py-2">
               <p class="text-gray-800 mb-4 text-xs text-justify">Peluang teoritis adalah ...</p>
               <div class="space-y-3 text-xs text-justify">
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -186,7 +198,10 @@
 
           <!-- Question 5: Short Answer -->
           <section id="question-5" class="hidden transition-all duration-300">
-            <div class="p-4">
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 5</p> 
+            </div>
+            <div class="px-4 py-2">
               <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
               <div class="flex items-center justify-center">
                 <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
@@ -198,27 +213,35 @@
 
           <!-- Question 6: Short Answer -->
           <section id="question-6" class="hidden transition-all duration-300">
-            <div class="p-4">
-              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan peluang kejadian mendapatkan hadiah buku  pada percobaan memutar spinner keberuntungan?</p>
+            <div class="px-4 text-sm text-primary font-semibold">
+              <p>Pertanyaan 6</p> 
+            </div>
+            <div class="px-4 py-2">
+              <p class="text-gray-800 mb-4 text-xs text-justify">
+                Fira memiliki kebiasaan memutar spinner makanan yang ia buat ketika dia bingung untuk memutusk makan siangnya.
+                <br>Tentukan peluang Fira mendapatkan mie goreng pada percobaan memutar spiner makanan?
+              </p>
               <div class="flex items-center justify-center">
-                <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
+                <img src="../dist/img/foodSpinner.svg" class="w-96"/>
               </div>
               <input type="text" id="answer-6" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-6" class="mt-4 text-xs"></p>
             </div>
           </section>
       </div>
-
-     
       <!-- Final Score Section -->
-      <section class="flex items-center justify-center">
-          <button id="check-all" class="bg-primary hover:bg-primary/90 text-white px-3 py-3 text-xs rounded-lg font-medium transition-colors">Periksa Semua Jawaban</button>
-          <div id="final-score" class="mt-4 text-lg font-bold text-center"></div>
-      </section>
+      <div class="h-28 mt-5">
+        <div id="final-score"></div>
+      </div>
       <!-- Navigation Buttons -->
-      <div class="fixed bottom-0 left-0 w-full bg-white p-3 shadow-md flex justify-between gap-4 text-xs">
-        <button id="prev-btn" class="flex-1 bg-gray-500 text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors" disabled>Sebelumnya</button>
-        <button id="next-btn" class="flex-1 bg-primary text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors">Selanjutnya</button>
+      <div class="fixed bottom-0 left-0 w-full bg-white px-3 py-1 shadow-md text-xs">
+        <section class="flex items-center justify-center mb-1">
+          <button id="check-all" class="bg-primary hover:bg-primary/90 text-white px-2 py-3 text-xs rounded-lg font-medium w-full transition-colors">Periksa Semua Jawaban</button>
+        </section>
+        <div class="flex justify-between gap-4">
+          <button id="prev-btn" class="flex-1 bg-gray-500 text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors" disabled>Sebelumnya</button>
+          <button id="next-btn" class="flex-1 bg-primary text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors">Selanjutnya</button>
+        </div>
       </div>
     </div>
   </div>  
