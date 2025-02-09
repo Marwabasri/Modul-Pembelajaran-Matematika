@@ -81,147 +81,7 @@ function restartWin() {
   document.getElementById("checkWin").disabled = false;
 }
 
-//SPINNER
 
-const createSpinner = (canvasId, buttonId, spinnerIndex, colors) => {
-    const wheel = document.getElementById(canvasId);
-    const spinBtn = document.getElementById(buttonId);
-    const finalValue = document.getElementById("final-value");
-  
-    const rotationValues = [
-      { minDegree: 0, maxDegree: 30, value: 2 },
-      { minDegree: 31, maxDegree: 90, value: 1 },
-      { minDegree: 91, maxDegree: 150, value: 6 },
-      { minDegree: 151, maxDegree: 210, value: 5 },
-      { minDegree: 211, maxDegree: 270, value: 4 },
-      { minDegree: 271, maxDegree: 330, value: 3 },
-      { minDegree: 331, maxDegree: 360, value: 2 },
-    ];
-  
-    const data = [16, 16, 16, 16, 16, 16];
-  
-    let myChart = new Chart(wheel, {
-      plugins: [ChartDataLabels],
-      type: "pie",
-      data: {
-        labels: [1, 2, 3, 4, 5, 6],
-        datasets: [
-          {
-            backgroundColor: colors,
-            data: data,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        animation: { duration: 0 },
-        plugins: {
-          tooltip: false,
-          legend: { display: false },
-          datalabels: {
-            color: "#ffffff",
-            formatter: (_, context) => context.chart.data.labels[context.dataIndex],
-            font: { size: 16 },
-          },
-        },
-      },
-    });
-  
-    const valueGenerator = (angleValue) => {
-      for (let i of rotationValues) {
-        if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-          return i.value;
-        }
-      }
-    };
-  
-    let count = 0;
-    let resultValue = 101;
-  
-    spinBtn.addEventListener("click", () => {
-      spinBtn.disabled = true;
-      finalValue.innerHTML = `<p>Good Luck!</p>`;
-      let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
-  
-      let rotationInterval = window.setInterval(() => {
-        myChart.options.rotation = myChart.options.rotation + resultValue;
-        myChart.update();
-  
-        if (myChart.options.rotation >= 360) {
-          count += 1;
-          resultValue -= 5;
-          myChart.options.rotation = 0;
-        } else if (count > 15 && myChart.options.rotation == randomDegree) {
-          const value = valueGenerator(randomDegree);
-          window["spinner" + spinnerIndex] = value;
-          const spinner1Value = window.spinner1 || 0;
-          const spinner2Value = window.spinner2 || 0;
-          finalValue.innerHTML = `<p>Kombinasi Value adalah: ${spinner1Value}, ${spinner2Value}</p>`;
-          clearInterval(rotationInterval);
-          count = 0;
-          resultValue = 101;
-        }
-      }, 10);
-    });
-  };
-  
-  createSpinner("wheel1", "spin-btn1", 1, ["#fa0644", "#fa0644", "#3a5dc4", "#3a5dc4", "#ffde59", "#ffde59"]);
-  createSpinner("wheel2", "spin-btn2", 2, ["#b163da", "#b163da", "#b163da", "#7ed957", "#7ed957", "#7ed957"]);
-  
-// Special
-//QuizType1
-//Expereinece RS spinner
-
-function checkAnswerType1Special() {
-  const alertBoxType1 = document.getElementById("alert9");
-  const correctAnswerBox = document.getElementById("answer9");
-  const selectedOption = document.querySelector('input[name="question9"]:checked');
-  const correctAnswer = "b"; // Jawaban benar
-  const correctAnswerText = "Tidak"; // Teks jawaban benar
-
-  // Validasi jika belum ada jawaban yang dipilih
-  if (!selectedOption) {
-    alertBoxType1.innerHTML = '<span>Silakan pilih jawaban terlebih dahulu!</span>';
-    alertBoxType1.className = "alert warning";
-    alertBoxType1.style.display = "block";
-    setTimeout(() => { alertBoxType1.style.display = "none"; }, 2000);
-    return;
-  }
-
-  const selectedLabel = selectedOption.closest("label");
-
-  // Menonaktifkan semua radio button setelah jawaban dipilih
-  const buttons = document.querySelectorAll('input[name="question9"]');
-  buttons.forEach(btn => btn.disabled = true);
-
-  const userAnswer = selectedOption.value;
-
-  if (userAnswer === correctAnswer) {
-    alertBoxType1.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
-    alertBoxType1.className = "alert correct";
-    selectedLabel.classList.add("correct-answer"); // Tambahkan warna hijau pada jawaban benar
-  } else {
-    alertBoxType1.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span>Jawaban Salah!</span>';
-    alertBoxType1.className = "alert incorrect";
-    selectedLabel.classList.add("incorrect-answer"); // Tambahkan warna merah pada jawaban salah
-    correctAnswerBox.textContent = `Jawaban yang benar adalah: ${correctAnswerText}`;
-    correctAnswerBox.style.display = "block";
-  }
-
-  // Tampilkan pesan hasil (Benar/Salah)
-  alertBoxType1.style.display = "block";
-  setTimeout(() => { alertBoxType1.style.display = "none"; }, 2000);
-
-  // Menyembunyikan tombol kirim setelah jawaban diverifikasi
-  const submitButton = document.querySelector('.submit-btn');
-  const questionType1_10 = document.getElementById('questionType1_10');
-  if (submitButton) {
-    submitButton.style.display = "none";
-  }
-  if (questionType1_10) {
-    questionType1_10.style.display = 'block';
-  }
-}
 
 //
 // SCRIPT QUIZ TYPE 5
@@ -283,14 +143,14 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
   const submitAnswer = () => {
       const answerItems = Array.from(answerList.children).map(item => item.getAttribute('value'));
       if (answerItems.length === correctAnswersType5.length && answerItems.every(ans => correctAnswersType5.includes(ans))) {
-          feedback.textContent = 'Jawaban Anda Benar!';
-          feedback.className = 'mt-4 text-sm font-semibold text-green-600';
+          feedback.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span>Jawaban Benar!</span>';
+          feedback.className = 'alert correct';
           isAnswerCorrect = true;
           submitButton.style.display = 'none'; 
           disableAllButtons();
       } else {
-          feedback.textContent = 'Jawaban Anda Salah. Coba lagi!';
-          feedback.className = 'mt-4 text-sm font-semibold text-red-600';
+          feedback.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span>Jawaban salah!</span>';
+          feedback.className = 'alert incorrect';
       }
   };
 
@@ -309,11 +169,10 @@ function setupQuestionType5(questionType5Id, correctAnswersType5) {
   submitButton.addEventListener('click', submitAnswer);
 }
 
-
-
-// Initialize question 2
-setupQuestionType5(3, ['Opsi 34','Opsi 36']);
-setupQuestionType5(7, ['Opsi 34','Opsi 36']);
+// Initialize question 
+setupQuestionType5(7, ['Opsi 77','Opsi 79', 'Opsi 74']);
+setupQuestionType5(8, ['Opsi 82','Opsi 85', 'Opsi 83']);
+setupQuestionType5(9, ['Opsi 91','Opsi 96', 'Opsi 98']);
 
 
 

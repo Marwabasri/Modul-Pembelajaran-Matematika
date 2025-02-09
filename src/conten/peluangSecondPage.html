@@ -394,14 +394,14 @@
                   Cek Jawaban
                 </button>
               </div>
-              <div id="feedbackType5-7" class="mt-4 text-xs font-semibold text-gray-800"></div>
+              <div id="feedbackType5-7" class="alert"></div>
             </div>
             <!--Quiztype5_7 -->
           
             <!--Quiztype5_8 Kejadian Seri  -->
             <div id="questionType5-8" class="question-container mt-4">
               <p class="text-black mb-2 mt-2 text-xs text-justify">
-                Tentukan kejadadian Pemaian 1 memenangkan kemungkinan hasil suit 2 orang!
+                Tentukan kejadadian Pemaian 2 memenangkan kemungkinan hasil suit 2 orang!
               </p>
               <div id="answerType5-box-8" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
                 <div class="flex items-center">
@@ -409,7 +409,7 @@
                   <div id="answerType5-list-8-content" class=" items-center flex">
                     <!-- Jawaban Anda dapat ditempatkan di sini -->
                   </div>
-                  <div id="answerType5-list-8" class="ml-1 flex items-center">}</div>
+                  <div id="answerType5-list-8" class="alert">}</div>
                 </div>
               </div>
               <div id="optionsType5-list-8" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
@@ -428,22 +428,22 @@
                   Cek Jawaban
                 </button>
               </div>
-              <div id="feedbackType5-8" class="mt-4 text-xs font-semibold text-gray-800"></div>
+              <div id="feedbackType5-8" class="alert"></div>
             </div>
             <!--Quiztype5_8 -->
 
             <!--Quiztype5_9 Kejadian Pemain 2 menang -->
             <div id="questionType5-9" class="question-container mt-4">
               <p class="text-black mb-2 mt-2 text-xs text-justify">
-                Tentukan kejadadian Pemaian 1 memenangkan kemungkinan hasil suit 2 orang!
-              </p>
+                Tentukan kejadian Pemaian 1 dan Pemain 2 mendapatkan hasil seri?
+              </p>  
               <div id="answerType5-box-9" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
                 <div class="flex items-center">
                   <div id="answerType5-list-9" class="flex items-center">{</div>
                   <div id="answerType5-list-9-content" class=" items-center flex">
                     <!-- Jawaban Anda dapat ditempatkan di sini -->
                   </div>
-                  <div id="answerType5-list-7" class="ml-1 flex items-center">}</div>
+                  <div id="answerType5-list-9" class="ml-1 flex items-center">}</div>
                 </div>
               </div>
               <div id="optionsType5-list-9" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
@@ -556,201 +556,6 @@
               </div>
             </div>
           </div>  
-          <div class="bg-white border-2 border-primary px-2 rounded-lg shadow-md">
-              <!-- SPINNER START -->
-              <h4 class="text-center text-sm mt-4">Roda Warna</h4>
-              <div class="px-1 flex flex-col items-center relative mt-5">
-                <div class="flex justify-between w-full mb-4">
-                    <!-- Spinner 1 -->
-                    <div class="relative w-28 h-28">
-                      <canvas id="wheel1"></canvas>
-                      <button
-                        id="spin-btn1"
-                        class="absolute inset-0 m-auto h-7 w-7 rounded-full bg-yellow-400 text-yellow-800 font-bold uppercase"
-                      >
-                        O
-                      </button>
-                      <img
-                        src="../dist/img/arrow.svg"
-                        alt="spinner-arrow"
-                        class="absolute top-[40%] right-[-15%] w-5"
-                      />
-                    </div>
-                    <!-- Spinner 2 -->
-                    <div class="relative mr-4 w-28 h-28">
-                      <canvas id="wheel2"></canvas>
-                      <button
-                        id="spin-btn2"
-                        class="absolute inset-0 m-auto h-7 w-7 rounded-full bg-yellow-400 text-yellow-800 font-bold uppercase"
-                      >
-                        O
-                      </button>
-                      <img
-                        src="../dist/img/arrow.svg"
-                        alt="spinner-arrow"
-                        class="absolute top-[40%] right-[-15%] w-5"
-                      />
-                    </div>
-                </div>
-                <div id="final-value" class="text-base text-gray-800 font-medium">
-                  <p>Klik tombol "Spin" untuk memulai</p>
-                </div>
-              </div>
-              <!-- SPINNER END -->    
-            <div class="flex items-center w-full top-0">
-              <img src="../dist/img/cubeWithHandLens.gif" alt="" class="w-20 sm:w-32 scale-x-[-1] md:w-24 flip" />
-              <div class="ml-2">
-                <div class="bg-secondary border-gray-200 p-2 rounded-lg mt-1 rounded-tl-none">
-                  <p class="text-xxs text-justify">  
-                    Ruang sampel dari percobaan memutar dua buah roda warna di atas adalah
-                    <i>S</i> = { (Merah, Ungu), (Merah, Hijau), (Biru, Ungu), (Biru, Hijau), (Biru, Ungu), (Kuning, Hijau) }.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!--QuestionType1_9 Start-->
-            <div class="mt-2 border-2 border-slate-400 rounded-lg bg-white p-2 text-start shadow-sm">   
-              <div class="question">
-                <p class="font-normal text-black text-xs text-justify mb-2">
-                  Apakah ruang sampel yang telah Zuri daftarkan benar? 
-                </p>
-                <form>
-                  <div class="text-xs grid gap-2">
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question9" value="a" onclick="showSubmitButton(this)" class="mr-2">
-                        Iya
-                    </label>
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question9" value="b" onclick="showSubmitButton(this)" class="mr-2">
-                        Tidak
-                    </label>
-                </div>
-                <button type="button" class="hidden text-xs bg-primary/70 text-white px-2 py-1.5 rounded mt-2 submit-btn" onclick="checkAnswerType1Special('question9', 'b','Tidak', 'alert9', 'answer9',this)">Cek Jawaban</button>
-                </form>
-                <div class="alert" id="alert9"></div>
-                <div class="answer" id="answer9"></div>
-              </div>
-              
-              <!--QuestionType1_10 Start-->
-              <div id="questionType1_10" class="hidden mt-4">
-                <p class="font-normal text-black text-xs text-justify mb-2">
-                  Manakah dari Himpunan berikut yang merupakan ruang sampel dari percobaan memutar 2 buah roda warna?
-                </p>
-                <form>
-                  <div class="text-xs text-justify grid gap-2">
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question10" value="a" onclick="showSubmitButton(this)" class="mr-2">
-                        { (Merah, Ungu), (Merah, Hijau), (Biru, Ungu), (Biru, Hijau), (Kuning, Ungu), (Kuning, Hijau) }
-                    </label>
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question10" value="b" onclick="showSubmitButton(this)" class="mr-2">
-                        { (Merah, Kuning), (Merah, Hijau), (Biru, Ungu), (Kuning, Hijau), (Kuning, Ungu), (Kuning, Hijau) }
-                    </label>
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question10" value="c" onclick="showSubmitButton(this)" class="mr-2">
-                        { (Merah, Ungu), (Merah, Hijau), (Biru, Ungu), (Biru, Hijau), (Biru, Ungu), (Kuning, Hijau) }
-                    </label>
-                    <label class="flex items-center appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <input type="radio" name="question10" value="d" onclick="showSubmitButton(this)" class="mr-2">
-                        { (Merah, Ungu), (Merah, Hijau), (Biru, Ungu), (Kuning, Ungu), (Kuning, Hijau) }
-                    </label>
-                </div>
-                <button type="button" class="hidden text-xs bg-primary/70 text-white px-2 py-1.5 rounded mt-2 submit-btn" onclick="checkAnswerType1('question10', 'a','{ (Merah, Ungu), (Merah, Hijau), (Biru, Ungu), (Biru, Hijau), (Kuning, Ungu), (Kuning, Hijau) }', 'alert10', 'answer10',this)">Cek Jawaban</button>
-                </form>
-                <div class="alert" id="alert10"></div>
-                <div class="answer" id="answer10"></div>
-              </div>
-              <!--QuestionType1_10 End-->
-              <!--Quiztype5_3 Kejadian -->
-              <div id="questionType5-3" class="question-container mt-4">
-                <p class="text-black mb-2 mt-2 text-xs text-justify">
-                  Zuri ingin video promosinya terlihat ceria, sehingga dia memilih warna kuning untuk videonya. Tentukan anggota kejadian yang mengandung warna kuning!
-                </p>
-                <div id="answerType5-box-3" class="border-2 border-dashed border-gray-400 p-4 rounded-lg mb-4 bg-gray-50 text-gray-600">
-                  <div class="flex items-center">
-                    <div id="answerType5-list-3" class="flex items-center">{</div>
-                    <div id="answerType5-list-3-content" class=" items-center flex">
-                      <!-- Jawaban Anda dapat ditempatkan di sini -->
-                    </div>
-                    <div id="answerType5-list-3" class="ml-1 flex items-center">}</div>
-                  </div>
-                </div>
-                <div id="optionsType5-list-3" class="flex flex-wrap justify-center text-xs text-gray-600 gap-2">
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 31">(Merah, Ungu),</button>
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 32">(Biru, Hijau),</button>
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 33">(Biru, Hijau),</button>
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 34">(Kuning, Ungu),</button> <!--Benar-->
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 35">(Biru, Merah),</button>
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 36">(Kuning, Hijau),</button> <!--Benar-->
-                  <button class="option-btnType5 bg-gray-100 p-2 rounded-sm hover:bg-secondary focus:outline-none" value="Opsi 37">(Merah, Hijau)</button>
-                </div>
-                <div class="flex justify-end">
-                  <button id="submitType5-btn-3" class="text-xs bg-primary/70 text-white px-2 py-1.5 rounded mt-2 hover:bg-secondary hover:text-gray-700">
-                    Cek Jawaban
-                  </button>
-                </div>
-                <div id="feedbackType5-3" class="mt-4 text-xs font-semibold text-gray-800"></div>
-              </div>
-              <!--Quiztype5_3 -->
-            </div>
-            <!--QuestionType1_9 End-->
-            
-            <!--QuestionType2_6 2_7 Start-->
-            <div class="mt-2 mb-2 border-2 border-slate-400 rounded-md bg-white p-2 text-justify shadow-sm">   
-              <div class="question">
-                <p class="font-normal text-black text-xs text-left mb-2">Berapa banyak anggota ruang sampel dari percobaan memutar 2 buah roda warna?</p>
-                <div class="flex items-center justify-between">
-                  <label class="font-normal text-black text-xs text-left" for="6"><i>n(S)</i> = </label>
-                  <input 
-                    id="q6" 
-                    name="q6" 
-                    type="number" 
-                    class="flex items-center text-xs appearance-none w-10/12 bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
-                    placeholder="Masukkan jawaban"
-                  />
-                </div>
-                <div class="flex justify-end">
-                  <button id="quizBtnType2-q6"
-                    type="button" 
-                    onclick="checkAnswerType2('q6', 6, 'alertType2-6', 'quizBtnType2-q6')" 
-                    class="text-xs bg-primary/70 text-white px-2 py-1.5 rounded mt-2">
-                    Cek Jawaban
-                  </button>
-                </div>
-                <div class="alert" id="alertType2-6"></div>
-                <div class="answer" id="answerType2-q6"></div>
-              </div>
-
-              <div class="question mt-3">
-                <p class="font-normal text-black text-xs text-left mb-2">
-                  Jika B adalah kejadian yang mengandung warna kuning, maka 
-                </p>
-                <div class="flex items-center justify-between">
-                  <label class="font-normal text-black text-xs text-left" for="7"><i>n(B)</i> = </label>
-                  <input 
-                    id="q7" 
-                    name="q7" 
-                    type="number" 
-                    class="flex items-center text-xs appearance-none w-10/12 bg-white border border-gray-400 hover:border-gray-500 px-2 py-1.5 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
-                    placeholder="Masukkan jawaban"
-                  />
-                </div>
-                <div class="flex justify-end"> 
-                  <button id="quizBtnType2-q7"
-                    type="button" 
-                    onclick="checkAnswerType2('q7', 2, 'alertType2-7', 'quizBtnType2-q7')" 
-                    class="text-xs bg-primary/70 text-white px-2 py-1.5 rounded mt-2">
-                    Cek Jawaban
-                  </button>
-                </div>
-                
-                <div class="alert" id="alertType2-7"></div>
-                <div class="answer" id="answerType2-q7"></div>
-              </div>  
-            </div>
-            <!--QuestionType2_6 2_7 End-->
-          </div>
         </li>
         <!-- Timeline Experience End -->
 
@@ -1102,13 +907,24 @@
   <!---->
   
     
-    <!--FOOTER START-->
-    <footer class="p-4">
-      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-      <span class="block text-sm text-gray-500 text-center">Universitas Negeri Makassar <a href="https://flowbite.com" target="_blank" class="hover:underline"><br>2025</a>.
-      </span>
-    </footer>
-    <!--FOOTER END-->
+  <!--FOOTER START-->
+  <footer class="p-4 bg-primary/50">
+    <div class="flex justify-between">
+      <a class="block text-xs ml-5 text-white text-center">
+        FMIPA
+      </a>
+      <a class="block text-xs text-white text-center">
+        Universitas Negeri Makassar
+      </a>
+      <a class="block text-xs mr-5 text-white text-center">
+       2025
+      </a>
+    </div>
+    <hr class="my-2 border-white sm:mx-auto lg:my-8" />
+    <span class="block text-xs text-white text-center">Marwa <a href="" target="_blank" class="hover:underline"><br>1911442002</a>
+    </span>
+  </footer>
+  <!--FOOTER END-->
 
 
   

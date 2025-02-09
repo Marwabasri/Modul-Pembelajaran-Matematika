@@ -1,5 +1,5 @@
 let currentQuestion = 1;
-const totalQuestions = 3;
+const totalQuestions = 4;
 
 // Function to hide navigation buttons
 const hideNavButtons = () => {
@@ -20,12 +20,17 @@ const areAllQuestionsAnswered = () => {
     // Check Question 3 (short answer)
     const q3Answered = document.getElementById('answer-3').value.trim() !== '';
 
+    // Check Question 4 (short answer)
+    const q4Answered = document.getElementById('answer-4').value.trim() !== '';
+
+    // Check Question 5 (short answer)
+    const q5Answered = document.getElementById('answer-5').value.trim() !== '';
 
     // Show/hide check all button based on answers
     const checkAllButton = document.getElementById('check-all');
-    checkAllButton.style.display = (q1Answered && q2Answered && q3Answered) ? 'block' : 'none';
+    checkAllButton.style.display = (q1Answered && q2Answered && q3Answered && q4Answered && q5Answered) ? 'block' : 'none';
     
-    return q1Answered && q2Answered && q3Answered;
+    return q1Answered && q2Answered && q3Answered && q4Answered && q5Answered;
 };
 
 // Navigation functions
@@ -82,7 +87,12 @@ const disableAllInputs = () => {
     // Disable text input
     document.getElementById('answer-3').disabled = true;
     document.getElementById('answer-3').classList.add('bg-gray-100');
-   
+    // Disable text input
+    document.getElementById('answer-4').disabled = true;
+    document.getElementById('answer-4').classList.add('bg-gray-100');
+    // Disable text input
+    document.getElementById('answer-5').disabled = true;
+    document.getElementById('answer-5').classList.add('bg-gray-100');
 
     // Disable check all button
     document.getElementById('check-all').style.display = 'none';
@@ -106,6 +116,8 @@ document.getElementById('next-btn').addEventListener('click', () => {
 document.getElementById('answer-1').addEventListener('input', areAllQuestionsAnswered);
 document.getElementById('answer-2').addEventListener('input', areAllQuestionsAnswered);
 document.getElementById('answer-3').addEventListener('input', areAllQuestionsAnswered);
+document.getElementById('answer-4').addEventListener('input', areAllQuestionsAnswered);
+document.getElementById('answer-5').addEventListener('input', areAllQuestionsAnswered);
 
 
 
@@ -163,13 +175,43 @@ document.getElementById('check-all').addEventListener('click', () => {
         isQ3Correct ? '' : '5 Gol'
     );
 
+    // Check Question 4
+    const q4Answer = document.getElementById('answer-4').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ4Answers = ['3/6', '1/2', '50%', '0.5'].map(ans => ans.replace(/\s+/g, ''));
+    const isQ4Correct = correctQ4Answers.includes(q4Answer);
+    if (isQ4Correct) {
+        score++;
+    } else {
+        wrongQuestions.push(4);
+    }
+    setFeedback('feedback-4',
+        isQ4Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
+        isQ4Correct,
+        isQ4Correct ? '' : '3/6 atau 50%'
+    );
+
+    // Check Question 5
+    const q5Answer = document.getElementById('answer-5').value.trim().replace(/\s+/g, '').replace(',', '.');
+    const correctQ5Answers = ['60'].map(ans => ans.replace(/\s+/g, ''));
+    const isQ5Correct = correctQ5Answers.includes(q5Answer);
+    if (isQ5Correct) {
+        score++;
+    } else {
+        wrongQuestions.push(5);
+    }
+    setFeedback('feedback-5',
+        isQ5Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
+        isQ5Correct,
+        isQ5Correct ? '' : '60 Kali'
+    );
+
     // Show all questions for review
     document.querySelectorAll('section[id^="question-"]').forEach(section => {
         section.classList.remove('hidden');
     });
 
     // Display results
-    document.getElementById('final-score').textContent = `Skor Total: ${score}/3`;
+    document.getElementById('final-score').textContent = `Skor Total: ${score}/5`;
     document.getElementById('final-score').className = 'mt-4 w-full p-3 bg-primary/20 text-lg rounded-md font-bold border border-primary text-primary text-center';
 
     // Hide navigation buttons after showing final score
@@ -190,13 +232,13 @@ const options = {
     series: [
       {
         name: "Pembayaran Digital",
-        color: "#31C48D",
+        color: "#ffa114",
         data: ["225"],
       },
       {
         name: "Pembayaran Tunai",
         data: ["25"],
-        color: "#F05252",
+        color: "#081F5C",
       }
     ],
     chart: {

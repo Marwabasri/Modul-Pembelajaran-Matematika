@@ -406,7 +406,7 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-4',
         isQ4Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ4Correct,
-        isQ4Correct ? '' : 'Peluang teoritis adalah rasio banyaknya kejadian yang diharapkan terhadap banyaknya anggota ruang sampel'
+        isQ4Correct ? '' : 'Peluang teoritis adalah rasio banyaknya anggota kejadian terhadap banyaknya anggota ruang sampel suatu percobaan'
     );
 
     // Check Question 5
@@ -426,7 +426,7 @@ document.getElementById('check-all').addEventListener('click', () => {
 
     // Check Question 6
     const q6Answer = document.getElementById('answer-6').value.trim().replace(/\s+/g, '').replace(',', '.');
-    const correctQ6Answers = ['1/8', '0.125','12.5%'].map(ans => ans.replace(/\s+/g, ''));
+    const correctQ6Answers = ['6/8','3/4', '0.75','75%'].map(ans => ans.replace(/\s+/g, ''));
     const isQ6Correct = correctQ6Answers.includes(q6Answer);
     if (isQ6Correct) {
         score++;
@@ -436,7 +436,7 @@ document.getElementById('check-all').addEventListener('click', () => {
     setFeedback('feedback-6',
         isQ6Correct ? 'Jawaban Anda Benar!' : 'Jawaban Anda Salah!',
         isQ6Correct,
-        isQ6Correct ? '' : '1/8 atau 12.5%'
+        isQ6Correct ? '' : '6/8 atau 75%'
     );
 
     // Show all questions for review
