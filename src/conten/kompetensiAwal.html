@@ -315,17 +315,21 @@
     </div>
   </div>
       <!--SKOR DAN TOMBOL MULAI LAGI-->
-      <div id="score-container" class="text-center font-bold mt-5 mx-5 hidden">
-        <p class="text-base font-bold text-primary mb-4">Skor Anda:<span id="score">0</span>/<span id="total-questions"></span></p>
-        <button class="block appearance-none w-full bg-primary/70 border-transparent text-white  hover:bg-white hover:text-primary mr-4 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
+      <div id="score-container" class="mx-5">
+        <div class="text-center bg-primary/20 p-3 my-2 w-full rounded-xl border-2 border-primary">
+          <p class="text-base font-bold text-primary">Skor Anda:<span id="score">0</span>/<span id="total-questions"></span></p>
+        </div>
+        <div class="flex items-center text-center mb-3">
+          <button class="block appearance-none w-full bg-primary/70 border-transparent text-white  hover:bg-white hover:text-primary mr-4 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline" 
                 id="restart" 
                 onclick="restartQuiz()">
-          Mulai Ulang
-        </button>
-        <a class="block appearance-none w-full bg-tertiary border-transparent text-white  hover:bg-white hover:text-tertiary mt-4 mr-4 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-           href="/src/conten/peluang.html">
-          Mulai Pembelajaran
-        </a>
+            Mulai Ulang
+          </button>
+          <a class="block appearance-none w-full bg-tertiary border-transparent text-white hover:bg-white hover:text-tertiary px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            href="./peluang.html">
+            Mulai Pembelajaran
+          </a>
+        </div>
       </div>
     <!--Quiz Kompetensi Awal End-->
   </div>

@@ -2,6 +2,9 @@
 //
 //
 //Script RUANG SAMPEL KEJADIAN BATU GUNTING KERTAS 
+let draggedElement = null;
+let touchStartX = 0;
+let touchStartY = 0;
 
 const dragCounts = {
     itemBatu1: 0,
@@ -24,13 +27,82 @@ const correctItemPairs = {
     "dropZone4_4": ["itemKertas1", "itemKertas2"]
 };
 
+// Initialize touch events for all draggable elements
+function initializeTouchEvents() {
+    const draggableElements = document.querySelectorAll('[draggable="true"]');
+    draggableElements.forEach(elem => {
+        elem.addEventListener('touchstart', handleTouchStart, { passive: false });
+        elem.addEventListener('touchmove', handleTouchMove, { passive: false });
+        elem.addEventListener('touchend', handleTouchEnd, { passive: false });
+    });
+}
+
+function handleTouchStart(e) {
+    if (dragCounts[e.target.id] >= 3) {
+        alert("Item ini hanya dapat dipindahkan maksimal 3 kali!");
+        return;
+    }
+    
+    e.preventDefault();
+    draggedElement = e.target;
+    
+    // Store initial touch position
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    
+    // Add visual feedback
+    draggedElement.style.opacity = '0.7';
+    draggedElement.style.position = 'relative';
+    draggedElement.style.zIndex = '1000';
+}
+
+function handleTouchMove(e) {
+    if (!draggedElement) return;
+    e.preventDefault();
+    
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    
+    // Move the element
+    draggedElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+}
+
+function handleTouchEnd(e) {
+    if (!draggedElement) return;
+    e.preventDefault();
+    
+    // Get the element under the finger
+    const touch = e.changedTouches[0];
+    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    // Check if we're over a valid drop zone
+    if (dropTarget && dropTarget.classList.contains('bg-gray-200')) {
+        handleDrop({
+            preventDefault: () => {},
+            target: dropTarget,
+            dataTransfer: {
+                getData: () => draggedElement.id
+            }
+        });
+    }
+    
+    // Reset the dragged element
+    draggedElement.style.opacity = '';
+    draggedElement.style.position = '';
+    draggedElement.style.zIndex = '';
+    draggedElement.style.transform = '';
+    draggedElement = null;
+}
+
+// Existing drag and drop functions with modifications
 function allowDrop(event) {
     event.preventDefault();
 }
 
 function startDrag(event) {
     const draggedItemId = event.target.id;
-
     if (dragCounts[draggedItemId] < 3) {
         event.dataTransfer.setData("text", draggedItemId);
     } else {
@@ -45,14 +117,19 @@ function handleDrop(event) {
     const dropZone = event.target;
 
     // Check if drop zone is a valid element
-    if (dropZone.id === "itemBatu1" || dropZone.id === "itemGunting1" || dropZone.id === "itemKertas1" || dropZone.id === "itemBatu2" || dropZone.id === "itemGunting2" || dropZone.id === "itemKertas2") {
+    if (!dropZone.id.startsWith('dropZone')) {
         alert("Anda tidak dapat menjatuhkan item ke elemen ini!");
-        return; // Stop execution if drop zone is invalid
+        return;
     }
 
     if (dropZone.children.length < 2) {
         const draggedElement = document.getElementById(data).cloneNode(true);
         draggedElement.classList.remove("cursor-move");
+        // Reinitialize touch events for the cloned element
+        draggedElement.addEventListener('touchstart', handleTouchStart, { passive: false });
+        draggedElement.addEventListener('touchmove', handleTouchMove, { passive: false });
+        draggedElement.addEventListener('touchend', handleTouchEnd, { passive: false });
+        
         dropZone.appendChild(draggedElement);
 
         dragCounts[data]++;
@@ -66,68 +143,8 @@ function handleDrop(event) {
     }
 }
 
-function validateSampleSpace() {
-    let allCorrect = true;
-
-    for (const [zoneId, expectedItems] of Object.entries(correctItemPairs)) {
-        const dropZone = document.getElementById(zoneId);
-        const children = dropZone.children;
-
-        if (children.length !== 2) {
-            allCorrect = false;
-            break;
-        }
-
-        const childIds = Array.from(children).map(child => child.id).sort();
-        const sortedExpectedItems = expectedItems.sort();
-
-        if (JSON.stringify(childIds) !== JSON.stringify(sortedExpectedItems)) {
-            allCorrect = false;
-            break;
-        }
-    }
-
-    const resultFeedback = document.getElementById("resultFeedback");
-    const EvenQuestion = document.getElementById("EvenQuestion");
-    if (allCorrect) {
-        resultFeedback.textContent = "Selamat! Anda berhasil melengkapi ruang sampel dengan benar.";
-        resultFeedback.className = "text-center mt-4 text-green-600 text-lg font-bold";
-        EvenQuestion.style.display = 'block';
-    } else {
-        resultFeedback.textContent = "Jawaban Anda belum tepat. Coba lagi!";
-        resultFeedback.className = "text-center mt-4 text-red-600 text-lg font-bold";
-    }
-
-    // Menonaktifkan semua item drag setelah tombol resultFeedback diklik
-    disableDragItems();
-}
-
-function disableDragItems() {
-    const dragItems = document.querySelectorAll('[id^="itemBatu"], [id^="itemGunting"], [id^="itemKertas"]');
-    dragItems.forEach(item => {
-        item.draggable = false; // Menonaktifkan kemampuan drag
-        item.classList.add("opacity-50"); // Memberikan efek visual
-    });
-}
-
-function restartGame() {
-    const dropZones = document.querySelectorAll('[id^="dropZone"]');
-    dropZones.forEach(zone => {
-        while (zone.firstChild) {
-            zone.removeChild(zone.firstChild);
-        }
-    });
-
-    for (const key in dragCounts) {
-        dragCounts[key] = 0;
-        const element = document.getElementById(key);
-        element.draggable = true;
-        element.classList.remove("opacity-50");
-    }
-
-    const resultFeedback = document.getElementById("resultFeedback");
-    resultFeedback.textContent = "";
-}
+// Initialize touch events when the page loads
+document.addEventListener('DOMContentLoaded', initializeTouchEvents);
 
    
 
