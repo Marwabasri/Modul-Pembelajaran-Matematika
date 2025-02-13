@@ -171,14 +171,14 @@ function restartGame() {
             chatElement.classList.add("flex", "items-start", "space-y-4", "mt-4");
 
             // Membuat elemen untuk foto profil dan pesan
-            const profilePic = `<img src="${message.avatar}" alt="${message.sender}'s avatar" class="bg-gray-100 w-7 h-7 rounded-full mr-3">`;
+            const profilePic = `<img src="${message.avatar}" alt="${message.sender}'s avatar" class="bg-gray-100 w-7 h-7 rounded-full mr-3 sm:h-10 sm:w-10">`;
 
             // Menambahkan foto profil dan pesan ke chat element
             if (message.sender === "Zari") {
                 chatElement.innerHTML = `
                     <div class="flex items-start">
                         ${profilePic}
-                        <div class="bg-gray-300 max-w-80 text-gray-800 p-1.5 text-xxs rounded-r-lg rounded-bl-lg">
+                        <div class="bg-gray-300 max-w-80 text-gray-800 p-1.5 text-xxs rounded-r-lg rounded-bl-lg sm:text-xs">
                             ${message.text}
                         </div>
                     </div>
@@ -187,7 +187,7 @@ function restartGame() {
                 chatElement.classList.add("ml-auto");  // Menambahkan margin kiri otomatis untuk membuatnya di sebelah kanan
                 chatElement.innerHTML = `
                     <div class="flex justify-end space-x-3 ml-auto">
-                        <div class="bg-blue-500 max-w-80 text-white p-1.5 text-xxs rounded-l-lg rounded-br-lg">
+                        <div class="bg-blue-500 max-w-80 text-white p-1.5 text-xxs rounded-l-lg rounded-br-lg sm:text-xs">
                             ${message.text}
                         </div>
                         ${profilePic}
