@@ -3931,6 +3931,11 @@ video {
   color: rgb(255 161 20 / 0.8);
 }
 
+.hover\:text-quaternary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(8 31 92 / var(--tw-text-opacity, 1));
+}
+
 .hover\:text-tertiary:hover {
   --tw-text-opacity: 1;
   color: rgb(149 204 213 / var(--tw-text-opacity, 1));
@@ -3939,11 +3944,6 @@ video {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-quaternary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(8 31 92 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -4062,10 +4062,6 @@ video {
 
   .sm\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .sm\:ml-20 {
-    margin-left: 5rem;
   }
 
   .sm\:mt-0 {
