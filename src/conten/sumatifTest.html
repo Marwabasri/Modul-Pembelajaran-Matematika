@@ -7,6 +7,7 @@
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
     <link href="../../dist/output.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
     <style>
@@ -83,7 +84,13 @@
                   </div>
                 </div>
               </div>
-              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan semua hasil yang mungkin dari pelemparan dadu di atas?</p>
+              <p class="text-gray-800 mb-4 text-xs text-justify">
+                Dua buah dadu bersisi 4 (tetrahedron), jika dua dadu tersebut dilempar bersama maka
+                tentukan ruang sampelnya, reta tentukan jika E adalah kejadian munculnya kedua mata dadu ganjil,
+                jika F untuk kejadian munculnya mata dadu berjumlah 5, dan jika G adalag kejadian mata dadu berjumlah kurang dari 7.
+                <br>
+                Dari ketiga kejadian yang di amati, manakah kejadian yang memiliki peluang terbesar?
+              </p>
               <div id="answer-box-1" class="border-2 border-dashed border-gray-300 p-4 rounded-lg mb-4 min-h-[60px] bg-gray-100">
                 <div class="flex items-center">
                   <div class="flex items-center">{</div>
@@ -121,16 +128,10 @@
               <p>Pertanyaan 2</p> 
             </div>
             <div class="px-4 py-2">
-              <p class="text-gray-800 text-xs text-justify">Percobaan pelemparan dua buah dadu</p>
-              <p class="text-gray-800 mb-4 text-xs text-justify">
-                <i>S</i> = { (1,1), (1,2), (1,3), (1,4), (1,5), (1,6),
-                  (2,1), (2,2), (2,3), (2,4), (2,5), (2,6),
-                  (3,1), (3,2), (3,3), (3,4), (3,5), (3,6),
-                  (4,1), (4,2), (4,3), (4,4), (4,5), (4,6),
-                  (5,1), (5,2), (5,3), (5,4), (5,5), (5,6),
-                  (6,1), (6,2), (6,3), (6,4), (6,5), (6,6) }
+              <p class="text-gray-800 text-xs text-justify">
+                Berdasarkan gambar, jika orang tua yang memiliki golongan darah A dan golongan darah B, 
+                hitunglah peluang bahwa anak mereka akan memiliki golongan darah O?
               </p>
-              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan kejadian jumlah mata dadu 6 pada percobaan pelemparan 2 buah dadu?</p>
               <div id="answer-box-2" class="border-2 border-dashed border-gray-300 p-4 rounded-lg mb-4 min-h-[60px] bg-gray-100">
                 <div class="flex items-center">
                   <div class="flex items-center">{</div>
@@ -149,7 +150,6 @@
                 <button class="option-btn-q2 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(5,1)">(5,1)</button>
                 <button class="option-btn-q2 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(6,6)">(6,6)</button>
                 <button class="option-btn-q2 bg-secondary hover:bg-primary hover:text-white p-2 rounded-lg text-xs transition-colors" data-value="(6,5)">(6,5)</button>
-
               </div>
               <p id="feedback-2" class="mt-4 text-xs"></p>
             </div>
@@ -161,7 +161,26 @@
               <p>Pertanyaan 3</p> 
             </div>
             <div class="px-4 py-2">
-              <p class="text-gray-800 mb-4 text-xs text-justify">Tentukan <i>n(S)</i> dari percobaan pelemparan sebuah dadu dan sebuah koin?</p>
+              <p class="text-gray-800 mb-4 text-xs text-justify">
+                Ibu Ria yang memiliki rumah produksi kue tradisional sedang mengevaluasi penjualan dua varian kroket barunya yaitu kroket ayam dan kroket udang dalam 15 hari terakhir.
+                setiap hari, rumah produksi tersebut membuat kroket 150 buah untuk masing masing varian.   
+              </p>
+              <!--Chart Start-->   
+              <div class="w-full bg-white rounded-lg shadow-sm dark:bg-gray-800">
+                <p class="text-center text-xs text-gray-800">Tabel Banyaknya Kroket Terjual</p>
+                <div id="labels-chart" class="px-2"></div>
+              </div>
+              <!--Chart End-->
+              <p class="text-gray-800 mt-2 text-xs text-justify">
+                Hitunglah frekuensi relatif penjualan kroket untuk masing masing varian dengan kriteria:
+              </p>  
+              <ul class="text-gray-800 text-xs text-justify list-decimal ml-4">
+                <li>Kejadian A adalah kroket terjual diatas 75 buah perhari</li>
+                <li>Kejadian B adalah kroket terjual dibawah 75 buah perhari</li>
+              </ul>
+              <p class="text-gray-800 text-xs text-justify">
+                Berdasarkan frekuensi relatifnya, varian mana yang perlu dipertahankan jumlah produksinya?
+              </p>
               <input type="text" id="answer-3" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-3" class="mt-4 text-xs"></p>
             </div>
@@ -173,7 +192,10 @@
               <p>Pertanyaan 4</p> 
             </div>
             <div class="px-4 py-2">
-              <p class="text-gray-800 mb-4 text-xs text-justify">Peluang teoritis adalah ...</p>
+              <p class="text-gray-800 mb-4 text-xs text-justify">
+                Sebuah pabrik memproduksi 1000 unit barang dengan peluang teoritis produk cacat sebesar 2%
+                perhari. hitunglah frekuensi harapan produk cacat dalam satu bulan (24 hari) produksi?
+              </p>
               <div class="space-y-3 text-xs text-justify">
                 <label class="flex flex-center appearance-none w-full bg-white border border-gray-400 hover:bg-secondary hover:border-gray-500 p-2 gap-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                   <input type="radio" name="q4" value="a" class="text-primary">
@@ -202,30 +224,121 @@
               <p>Pertanyaan 5</p> 
             </div>
             <div class="px-4 py-2">
-              <p class="text-gray-800 text-xs text-justify">Tentukan peluang kejadian munculnya bunga putih (genotip rr) pada percobaan persilangan bunga di bawah!</p>
-              <div class="flex items-center justify-center">
-                <img src="../dist/img/Gen1Bunga.svg" class="w-40"/>
-              </div>
+              <p class="text-gray-800 text-xs text-justify mb-2">
+                 J-Hope member BTS, akan mengadakan konser di Jakarta pada tanggal 3-4 Mei 2025 di GBK.
+                 Berikut adalah dafar harga tiket konser J-Hope BTS:
+              </p>
+              <div class="border border-gray-300 shadow-sm rounded-lg overflow-auto mx-auto">
+                <table class="w-full text-xs leading-5 text-gray-600 ">
+                  <thead class="bg-gray-100">
+                    <tr>
+                      <th class="py-2 px-4 text-center">Kategori</th>
+                      <th class="py-2 px-4 text-center">Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          VIP Bov (duduk)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP4.550.000
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          VIP A dan B (berdiri)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP3.600.000
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          CAT 1 (duduk)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP3.300.000
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          CAT 2 (duduk)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP2.650.000
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          CAT 3A/3B (duduk)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP2.300.000
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          CAT 4A/4B (duduk, restrited view)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP2.650.000
+                        </p>
+                      </td>
+                    </tr><tr class="bg-gray-50 text-xs">
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          CAT 5A/5B (duduk, restrited view)
+                        </p>
+                      </td>
+                      <td class="py-1 px-4">
+                        <p class="w-full px-4 py-2 text-center border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary hover:shadow-lg bg-gray-100">
+                          RP1.800.000
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>      
+              <p class="text-gray-500 text-xs text-center mb-3">
+                Sumber: Instagram Ime Indonesia
+              </p>  
+              <p class="text-gray-800 text-xs text-justify">
+                Promotor konser memiliki data penjualan tiket dari konser BTS sebelumnya dengan rincian:
+              </p>
+              <ul class="text-gray-800 text-xs text-justify list-decimal ml-4">
+                <li>Peluang terjual VIP A dan B = 0,90</li>
+                <li>Peluang terjual CAT 1 = 0,91</li>
+                <li>Peluang terjual CAT 2 = 0,85</li>
+              </ul>
+              <p class="text-gray-800 text-xs text-justify mb-4">
+                Jika konser solo J-Hope memiliki kapasitas masing-masing kategori adalah 500 kursi, ketegori mana yang memiliki potensi pendapatan tertinggi berdasarkan frekuensi harapannya?
+              </p>  
               <input type="text" id="answer-5" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
               <p id="feedback-5" class="mt-4 text-xs"></p>
-            </div>
-          </section>
-
-          <!-- Question 6: Short Answer -->
-          <section id="question-6" class="hidden transition-all duration-300">
-            <div class="px-4 text-sm text-primary font-semibold">
-              <p>Pertanyaan 6</p> 
-            </div>
-            <div class="px-4 py-2">
-              <p class="text-gray-800 mb-4 text-xs text-justify">
-                Fira memiliki kebiasaan memutar spinner makanan yang ia buat ketika dia bingung untuk memutusk makan siangnya.
-                <br>Tentukan peluang Fira mendapatkan makanan dengan karbohidrat selain nasi pada percobaan memutar spiner makanan?
-              </p>
-              <div class="flex items-center justify-center">
-                <img src="../dist/img/foodSpinner.svg" class="w-96"/>
-              </div>
-              <input type="text" id="answer-6" class="border-2 border-gray-300 w-full rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
-              <p id="feedback-6" class="mt-4 text-xs"></p>
             </div>
           </section>
       </div>
@@ -254,7 +367,7 @@
   
 
   <script src="./script.js"></script>
-  <script src="./firstTest.js"></script>
+  <script src="./sumatifTest.js"></script>
 
 </body>
 
