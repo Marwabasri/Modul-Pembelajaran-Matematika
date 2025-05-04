@@ -1,4 +1,6 @@
 {
     "liveServer.settings.port": 5501,
-    "livePreview.defaultPreviewPath": "/src/conten/kompetensiAwal.html"
+    "livePreview.defaultPreviewPath": "/src/conten/kompetensiAwal.html",
+    "liveServer.settings.CustomBrowser": "chrome"
+
 }

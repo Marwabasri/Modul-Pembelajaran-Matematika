@@ -110,33 +110,31 @@ spinButton.addEventListener('click', () => {
     const ticketAnswer = document.getElementById('ticket-answer1');
 
     ticketSubmitBtn.addEventListener('click', () => {
-      const userAnswer = ticketForm['ticket-answer'].value.trim();
-      const correctAnswer = "5/10";
+    const userAnswer = ticketForm['ticket-answer'].value.trim();
+    const correctAnswers = ["5/10", "1/2"];
 
-      if (userAnswer === correctAnswer) {
+    if (correctAnswers.includes(userAnswer)) {
         ticketFeedback.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
         ticketFeedback.className = 'alert correct';
         ticketFeedback.style.display = "block";
         ticketAnswer.classList.add('correct-answer');
-        
-        // Tampilkan kode voucher
+
         ticketVoucher.innerHTML = `
             <p class="text-primary text-center text-sm font-bold">Selamat! Anda mendapatkan kode voucher:</p>
             <p class="text-primary text-center text-base font-mono mt-1">SPIN2WIN</p>
         `;
         ticketVoucher.style.display = "block";
 
-        // Disable semua input dalam form
         Array.from(ticketForm.elements).forEach(element => {
             element.disabled = true;
         });
-      } else {
+    } else {
         ticketFeedback.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
         ticketFeedback.className = 'alert incorrect';
         ticketFeedback.style.display = "block";
-
-      }
+    }
     });
+
 
 
 /// Tiket_2 / Kuis Box (Kejaidan " Gratis Es Teh")
@@ -184,33 +182,32 @@ spinButton.addEventListener('click', () => {
     const ticketAnswer3 = document.getElementById('ticket-answer3');
 
     ticketSubmitBtn3.addEventListener('click', () => {
-    const userAnswer3 = ticketForm3['ticket-answer'].value.trim();
-    const correctAnswer3 = "2/10";
+        const userAnswer3 = ticketForm3['ticket-answer'].value.trim();
+        const correctAnswer3 = ["2/10", "1/5"];
 
-    if (userAnswer3 === correctAnswer3) {
-        ticketFeedback3.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
-        ticketFeedback3.className = 'alert correct';
-        ticketFeedback3.style.display = "block";
-        ticketAnswer3.classList.add('correct-answer');
-        
-        // Tampilkan kode voucher
-        ticketVoucher3.innerHTML = `
-            <p class="text-primary text-center text-sm font-bold">Selamat! Anda mendapatkan kode voucher:</p>
-            <p class="text-primary text-center text-base font-mono mt-1">MATHRESTO</p>
-        `;
-        ticketVoucher3.style.display = "block";
+        if (correctAnswer3.includes(userAnswer3)) {
+            ticketFeedback3.innerHTML = '<img src="../dist/img/true.svg" alt="Benar"><span> Jawaban Benar!</span>';
+            ticketFeedback3.className = 'alert correct';
+            ticketFeedback3.style.display = "block";
+            ticketAnswer3.classList.add('correct-answer');
+            
+            // Tampilkan kode voucher
+            ticketVoucher3.innerHTML = `
+                <p class="text-primary text-center text-sm font-bold">Selamat! Anda mendapatkan kode voucher:</p>
+                <p class="text-primary text-center text-base font-mono mt-1">MATHRESTO</p>
+            `;
+            ticketVoucher3.style.display = "block";
 
-        // Disable semua input dalam form
-        Array.from(ticketForm3.elements).forEach(element => {
-            element.disabled = true;
-        });
-    } else {
-        ticketFeedback3.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
-        ticketFeedback3.className = 'alert incorrect';
-        ticketFeedback3.style.display = "block";
-
-    }
-    });       
+            // Disable semua input dalam form
+            Array.from(ticketForm3.elements).forEach(element => {
+                element.disabled = true;
+            });
+        } else {
+            ticketFeedback3.innerHTML = '<img src="../dist/img/false.svg" alt="Salah"><span> Jawaban salah! Coba lagi.</span>';
+            ticketFeedback3.className = 'alert incorrect';
+            ticketFeedback3.style.display = "block";
+        }
+    });
 
 
 ///GeneralFormulaFH
