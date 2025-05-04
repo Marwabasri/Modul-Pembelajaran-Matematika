@@ -143,13 +143,129 @@ function handleDrop(event) {
     }
 }
 
+function validateSampleSpace() {
+    let allCorrect = true;
+    
+    // Reset semua zona ke default terlebih dahulu
+    const allDropZones = document.querySelectorAll('[id^="dropZone"]');
+    allDropZones.forEach(zone => {
+        zone.classList.remove('border-red-500', 'border-green-500', 'bg-red-200', 'bg-green-200');
+        zone.classList.add('border-tertiary', 'bg-gray-200');
+    });
+    
+    // Validasi setiap zona
+    for (const [zoneId, correctItems] of Object.entries(correctItemPairs)) {
+        const zone = document.getElementById(zoneId);
+        if (!zone || zone.children.length !== 2) {
+            allCorrect = false;
+            zone.classList.remove('border-tertiary');
+            zone.classList.add('border-red-500', 'bg-red-200');
+            continue;
+        }
+        
+        const childIds = Array.from(zone.children).map(child => child.id);
+        const isCorrect = childIds.includes(correctItems[0]) && childIds.includes(correctItems[1]);
+        
+        if (!isCorrect) {
+            allCorrect = false;
+            zone.classList.remove('border-tertiary');
+            zone.classList.add('border-red-500', 'bg-red-200');
+        } else {
+            zone.classList.remove('border-tertiary');
+            zone.classList.add('border-green-500', 'bg-green-200');
+        }
+    }
+
+    const resultFeedback = document.getElementById("resultFeedback");
+    const nextGame = document.getElementById("nextGame");
+    
+    if (allCorrect) {
+        resultFeedback.innerHTML = "<span class='text-green-600'>🎉 Selamat! Anda berhasil melengkapi ruang sampel dengan benar.</span>";
+        resultFeedback.className = "text-center mt-4 text-lg font-bold";
+        nextGame.style.display = 'block';
+    } else {
+        resultFeedback.innerHTML = "<span class='text-red-600'>❌ Jawaban Anda belum tepat. Periksa kembali kombinasi yang masih salah (ditandai dengan border merah).</span>";
+        resultFeedback.className = "text-center mt-4 text-lg font-bold";
+    }
+
+    disableDragItems();
+}
+
+function disableDragItems() {
+    // Nonaktifkan semua elemen draggable asli
+    const originalDragItems = document.querySelectorAll('[id^="itemBatu"], [id^="itemGunting"], [id^="itemKertas"]');
+    originalDragItems.forEach(item => {
+        item.draggable = false;
+        item.classList.add("opacity-50");
+        item.style.pointerEvents = "none"; // Tambahan untuk memastikan tidak bisa diinteraksi
+    });
+
+    // Nonaktifkan juga semua clone yang sudah di-drop
+    const clonedItems = document.querySelectorAll('[id^="dropZone"] [id^="itemBatu"], [id^="dropZone"] [id^="itemGunting"], [id^="dropZone"] [id^="itemKertas"]');
+    clonedItems.forEach(item => {
+        item.draggable = false;
+        item.classList.add("opacity-50");
+        item.style.pointerEvents = "none";
+        
+        // Hapus event listener touch jika ada
+        item.removeEventListener('touchstart', handleTouchStart);
+        item.removeEventListener('touchmove', handleTouchMove);
+        item.removeEventListener('touchend', handleTouchEnd);
+    });
+}
+
+function restartGame() {
+    const dropZones = document.querySelectorAll('[id^="dropZone"]');
+    dropZones.forEach(zone => {
+        // Hapus semua anak elemen
+        while (zone.firstChild) {
+            zone.removeChild(zone.firstChild);
+        }
+        
+        // Reset kelas border dan background ke keadaan awal
+        zone.classList.remove('border-red-500', 'border-green-500', 'bg-red-200', 'bg-green-200');
+        zone.classList.add('border-tertiary', 'bg-gray-200');
+    });
+
+    // Reset drag counts dan enable kembali semua item
+    const allDragItems = document.querySelectorAll('[id^="itemBatu"], [id^="itemGunting"], [id^="itemKertas"]');
+    allDragItems.forEach(item => {
+        const itemId = item.id;
+        if (dragCounts.hasOwnProperty(itemId)) {
+            dragCounts[itemId] = 0;
+        }
+        item.draggable = true;
+        item.classList.remove("opacity-50");
+        item.style.pointerEvents = "auto"; // Kembalikan pointer events
+        
+        // Tambahkan kembali event listener touch
+        item.addEventListener('touchstart', handleTouchStart, { passive: false });
+        item.addEventListener('touchmove', handleTouchMove, { passive: false });
+        item.addEventListener('touchend', handleTouchEnd, { passive: false });
+    });
+
+    // Reset feedback message
+    const resultFeedback = document.getElementById("resultFeedback");
+    resultFeedback.textContent = "";
+    resultFeedback.className = "text-center mt-4 text-lg font-bold";
+    
+    // Sembunyikan tombol next game jika ada
+    const nextGame = document.getElementById("nextGame");
+    if (nextGame) {
+        nextGame.style.display = 'none';
+    }
+}
+
 // Initialize touch events when the page loads
-document.addEventListener('DOMContentLoaded', initializeTouchEvents);
-
-   
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTouchEvents();
+    
+    // Add event listener for the check button
+    const checkButton = document.getElementById("checkButton");
+    if (checkButton) {
+        checkButton.addEventListener("click",validateSampleSpace);
+    }
+});
 
 //SCRIPT LANGUANGE
 //
