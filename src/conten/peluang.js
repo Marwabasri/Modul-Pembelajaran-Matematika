@@ -87,7 +87,6 @@ function handleDrop(event) {
     // Periksa apakah item yang sama sudah ada di drop zone
     const existingItems = dropZone.querySelectorAll(`[data-original-id="${data}"]`);
     if (existingItems.length > 0) {
-        alert("Item ini sudah ada di drop zone!");
         return;
     }
 
