@@ -2,6 +2,7 @@
 //
 //
 //Script RUANG SAMPEL KEJADIAN BATU GUNTING KERTAS 
+// game-logic.js
 let draggedElement = null;
 let touchStartX = 0;
 let touchStartY = 0;
@@ -27,76 +28,36 @@ const correctItemPairs = {
     "dropZone4_4": ["itemKertas1", "itemKertas2"]
 };
 
-// Initialize touch events for all draggable elements
-function initializeTouchEvents() {
+function initializeGame() {
+    setupDragElements();
+    setupDropZones();
+
+    const checkButton = document.querySelector('button[onclick="validateSampleSpace()"]');
+    if (checkButton) checkButton.addEventListener("click", validateSampleSpace);
+
+    const restartButton = document.querySelector('button[onclick="restartGame()"]');
+    if (restartButton) restartButton.addEventListener("click", restartGame);
+}
+
+function setupDragElements() {
     const draggableElements = document.querySelectorAll('[draggable="true"]');
     draggableElements.forEach(elem => {
+        elem.addEventListener('dragstart', startDrag);
         elem.addEventListener('touchstart', handleTouchStart, { passive: false });
         elem.addEventListener('touchmove', handleTouchMove, { passive: false });
         elem.addEventListener('touchend', handleTouchEnd, { passive: false });
+        elem.addEventListener('touchcancel', handleTouchEnd, { passive: false });
     });
 }
 
-function handleTouchStart(e) {
-    if (dragCounts[e.target.id] >= 3) {
-        alert("Item ini hanya dapat dipindahkan maksimal 3 kali!");
-        return;
-    }
-    
-    e.preventDefault();
-    draggedElement = e.target;
-    
-    // Store initial touch position
-    const touch = e.touches[0];
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-    
-    // Add visual feedback
-    draggedElement.style.opacity = '0.7';
-    draggedElement.style.position = 'relative';
-    draggedElement.style.zIndex = '1000';
+function setupDropZones() {
+    const dropZones = document.querySelectorAll('[id^="dropZone"]');
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragover', allowDrop);
+        zone.addEventListener('drop', handleDrop);
+    });
 }
 
-function handleTouchMove(e) {
-    if (!draggedElement) return;
-    e.preventDefault();
-    
-    const touch = e.touches[0];
-    const deltaX = touch.clientX - touchStartX;
-    const deltaY = touch.clientY - touchStartY;
-    
-    // Move the element
-    draggedElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-}
-
-function handleTouchEnd(e) {
-    if (!draggedElement) return;
-    e.preventDefault();
-    
-    // Get the element under the finger
-    const touch = e.changedTouches[0];
-    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-    
-    // Check if we're over a valid drop zone
-    if (dropTarget && dropTarget.classList.contains('bg-gray-200')) {
-        handleDrop({
-            preventDefault: () => {},
-            target: dropTarget,
-            dataTransfer: {
-                getData: () => draggedElement.id
-            }
-        });
-    }
-    
-    // Reset the dragged element
-    draggedElement.style.opacity = '';
-    draggedElement.style.position = '';
-    draggedElement.style.zIndex = '';
-    draggedElement.style.transform = '';
-    draggedElement = null;
-}
-
-// Existing drag and drop functions with modifications
 function allowDrop(event) {
     event.preventDefault();
 }
@@ -105,6 +66,7 @@ function startDrag(event) {
     const draggedItemId = event.target.id;
     if (dragCounts[draggedItemId] < 3) {
         event.dataTransfer.setData("text", draggedItemId);
+        draggedElement = event.target;
     } else {
         event.preventDefault();
         alert("Item ini hanya dapat dipindahkan maksimal 3 kali!");
@@ -114,46 +76,144 @@ function startDrag(event) {
 function handleDrop(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
-    const dropZone = event.target;
-
-    // Check if drop zone is a valid element
-    if (!dropZone.id.startsWith('dropZone')) {
+    if (!data) return;
+    
+    const dropZone = event.target.closest('[id^="dropZone"]');
+    if (!dropZone) {
         alert("Anda tidak dapat menjatuhkan item ke elemen ini!");
         return;
     }
 
+    // Periksa apakah item yang sama sudah ada di drop zone
+    const existingItems = dropZone.querySelectorAll(`[data-original-id="${data}"]`);
+    if (existingItems.length > 0) {
+        alert("Item ini sudah ada di drop zone!");
+        return;
+    }
+
     if (dropZone.children.length < 2) {
-        const draggedElement = document.getElementById(data).cloneNode(true);
-        draggedElement.classList.remove("cursor-move");
-        // Reinitialize touch events for the cloned element
-        draggedElement.addEventListener('touchstart', handleTouchStart, { passive: false });
-        draggedElement.addEventListener('touchmove', handleTouchMove, { passive: false });
-        draggedElement.addEventListener('touchend', handleTouchEnd, { passive: false });
-        
-        dropZone.appendChild(draggedElement);
+        const draggedItem = document.getElementById(data);
+        const clonedElement = draggedItem.cloneNode(true);
+        clonedElement.removeAttribute('draggable');
+        clonedElement.classList.remove("cursor-move");
+        clonedElement.style.cursor = 'default';
+        clonedElement.setAttribute('data-original-id', data);
+        dropZone.appendChild(clonedElement);
 
         dragCounts[data]++;
         if (dragCounts[data] >= 3) {
-            const element = document.getElementById(data);
-            element.draggable = false;
-            element.classList.add("opacity-50");
+            draggedItem.draggable = false;
+            draggedItem.classList.add("opacity-50");
         }
     } else {
         alert("Drop zone sudah penuh! Hanya dua elemen yang diperbolehkan.");
     }
 }
 
+function handleTouchStart(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const element = e.target.closest('[draggable="true"]');
+    if (!element || dragCounts[element.id] >= 3) {
+        if (element && dragCounts[element.id] >= 3) {
+            alert("Item ini hanya dapat dipindahkan maksimal 3 kali!");
+        }
+        return;
+    }
+
+    draggedElement = element;
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+
+    draggedElement.classList.add('dragging');
+    draggedElement.style.opacity = '0.7';
+    draggedElement.style.transition = 'none';
+    draggedElement.style.position = 'fixed';
+    draggedElement.style.zIndex = '1000';
+    draggedElement.style.width = `${draggedElement.offsetWidth}px`;
+    draggedElement.style.left = `${draggedElement.getBoundingClientRect().left}px`;
+    draggedElement.style.top = `${draggedElement.getBoundingClientRect().top}px`;
+}
+
+function handleTouchMove(e) {
+    if (!draggedElement) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    draggedElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+    document.querySelectorAll('[id^="dropZone"]').forEach(zone => {
+        const rect = zone.getBoundingClientRect();
+        if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+            touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+            zone.classList.add('potential-drop');
+        } else {
+            zone.classList.remove('potential-drop');
+        }
+    });
+}
+
+function handleTouchEnd(e) {
+    if (!draggedElement) return;
+    e.preventDefault();
+
+    const touch = e.changedTouches[0];
+    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+    const validDropZone = dropTarget?.closest('[id^="dropZone"]');
+
+    draggedElement.classList.remove('dragging');
+    draggedElement.style.opacity = '';
+    draggedElement.style.transition = '';
+    draggedElement.style.position = '';
+    draggedElement.style.zIndex = '';
+    draggedElement.style.transform = '';
+    draggedElement.style.width = '';
+    draggedElement.style.left = '';
+    draggedElement.style.top = '';
+
+    document.querySelectorAll('[id^="dropZone"]').forEach(zone => {
+        zone.classList.remove('potential-drop');
+    });
+
+    if (validDropZone) {
+        const existingItems = validDropZone.querySelectorAll(`[data-original-id="${draggedElement.id}"]`);
+        if (existingItems.length > 0) {
+            alert("Item ini sudah ada di drop zone!");
+            return;
+        }
+
+        if (validDropZone.children.length < 2) {
+            const clonedElement = draggedElement.cloneNode(true);
+            clonedElement.removeAttribute('draggable');
+            clonedElement.classList.remove("cursor-move");
+            clonedElement.style.cursor = 'default';
+            clonedElement.setAttribute('data-original-id', draggedElement.id);
+            validDropZone.appendChild(clonedElement);
+
+            dragCounts[draggedElement.id]++;
+            if (dragCounts[draggedElement.id] >= 3) {
+                draggedElement.draggable = false;
+                draggedElement.classList.add("opacity-50");
+            }
+        } else {
+            alert("Drop zone sudah penuh! Hanya dua elemen yang diperbolehkan.");
+        }
+    }
+
+    draggedElement = null;
+}
+
 function validateSampleSpace() {
     let allCorrect = true;
-    
-    // Reset semua zona ke default terlebih dahulu
+
     const allDropZones = document.querySelectorAll('[id^="dropZone"]');
     allDropZones.forEach(zone => {
         zone.classList.remove('border-red-500', 'border-green-500', 'bg-red-200', 'bg-green-200');
         zone.classList.add('border-tertiary', 'bg-gray-200');
     });
-    
-    // Validasi setiap zona
+
     for (const [zoneId, correctItems] of Object.entries(correctItemPairs)) {
         const zone = document.getElementById(zoneId);
         if (!zone || zone.children.length !== 2) {
@@ -162,10 +222,10 @@ function validateSampleSpace() {
             zone.classList.add('border-red-500', 'bg-red-200');
             continue;
         }
-        
-        const childIds = Array.from(zone.children).map(child => child.id);
+
+        const childIds = Array.from(zone.children).map(child => child.getAttribute('data-original-id'));
         const isCorrect = childIds.includes(correctItems[0]) && childIds.includes(correctItems[1]);
-        
+
         if (!isCorrect) {
             allCorrect = false;
             zone.classList.remove('border-tertiary');
@@ -178,11 +238,11 @@ function validateSampleSpace() {
 
     const resultFeedback = document.getElementById("resultFeedback");
     const nextGame = document.getElementById("nextGame");
-    
+
     if (allCorrect) {
         resultFeedback.innerHTML = "<span class='text-green-600'>🎉 Selamat! Anda berhasil melengkapi ruang sampel dengan benar.</span>";
         resultFeedback.className = "text-center mt-4 text-lg font-bold";
-        nextGame.style.display = 'block';
+        if (nextGame) nextGame.style.display = 'block';
     } else {
         resultFeedback.innerHTML = "<span class='text-red-600'>❌ Jawaban Anda belum tepat. Periksa kembali kombinasi yang masih salah (ditandai dengan border merah).</span>";
         resultFeedback.className = "text-center mt-4 text-lg font-bold";
@@ -192,80 +252,58 @@ function validateSampleSpace() {
 }
 
 function disableDragItems() {
-    // Nonaktifkan semua elemen draggable asli
     const originalDragItems = document.querySelectorAll('[id^="itemBatu"], [id^="itemGunting"], [id^="itemKertas"]');
     originalDragItems.forEach(item => {
         item.draggable = false;
         item.classList.add("opacity-50");
-        item.style.pointerEvents = "none"; // Tambahan untuk memastikan tidak bisa diinteraksi
+        item.style.pointerEvents = "none";
     });
 
-    // Nonaktifkan juga semua clone yang sudah di-drop
-    const clonedItems = document.querySelectorAll('[id^="dropZone"] [id^="itemBatu"], [id^="dropZone"] [id^="itemGunting"], [id^="dropZone"] [id^="itemKertas"]');
+    const clonedItems = document.querySelectorAll('[id^="dropZone"] [data-original-id]');
     clonedItems.forEach(item => {
         item.draggable = false;
         item.classList.add("opacity-50");
         item.style.pointerEvents = "none";
-        
-        // Hapus event listener touch jika ada
         item.removeEventListener('touchstart', handleTouchStart);
         item.removeEventListener('touchmove', handleTouchMove);
         item.removeEventListener('touchend', handleTouchEnd);
+        item.removeEventListener('touchcancel', handleTouchEnd);
     });
 }
 
 function restartGame() {
     const dropZones = document.querySelectorAll('[id^="dropZone"]');
     dropZones.forEach(zone => {
-        // Hapus semua anak elemen
-        while (zone.firstChild) {
-            zone.removeChild(zone.firstChild);
-        }
-        
-        // Reset kelas border dan background ke keadaan awal
-        zone.classList.remove('border-red-500', 'border-green-500', 'bg-red-200', 'bg-green-200');
+        while (zone.firstChild) zone.removeChild(zone.firstChild);
+        zone.classList.remove('border-red-500', 'border-green-500', 'bg-red-200', 'bg-green-200', 'potential-drop');
         zone.classList.add('border-tertiary', 'bg-gray-200');
     });
 
-    // Reset drag counts dan enable kembali semua item
     const allDragItems = document.querySelectorAll('[id^="itemBatu"], [id^="itemGunting"], [id^="itemKertas"]');
     allDragItems.forEach(item => {
-        const itemId = item.id;
-        if (dragCounts.hasOwnProperty(itemId)) {
-            dragCounts[itemId] = 0;
-        }
+        if (dragCounts.hasOwnProperty(item.id)) dragCounts[item.id] = 0;
         item.draggable = true;
-        item.classList.remove("opacity-50");
-        item.style.pointerEvents = "auto"; // Kembalikan pointer events
-        
-        // Tambahkan kembali event listener touch
+        item.classList.remove("opacity-50", "dragging");
+        item.style.pointerEvents = "auto";
+        item.style.transform = "";
+        item.style.position = "";
+        item.style.zIndex = "";
+
         item.addEventListener('touchstart', handleTouchStart, { passive: false });
         item.addEventListener('touchmove', handleTouchMove, { passive: false });
         item.addEventListener('touchend', handleTouchEnd, { passive: false });
+        item.addEventListener('touchcancel', handleTouchEnd, { passive: false });
     });
 
-    // Reset feedback message
     const resultFeedback = document.getElementById("resultFeedback");
     resultFeedback.textContent = "";
     resultFeedback.className = "text-center mt-4 text-lg font-bold";
-    
-    // Sembunyikan tombol next game jika ada
+
     const nextGame = document.getElementById("nextGame");
-    if (nextGame) {
-        nextGame.style.display = 'none';
-    }
+    if (nextGame) nextGame.style.display = 'none';
 }
 
-// Initialize touch events when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    initializeTouchEvents();
-    
-    // Add event listener for the check button
-    const checkButton = document.getElementById("checkButton");
-    if (checkButton) {
-        checkButton.addEventListener("click",validateSampleSpace);
-    }
-});
+document.addEventListener('DOMContentLoaded', initializeGame);
 
 //SCRIPT LANGUANGE
 //

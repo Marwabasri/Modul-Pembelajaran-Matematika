@@ -11,6 +11,25 @@
         font-family: 'Poppins';
         src: url(../dist/font/Poppins-Regular.ttf) format('truetype');
       }
+
+      /* Drag and drop styles */
+.dragging {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.potential-drop {
+    border-color: #3b82f6 !important;
+    background-color: #dbeafe !important;
+}
+
+/* Ensure draggable items have the right cursor */
+[draggable="true"] {
+    cursor: move;
+    user-select: none;
+    -webkit-user-drag: element;
+}
     </style>
 </head>
 <body class="bg-secondary font-Poppins">
