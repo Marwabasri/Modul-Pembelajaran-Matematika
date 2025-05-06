@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul Pembelajaran Peluang</title>
+    <meta name="description" content="Modul pembelajaran matematika interaktif tentang peluang, frekuensi relatif, dan frekuensi harapan untuk siswa SMP menggunakan pendekatan ELPSA">
+    <meta name="keywords" content="matematika, peluang, frekuensi relatif, frekuensi harapan, modul pembelajaran, ELPSA, pendidikan">
+    <meta name="author" content="Marwa, Universitas Negeri Makassar">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Modul Pembelajaran Matematika - Materi Peluang">
+    <meta property="og:description" content="Modul interaktif pembelajaran peluang dengan pendekatan ELPSA untuk siswa SMP">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://example.com/src/dist/img/cube-icon.png">
+    
+    <title>Modul Pembelajaran Peluang Matematika | ELPSA Framework</title>
+    <link rel="canonical" href="https://example.com">
+    
     <link href="./dist/output.css" rel="stylesheet">
     <link href="src/conten/style.css" rel="stylesheet">
     <style>
       @font-face {
         font-family: 'Poppins';
         src: url(./src/dist/font/Poppins-Regular.ttf) format('truetype');
+        font-display: swap;
       }
     </style>
 </head>
@@ -23,11 +37,12 @@
         <div class="px-4 flex gap-1">
           <img class="w-10 h-10 rounded-lg mt-5"
                     src="./src/dist/img/cube-icon.png"
-                    alt="Beranda">
-          <a href="" class="font-bold text-lg text-primary block py-6 sm:text-2xl">Modul Matematika</a>
+                    alt="Icon Kubus - Logo Modul Matematika"
+                    width="40" height="40">
+          <a href="index.html" class="font-bold text-lg text-primary block py-6 sm:text-2xl">Modul Matematika</a>
         </div>
         <div class="flex items-center px-4">
-          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolut right-4" aria-label="Menu navigasi">
             <span class="w-10 h-1 my-2 block rounded-full bg-black origin-center transition duration-300"></span>
             <span class="w-8 h-1 my-2 block rounded-full bg-primary origin-center transition duration-300"></span>
           </button>
@@ -35,9 +50,10 @@
             <ul class="flex flex-col gap-2 max-w-[280px] mx-auto text-base">
               <li class="flex gap-2">
                 <span class="flex gap-2 p-2">
-                  <img href="" class="w-6 h-6 rounded-lg"
+                  <img class="w-6 h-6 rounded-lg"
                     src="./src/dist/img/beranda.svg"
-                    alt="Beranda">
+                    alt="Icon Beranda"
+                    width="24" height="24">
                   <a href="index.html">Beranda</a>
                 </span>
               </li>
@@ -48,7 +64,8 @@
                         <span class="flex gap-2">
                           <img class="w-6 h-6 rounded-lg"
                             src="./src/dist/img/Aktv belajar.svg"
-                            alt="">
+                            alt="Icon Aktivitas Pembelajaran"
+                            width="24" height="24">
                           <span>
                               Aktivitas Pembelajaran
                           </span>
@@ -64,25 +81,28 @@
                         <ul class="flex flex-col gap-4 pl-2 mt-4">
                           <li class="flex gap-2">
                             <span class="flex gap-2">
-                              <img href="" class="w-6 h-6 rounded-lg"
+                              <img class="w-6 h-6 rounded-lg"
                                 src="./src/dist/img/peluang.svg"
-                                alt="">
+                                alt="Icon Peluang"
+                                width="24" height="24">
                               <a href="./src/conten/peluang.html">Peluang</a>
                             </span>
                           </li>
                           <li class="flex gap-2">
                             <span class="flex gap-2">
-                              <img href="./src/conten/frekuensi-relatif.html" class="w-6 h-6 rounded-lg"
+                              <img class="w-6 h-6 rounded-lg"
                                 src="./src/dist/img/fre relatif.svg"
-                                alt="">
+                                alt="Icon Frekuensi Relatif"
+                                width="24" height="24">
                               <a href="./src/conten/frekuensi-relatif.html">Frekuensi Relatif</a>
                             </span>
                           </li>   
                           <li class="flex gap-2">
                             <span class="flex gap-2">
-                              <img href="./src/conten/frekuensi-harapan.html" class="w-6 h-6 rounded-lg"
+                              <img class="w-6 h-6 rounded-lg"
                                 src="./src/dist/img/fre harapan.svg"
-                                alt="">
+                                alt="Icon Frekuensi Harapan"
+                                width="24" height="24">
                               <a href="./src/conten/frekuensi-harapan.html">Frekuensi Harapan</a>
                             </span>
                           </li>                            
@@ -92,9 +112,10 @@
               </li> 
               <li class="flex gap-2">
                 <span class="flex gap-2 p-2">
-                  <img href="" class="w-6 h-6 rounded-lg"
+                  <img class="w-6 h-6 rounded-lg"
                     src="./src/dist/img/close.svg"
-                    alt="Beranda">
+                    alt="Icon Penutup"
+                    width="24" height="24">
                   <a href="./src/conten/penutup.html">Penutup</a>
                 </span>
               </li>      
@@ -115,10 +136,10 @@
           <div class="flex flex-col items-center w-full h-full bg-white p-2">
             <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
               <div class="lg:flex-grow mt-0 md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                  <h2 class="text-sm font-extrabold tracking-tight mb-3 text-gray-900 sm:text-4xl md:text-5xl">
+                  <h1 class="text-sm font-extrabold tracking-tight mb-3 text-gray-900 sm:text-4xl md:text-5xl">
                     Modul Pembelajaran Matematika
-                    <span class="mt-0">Materi Peluang</span>
-                  </h2>
+                    <span class="mt-0 block">Materi Peluang</span>
+                  </h1>
 
                   <p class="mb-0 md:pl-0 text-xs text-center md:text-start">
                     Modul ini didesain dengan menggunakan desain pembelajaran ELPSA (<i>Experience, Languange, Picture, Symbol And Application</i>)
@@ -128,7 +149,7 @@
                 <div class="container relative mt-0">
                   <div class="flex items-end justify-center space-x-2">
                     <div class="flex flex-col items-center">
-                      <img src="./src/dist/img/cubeWelcome.gif" class="mb-3 w-16"/>
+                      <img src="./src/dist/img/cubeWelcome.gif" class="mb-3 w-16" alt="Animasi kubus matematika" width="64" height="64">
                       <!-- Box 1 -->
                       <div class="w-14 h-10 border-2 border-primary rounded-lg transform -translate-y-3">
                         <div class="w-1 h-1 bg-primary absolute top-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -164,9 +185,9 @@
           <div class="bg-white border-2 border-primary rounded-xl w-full mb-2">
             <details class="group w-full">
               <summary class="flex items-center justify-between cursor-pointer p-3">
-                <h5 class="text-xs font-medium text-gray-900 text-justify">
+                <h3 class="text-xs font-medium text-gray-900 text-justify">
                   Apa Capaian Pembelajaran dari Modul ini?
-                </h5>
+                </h3>
                 <span class="relative flex-shrink-0 ml-2 w-5 h-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" 
                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -200,9 +221,9 @@
           <div class="bg-white border-2 border-primary rounded-xl w-full mb-2">
             <details class="group w-full">
               <summary class="flex items-center justify-between cursor-pointer p-3">
-                <h5 class="text-xs font-medium text-gray-900 text-justify">
+                <h3 class="text-xs font-medium text-gray-900 text-justify">
                   Bagaimana alur tujuan pembelajaran dari modul ini?
-                </h5>
+                </h3>
                 <span class="relative flex-shrink-0 ml-2 w-5 h-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" 
                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -261,9 +282,9 @@
           <div class="bg-white border-2 border-primary rounded-xl w-full mb-2">
             <details class="group w-full">
               <summary class="flex items-center justify-between cursor-pointer p-3">
-                <h5 class="text-xs font-medium text-gray-900 text-justify">
+                <h3 class="text-xs font-medium text-gray-900 text-justify">
                   Apa itu ELPSA, dan apa bedanya dengan cara belajar biasanya?
-                </h5>
+                </h3>
                 <span class="relative flex-shrink-0 ml-2 w-5 h-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" 
                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -286,9 +307,9 @@
           <div class="bg-white border-2 border-primary rounded-xl w-full mb-2">
             <details class="group w-full">
               <summary class="flex items-center justify-between cursor-pointer p-3">
-                <h5 class="text-xs font-medium text-gray-900 text-justify">
+                <h3 class="text-xs font-medium text-gray-900 text-justify">
                   Bagaimana ELPSA bisa membantu kita memahami materi peluang?
-                </h5>
+                </h3>
                 <span class="relative flex-shrink-0 ml-2 w-5 h-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" 
                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -320,9 +341,9 @@
           <div class="bg-white border-2 border-primary rounded-xl w-full mb-2">
             <details class="group w-full">
               <summary class="flex items-center justify-between cursor-pointer p-3">
-                <h5 class="text-xs font-medium text-gray-900 text-justify">
+                <h3 class="text-xs font-medium text-gray-900 text-justify">
                   Bagaimana cara belajar yang efektif menggunakan modul pembelajaran ini?
-                </h5>
+                </h3>
                 <span class="relative flex-shrink-0 ml-2 w-5 h-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" 
                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -397,13 +418,6 @@
   </footer>
   <!--FOOTER END-->
 
-
-  
-
   <script src="./src/conten/script.js"></script>
-
-  
-
 </body>
-
 </html>
