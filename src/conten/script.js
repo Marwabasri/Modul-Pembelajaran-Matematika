@@ -34,8 +34,27 @@ document.querySelectorAll('details').forEach((detail) => {
     });
 });
 
+//pop up profil pengembang
+const btnProfil = document.getElementById("btnProfil");
+const overlayProfil = document.getElementById("overlayProfil");
+const closeProfil = document.getElementById("closeProfil");
 
-    
+btnProfil.addEventListener("click", function (e) {
+e.preventDefault();
+overlayProfil.classList.remove("hidden");
+});
+
+closeProfil.addEventListener("click", function () {
+overlayProfil.classList.add("hidden");
+});
+
+// Klik area gelap untuk menutup
+overlayProfil.addEventListener("click", function (e) {
+if (e.target === overlayProfil) {
+overlayProfil.classList.add("hidden");
+}
+});
+
 
 
 
