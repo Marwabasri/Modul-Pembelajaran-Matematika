@@ -32,7 +32,8 @@ function updateDisplay() {
   // 4. Atur Tombol Selanjutnya/Selesai
   if (currentIndex === steps.length - 1) {
     nextBtn.innerText = "Selesai";
-    nextBtn.classList.replace('bg-blue-600', 'bg-green-600');
+    nextBtn.classList.replace('bg-primary', 'bg-secondary');
+    nextBtn.classList.replace('text-white','text-gray-700')
   } else {
     nextBtn.innerText = "Selanjutnya";
     nextBtn.classList.replace('bg-green-600', 'bg-blue-600');

@@ -727,6 +727,22 @@ video {
   right: 0px;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-28 {
+  top: 7rem;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -3029,6 +3045,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -3107,6 +3128,10 @@ video {
 
 .pb-24 {
   padding-bottom: 6rem;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
 }
 
 .text-left {
