@@ -62,217 +62,98 @@
             <div id="progress-bar" class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 20%"></div>
           </div>
         </div>
+        
+        <!-- Container Utama (Bisa disesuaikan dengan struktur Anda) -->
+<!-- Wrapper Utama -->
+<div id="quiz-container" class="max-w-md mx-auto relative pb-20">
+  
+  <!-- Container Soal -->
+  <div id="questions-container">
+    <!-- Soal 1-3 (Contoh Dummy) -->
+    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+      <div class="py-10">
+        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 1</p>
+        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa hasil dari 5 x 5?</p>
+        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
+      </div>
+    </section>
+    
+    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+      <div class="py-10">
+        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 2</p>
+        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Ibukota Indonesia adalah?</p>
+        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
+      </div>
+    </section>
 
-        <!-- Question Container -->
-        <div id="question-wrapper" class="p-4">
-          
-          <!-- Soal 1 -->
-          <section class="question-step bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div class="py-10">
-              <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 1</p>
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Dua buah dadu bersisi 4 (tetrahedron), jika dua dadu tersebut di lempar bersama maka tentukan
-                ruang sampelnya, serta tentukan jika E adalah kejadian munculnya kedua mata dadu ganjil,
-                jika F untuk kejadian munculnya kedua mata dadu bejumlah 5, dan jika G adalah kejadian
-                munculnya kedua mata dadu berjumlah kurang dari 7. Dari ketiga kejadian E, F, dan G manakah
-                yang memiliki peluang terbesar?
-               </p>
-            </div>
-            
-          </section>
+    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+      <div class="py-10">
+        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 3</p>
+        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa hasil dari 10 + 15?</p>
+        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
+      </div>
+    </section>
 
-          <!-- Soal 2 -->
-          <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div class="py-10">  
-              <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 2</p>
-              <img class="w-full rounded-lg mt-5"
-                    src="../dist/img/bloodtype.jpg"
-                    alt="Beranda">
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Berdasarkan gambar, jika orang tua memiliki golongan darah A dan golongan darah B,
-                hitunglah peluang bahawa anak mereka akan memiliki golongan darah O?
-              </p>
-            </div>  
-          </section>
+    <!-- Soal 4 (Soal Asli dari Anda) -->
+    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+      <div class="py-10">
+        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 4</p>
+        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">
+          Sebuah pabrik memproduksi 1000 unit barang dengan peluang teoritis produk cacat sebesar 2% perhari. Hitung frekuensi harapan produk cacat dalam satu bulan (24 hari) produksi?
+        </p>
+        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
+      </div>
+    </section>
 
-          <!-- Soal 3 -->
-          <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div class="py-10">
-              <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 3</p>
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Ibu Ria yang memiliki rumah produksi cemilan sedang mengevaluasi penjualan dua varian
-                kroket barunya yaitu kroket ayam dan kroket udang dalam 15 hari terakhir. Setiap hari, rumah
-                produksi tersebut membuat kroket 150 unit untuk masing-masing varian.
-              </p>
-              <div class="border border-gray-300 shadow-sm rounded-lg overflow-hidden max-w-sm mx-auto">
-                <table class="w-full text-xs leading-5 text-gray-600 ">
-                  <thead class="bg-gray-100">
-                    <tr>
-                      <th class="py-2 px-4 text-center">Hari Ke-</th>
-                      <th class="py-2 px-4 text-center">Kroket Udang</th>
-                      <th class="py-2 px-4 text-center">Kroket Ayam</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="py-1 px-4 text-center">1</td>
-                      <td class="py-1 px-4 text-center">65</td>
-                      <td class="py-1 px-4 text-center">90</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">2</td>
-                      <td class="py-1 px-4 text-center">113</td>
-                      <td class="py-1 px-4 text-center">69</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">3</td>
-                      <td class="py-1 px-4 text-center">79</td>
-                      <td class="py-1 px-4 text-center">71</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">4</td>
-                      <td class="py-1 px-4 text-center">73</td>
-                      <td class="py-1 px-4 text-center">135</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">5</td>
-                      <td class="py-1 px-4 text-center">60</td>
-                      <td class="py-1 px-4 text-center">120</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">6</td>
-                      <td class="py-1 px-4 text-center">125</td>
-                      <td class="py-1 px-4 text-center">74</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">7</td>
-                      <td class="py-1 px-4 text-center">87</td>
-                      <td class="py-1 px-4 text-center">90</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">8</td>
-                      <td class="py-1 px-4 text-center">60</td>
-                      <td class="py-1 px-4 text-center">147</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">9</td>
-                      <td class="py-1 px-4 text-center">67</td>
-                      <td class="py-1 px-4 text-center">112</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">10</td>
-                      <td class="py-1 px-4 text-center">46</td>
-                      <td class="py-1 px-4 text-center">99</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">11</td>
-                      <td class="py-1 px-4 text-center">114</td>
-                      <td class="py-1 px-4 text-center">80</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">12</td>
-                      <td class="py-1 px-4 text-center">63</td>
-                      <td class="py-1 px-4 text-center">70</td>
-                    </tr>
-                    <tr">
-                      <td class="py-1 px-4 text-center">13</td>
-                      <td class="py-1 px-4 text-center">84</td>
-                      <td class="py-1 px-4 text-center">120</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">14</td>
-                      <td class="py-1 px-4 text-center">71</td>
-                      <td class="py-1 px-4 text-center">138</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">15</td>
-                      <td class="py-1 px-4 text-center">52</td>
-                      <td class="py-1 px-4 text-center">126</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div> 
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Hitunglah frekuensi relatif penjualan kroket untuk masiang masing varian dengan kejadian A
-                adalah koroket terjual di atas 75 buah perhari
-                Berdasrakan frekuensi relatifnya, varian mana yang perlu dipertahakan jumlah produksinya?
-              </p>
-            </div>      
-          </section>
+    <!-- Soal 5 -->
+    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+      <div class="py-10">
+        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 5</p>
+        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa jumlah warna pada pelangi?</p>
+        <input type="text" id="input-soal-5" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
+      </div>
+    </section>
+  </div>
 
-          <!-- Soal 4 -->
-          <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div class="py-10">
-              <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 4</p>
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Sebuah pabrik memproduksi 1000 unit barang dengan peluang teoritis produk cacat sebesar 2%
-                perhari. Hitung frekuensi harapan produk cacat dalam satu bulan (24 hari) produksi?
-              </p>
-            </div>
-          </section>
+  <!-- Halaman Hasil (Disembunyikan di awal) -->
+  <div id="result-section" class="hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
+    <h2 class="text-2xl font-bold text-center text-primary mb-4">Ujian Selesai!</h2>
+    <div class="text-center mb-6">
+      <p class="text-gray-600 text-sm">Total Skor Anda:</p>
+      <p id="total-score" class="text-5xl font-extrabold text-green-500">0</p>
+    </div>
+    
+    <div id="summary-container" class="space-y-3 mb-6">
+      <!-- Ringkasan jawaban disisipkan lewat JS -->
+    </div>
 
-          <!-- Soal 5 -->
-          <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div class="py-10">  
-              <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 5</p>
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Konser solo artis terkenal, akan mengadakan konser di Jakarta. Berikut adalah daftar harga tiket konser:
-              </p>
-              <div class="border border-gray-300 shadow-sm rounded-lg overflow-hidden max-w-sm mx-auto">
-                <table class="w-full text-xs leading-5 text-gray-600 ">
-                  <thead class="bg-gray-100">
-                    <tr>
-                      <th class="py-2 px-4 text-center">Kategori</th>
-                      <th class="py-2 px-4 text-center">Harga</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="py-1 px-4 text-center">VIP A dan B (Berdiri)</td>
-                      <td class="py-1 px-4 text-center">Rp 3.600.000</td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="py-1 px-4 text-center">CAT 1 (Duduk)</td>
-                      <td class="py-1 px-4 text-center">Rp 3.300.000</td>
-                    </tr>
-                    <tr>
-                      <td class="py-1 px-4 text-center">CAT 2 (Duduk)</td>
-                      <td class="py-1 px-4 text-center">Rp 2.650.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div> 
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Promotor konser memiliki data penjualan tiket dari konser-konser artis tersebut sebelumnya dengan
-                rincian:
-              </p> 
-              <div class="px-3 pb-3 text-sm leading-relaxed text-gray-800">
-                <ul class="space-y-1 list-disc pl-4 text-justify">
-                  <li>Peluang terjual VIP A dan B adalah 0,90</li>
-                  <li>Peluang terjual CAT 1 adalah 0,91</li>
-                  <li>Peluang terjual CAT 2 adalah 0,82</li>
-                </ul>
-              </div>    
-              <p class="text-gray-800 text-sm leading-relaxed text-justify">
-                Jika konser solo artis tersebut memiliki kapasistas masisng-masisng kategori adalah 500 kursi,
-                kategori mana yang memiliki potensi pendapatan tertinggi berdasarkan frekuensi
-                harapannya?
-              </p>
-            </div>  
-          </section>
-        </div>
+    <button id="btn-pembahasan" class="w-full bg-blue-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-all">
+      Lihat Pembahasan Lengkap
+    </button>
+  </div>
 
-        <!-- Navigation Buttons -->
-        <div class="fixed bottom-0 left-0 w-full bg-white px-4 py-3 border-t">
-          <div class="flex justify-between gap-4 max-w-md mx-auto">
-            <button id="prev-btn" class="flex-1 bg-gray-100 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold transition-all disabled:opacity-50">
-              Sebelumnya
-            </button>
-            <button id="next-btn" class="flex-1 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-secondary hover:text-gray-700 transition-all">
-              Selanjutnya
-            </button>
-          </div>
-        </div>
+  <!-- Halaman Pembahasan (Disembunyikan di awal) -->
+  <div id="pembahasan-section" class="hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mt-4">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Pembahasan Soal</h3>
+    <div id="pembahasan-container" class="space-y-6">
+      <!-- Pembahasan disisipkan lewat JS -->
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div id="nav-buttons" class="fixed bottom-0 left-0 w-full bg-white px-4 py-3 border-t">
+    <div class="flex justify-between gap-4 max-w-md mx-auto">
+      <button id="prev-btn" class="flex-1 bg-gray-100 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold transition-all disabled:opacity-50">
+        Sebelumnya
+      </button>
+      <button id="next-btn" class="flex-1 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+        Selanjutnya
+      </button>
+    </div>
+  </div>
+
+</div>
+        
       </div>
     </div>
   </div>  
