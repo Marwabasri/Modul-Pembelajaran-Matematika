@@ -36,10 +36,9 @@
           <div class="flex flex-col items-start justify-center py-6">
             <a href="" class="font-bold sm:text-2xl text-lg text-primary block">Modul Matematika</a>
           </div>          
-          
         </div>
         <div class="flex items-center px-4">
-          <a href="./penutup.html" id="endTheTest"  class="block absolute right-4">
+          <a href="../../index.html" id="endTheTest"  class="block absolute right-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-7" viewBox="0 0 448 512">
               <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm79 143c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
             </svg>
@@ -51,110 +50,128 @@
   <!--Header End-->
 
   <div class="p-2 mt-20">
-    <div class="max-w-3xl mx-auto space-y-0.5 bg-gray-50">
-      <div class="">
-        <!-- Progress Bar Container -->
-        <div class="fixed w-full top-20 left-1 p-4 shadow-sm rounded-xl bg-white">
-          <div class="flex justify-center text-sm text-primary font-bold mb-2">
-            <p>Tes Formatif 1</p>
+    <div class="max-w-3xl mx-auto space-y-0.5">
+      <!-- Progress Bar Container -->
+      <div class="mt-0 sticky top-20 z-10 bg-white p-4 rounded-xl rounded-b-none">
+          <div class="flex justify-center sm:text-sm text-sm text-primary font-bold text-center mb-2">
+             <p>Tes Sumatif</p> 
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-2">
-            <div id="progress-bar" class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 20%"></div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 33%"></div>
           </div>
-        </div>
-        
-        <!-- Container Utama (Bisa disesuaikan dengan struktur Anda) -->
-<!-- Wrapper Utama -->
-<div id="quiz-container" class="max-w-md mx-auto relative pb-20">
-  
-  <!-- Container Soal -->
-  <div id="questions-container">
-    <!-- Soal 1-3 (Contoh Dummy) -->
-    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
-      <div class="py-10">
-        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 1</p>
-        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa hasil dari 5 x 5?</p>
-        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
       </div>
-    </section>
-    
-    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
-      <div class="py-10">
-        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 2</p>
-        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Ibukota Indonesia adalah?</p>
-        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
-      </div>
-    </section>
 
-    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
-      <div class="py-10">
-        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 3</p>
-        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa hasil dari 10 + 15?</p>
-        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
-      </div>
-    </section>
+      <!-- Question Container -->
+      <div id="question-container" class="bg-white rounded-xl rounded-t-none shadow-lg overflow-hidden">
+        <!-- Question 1: Short Answer -->
+        <section id="question-1" class="hidden transition-all duration-300">
+          <div class="px-4 text-sm text-primary font-semibold">
+            <p>Pertanyaan 1</p> 
+          </div>
+          <div class="px-4 py-2">
+            <p class="text-gray-800 mb-4 text-xs text-justify">
+              Sebuah sekolah melalakukan survei tetang kebiasaan sarapan pagi siswa. Survei dilakuakan kepada 150 siswa,
+              hasilnya menunjukkan 90 siswa memiliki kebiasan sarapan pagi setiap harinya sebelum berangkat sekolah. 
+              Sekolah tersebut memiliki 1500 siswa, berdasarkan data ini, berapa banyak siswa di sekolah ini yang diperkirakan memiliki kebiasaan sarapan pagi?
+            </p>
+            <div class="flex items-center justify-start gap-1">
+              <input type="text" id="answer-1" class="border-2 border-gray-300 w-2/12 sm:w-1/2 rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+              <p class="text-xs">Siswa</p>
+            </div>
+            <p id="feedback-1" class="text-xs"></p>
+          </div>
+        </section>
 
-    <!-- Soal 4 (Soal Asli dari Anda) -->
-    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
-      <div class="py-10">
-        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 4</p>
-        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">
-          Sebuah pabrik memproduksi 1000 unit barang dengan peluang teoritis produk cacat sebesar 2% perhari. Hitung frekuensi harapan produk cacat dalam satu bulan (24 hari) produksi?
-        </p>
-        <input type="text" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
-      </div>
-    </section>
+        <!-- Question 2: Short Answer -->
+        <section id="question-2" class="hidden transition-all duration-300">
+          <div class="px-4 text-sm text-primary font-semibold">
+            <p>Pertanyaan 2</p> 
+          </div>
+          <div class="px-4 py-2">
+            <p class="text-gray-800 mb-1 text-xs text-justify">
+              Pusat perbelanjaan di tengah Kota Jakarta memiliki rata-rata pengunjung harian sebanyak 9.000 orang.
+              Sebuah survei dilakukan untuk mengetahui preferensi metode pembayaran pengunjung pusat perbelanjaan tersebut, berikut hasil surveinya:
+            </p>      
+            <div class="max-w-sm w-full bg-white rounded-lg shadow-sm dark:bg-gray-800 p-4 md:p-6">
+              <div id="bar-chart"></div>
+                <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+                  <div class="flex justify-between items-center">
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-800 mb-1 text-xs text-justify">
+              Berapa banyak pengunjung yang diperkirakan memilih metode pembayaran digital?
+            </p>  
+            <div class="flex items-center justify-start gap-1">
+              <input type="text" id="answer-2" class="border-2 border-gray-300 w-2/12 sm:w-1/2 rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+              <p class="text-xs">Orang</p>
+            </div>
+            <p id="feedback-2" class="text-xs"></p>
+          </div>
+        </section>
 
-    <!-- Soal 5 -->
-    <section class="question-step hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
-      <div class="py-10">
-        <p class="text-xs font-bold text-primary uppercase mb-2">Pertanyaan 5</p>
-        <p class="text-gray-800 text-sm leading-relaxed text-justify mb-4">Berapa jumlah warna pada pelangi?</p>
-        <input type="text" id="input-soal-5" class="answer-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Masukkan jawaban Anda...">
-      </div>
-    </section>
-  </div>
+        <!-- Question 3: Short Answer -->
+        <section id="question-3" class="hidden transition-all duration-300">
+          <div class="px-4 text-sm text-primary font-semibold">
+            <p>Pertanyaan 3</p> 
+          </div>
+          <div class="px-4 py-2">
+            <p class="text-gray-800 mb-4 text-xs text-justify">
+              Zari merupakan seorang atlet sepak bola yang memiliki peluang mencetak gol dalam satu pertandingan adalah 20%. 
+              Jika tim Zari bermaian sebanyak 25 pertandingan dalam satu musim, berapa kali zari diperkirakan mencetak gol?
+            </p>
+            <div class="flex items-center justify-start gap-1">
+              <input type="text" id="answer-3" class="border-2 border-gray-300 w-2/12 sm:w-1/2 rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+              <p class="text-xs">gol</p>
+            </div>
+            <p id="feedback-3" class="text-xs"></p>
+          </div>
+        </section>
 
-  <!-- Halaman Hasil (Disembunyikan di awal) -->
-  <div id="result-section" class="hidden bg-white p-6 rounded-xl shadow-md border border-gray-100">
-    <h2 class="text-2xl font-bold text-center text-primary mb-4">Ujian Selesai!</h2>
-    <div class="text-center mb-6">
-      <p class="text-gray-600 text-sm">Total Skor Anda:</p>
-      <p id="total-score" class="text-5xl font-extrabold text-green-500">0</p>
+        <!-- Question 4: Short Answer -->
+        <section id="question-4" class="hidden transition-all duration-300">
+          <div class="px-4 text-sm text-primary font-semibold">
+            <p>Pertanyaan 4</p> 
+          </div>
+          <div class="px-4 py-2">
+            <p class="text-gray-800 mb-4 text-xs text-justify">
+              Dalam permaianan yang menggunakan dadu, pemaian melempar dadu bersisi6 sebanyak 120 kali.
+              pemaian akan mendapatkan poin jika mendapatkan mata dadu 4, 5, atau 6.
+            </p>
+            <p class="text-gray-800 mb-1 text-xs text-justify">
+              Tentukan peluang teoritis kejadian munculnya mata dadu 4, 5, atau 6 dalam sekali lemparan!
+            </p>  
+            <div class="flex items-center justify-start gap-1">
+              <input type="text" id="answer-4" class="border-2 border-gray-300 w-2/12 sm:w-1/2 rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+            </div>
+            <p id="feedback-4" class="text-xs"></p>
+
+            <p class="text-gray-800 mb-1 mt-4 text-xs text-justify">
+              Berdasarkan peluang tersebut, erapakah frekuensi harapan mata dadu 4, 5, atau 6 muncul dalam 120 kali lemparan?
+            </p>  
+            <div class="flex items-center justify-start gap-1">
+              <input type="text" id="answer-5" class="border-2 border-gray-300 w-2/12 sm:w-1/2 rounded-lg px-4 py-2 focus:outline-none text-xs focus:border-primary transition-colors" placeholder="Masukkan jawaban">
+              <p class="text-xs">Kali</p>
+            </div>
+            <p id="feedback-5" class="text-xs"></p>
+          </div>
+        </section>
+      </div>
+
+     <!-- Final Score Section -->
+     <div class="h-28 mt-5">
+      <div id="final-score"></div>
     </div>
-    
-    <div id="summary-container" class="space-y-3 mb-6">
-      <!-- Ringkasan jawaban disisipkan lewat JS -->
-    </div>
-
-    <button id="btn-pembahasan" class="w-full bg-blue-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-all">
-      Lihat Pembahasan Lengkap
-    </button>
-  </div>
-
-  <!-- Halaman Pembahasan (Disembunyikan di awal) -->
-  <div id="pembahasan-section" class="hidden bg-white p-6 rounded-xl shadow-md border border-gray-100 mt-4">
-    <h3 class="text-xl font-bold text-gray-800 mb-4">Pembahasan Soal</h3>
-    <div id="pembahasan-container" class="space-y-6">
-      <!-- Pembahasan disisipkan lewat JS -->
-    </div>
-  </div>
-
-  <!-- Navigation Buttons -->
-  <div id="nav-buttons" class="fixed bottom-0 left-0 w-full bg-white px-4 py-3 border-t">
-    <div class="flex justify-between gap-4 max-w-md mx-auto">
-      <button id="prev-btn" class="flex-1 bg-gray-100 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold transition-all disabled:opacity-50">
-        Sebelumnya
-      </button>
-      <button id="next-btn" class="flex-1 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
-        Selanjutnya
-      </button>
-    </div>
-  </div>
-
-</div>
-        
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-0 left-0 w-full bg-white px-3 py-1 shadow-md text-xs">
+      <section class="flex items-center justify-center mb-1">
+        <button id="check-all" class="bg-primary hover:bg-primary/90 text-white px-2 py-3 text-xs rounded-lg font-medium w-full transition-colors">Periksa Semua Jawaban</button>
+      </section>
+      <div class="flex justify-between gap-4">
+        <button id="prev-btn" class="flex-1 bg-gray-500 text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors" disabled>Sebelumnya</button>
+        <button id="next-btn" class="flex-1 bg-primary text-white px-2 py-1.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors">Selanjutnya</button>
       </div>
+    </div>
     </div>
   </div>  
 
